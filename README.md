@@ -15,3 +15,8 @@ as well as in the future to keep track of where the original documentation was c
 4. translate copied file to french
 5. commit **only** files translated (`english/docs/AutoHotkey.htm` and `french/docs/AutoHotkey.htm`),
 especially meaning: do not commit files in english that weren't translated or which translation wasn't updated
+
+# Style d'écriture
+AutoHotkey est utilisé comme nom propre masculin
+
+On préfère une reformulation à l'utilisation de "tu" ou "vous" puisqu'on n'a pas la neutralité de "you" en français
