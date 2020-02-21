@@ -20,3 +20,5 @@ especially meaning: do not commit files in english that weren't translated or wh
 AutoHotkey est utilisé comme nom propre masculin
 
 On préfère une reformulation à l'utilisation de "tu" ou "vous" puisqu'on n'a pas la neutralité de "you" en français
+
+"hotkey" n'est pas traduit puisque le concept inclut plus que "raccourci clavier"
