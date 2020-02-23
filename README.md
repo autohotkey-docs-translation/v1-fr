@@ -17,8 +17,16 @@ as well as in the future to keep track of where the original documentation was c
 especially meaning: do not commit files in english that weren't translated or which translation wasn't updated
 
 # Style d'écriture
+**Rajouter ici les choix faits lors de la traduction afin de garder un style homogène et cohérent**
+
 AutoHotkey est utilisé comme nom propre masculin
 
 On préfère une reformulation à l'utilisation de "tu" ou "vous" puisqu'on n'a pas la neutralité de "you" en français
 
-"hotkey" n'est pas traduit puisque le concept inclut plus que "raccourci clavier"
+"hotkey" n'est pas traduit puisque le concept inclut plus que "raccourci clavier" et utilisé au féminin
+
+"hotstring" pareil et utilisé au masculin
+
+"OutputVar" est traduit par "VarSortie" (rq : pas forcément une bonne idée)
+
+"InputVar" est traduit par "VarEntree"
