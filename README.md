@@ -12,7 +12,7 @@ If a file is only partly translated, indicate it in the filename. For example `W
 
 The goal is to keep track of what has been translated from the "frozen copy" of the original documentation, such that if a corresponding file under `english` does not exist under `french` then it has not yet been translated.
 
-**Note:** Do not translate the html code, such as `<tags>`, `attributes="some value"`, anchors `#my_page_section`, etc.
+**Note:** Do not translate the file names or html code, such as `<tags>`, `attributes="some value"`, anchors `#my_page_section`, etc.
 
 ## Steps to translate a file
 1. clone this repository
