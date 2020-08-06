@@ -22,6 +22,8 @@ The goal is to keep track of what has been translated from the "frozen copy" of 
 
 ## Tools
 - [**OmegaT**](https://omegat.org/) - Free open-source translation memory tool, computer-assisted translation (CAT) software
+  - [Google Translator without API key](https://sourceforge.net/projects/omegat-gt-without-api-key/files/) - Plugin for Google Translate service, without needing an API key.
+  - [More plugins](https://sourceforge.net/p/omegat/wiki/Plugins/)
 - [**Microsoft Terminology Translation**](https://www.microsoft.com/en-us/language) - Useful for when you need a computer-term in a different language. These are used my Microsoft themselves for things like Windows, Office, Skype, Xbox, Bing, etc.
   - You can download *.tbx glossary files here to help with CAT software: 
   https://www.microsoft.com/en-us/language/Terminology
