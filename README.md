@@ -10,7 +10,7 @@ Do not commit anything to `english`. If a file has been translated, save and com
 
 If a file is only partly translated, indicate it in the filename. For example `Welcome.htm` could be `Welcome.part.htm` or `Welcome.htm.part`.
 
-The goal is to keep track to keep track of what has been translated from the "frozen copy" of the original documentation, such that if a corresponding file under `english` does not exist under `french` then it has not yet been translated.
+The goal is to keep track of what has been translated from the "frozen copy" of the original documentation, such that if a corresponding file under `english` does not exist under `french` then it has not yet been translated.
 
 ## Steps to translate a file
 1. clone this repository
