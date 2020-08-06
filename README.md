@@ -43,3 +43,5 @@ On préfère une reformulation à l'utilisation de "tu" ou "vous" puisqu'on n'a 
 <kbd>Caps Lock</kbd> est traduit par <kbd>Verr Maj</kbd>
 
 <kbd>Backspace</kbd> est traduit par <kbd>Suppr arrière</kbd>
+
+"Mouse Wheel" est traduit par "Roulette de la souris"
