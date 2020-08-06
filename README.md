@@ -52,4 +52,4 @@ On préfère une reformulation à l'utilisation de "tu" ou "vous" puisqu'on n'a 
 
 "Joystick" restera "Joystick", et non des termes qui peuvent etre ambigu: "gâchettes", "stick", "bouton de tranche", etc.
 
-"Key(s)" est traduit par "Touche(s)" et non "clé(s)È ou "bouton(s)".
+"Key(s)" est traduit par "Touche(s)" et non "clé(s)" ou "bouton(s)".
