@@ -36,6 +36,8 @@ On préfère une reformulation à l'utilisation de "tu" ou "vous" puisqu'on n'a 
 
 "hotkey" n'est pas traduit puisque le concept inclut plus que "raccourci clavier" et utilisé au féminin
 
+Si vous n'êtes pas certain du nom d'une certaine touche, vous pouvez vous référer à: https://fr.wikipedia.org/wiki/Clavier_d%27ordinateur#Touches_les_plus_communes
+
 "hotstring" pareil et utilisé au masculin
 
 "OutputVar" est traduit par "VarSortie" (rq : pas forcément une bonne idée)
