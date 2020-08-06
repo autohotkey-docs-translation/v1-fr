@@ -51,3 +51,5 @@ On préfère une reformulation à l'utilisation de "tu" ou "vous" puisqu'on n'a 
 "Mouse Wheel" est traduit par "Roulette de la souris"
 
 "Joystick" restera "Joystick", et non des termes qui peuvent etre ambigu: "gâchettes", "stick", "bouton de tranche", etc.
+
+"Key(s)" est traduit par "Touche(s)" et non "clé(s)È ou "bouton(s)".
