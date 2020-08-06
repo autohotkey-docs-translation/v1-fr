@@ -36,3 +36,9 @@ On préfère une reformulation à l'utilisation de "tu" ou "vous" puisqu'on n'a 
 "OutputVar" est traduit par "VarSortie" (rq : pas forcément une bonne idée)
 
 "InputVar" est traduit par "VarEntree"
+
+<kbd>Shift</kbd> est traduit par <kbd>Maj</kbd>
+
+<kbd>Caps Lock</kbd> est traduit par <kbd>Verr Maj</kbd>
+
+<kbd>Backspace</kbd> est traduit par <kbd>Suppr arrière</kbd>
