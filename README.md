@@ -18,6 +18,10 @@ The goal is to keep track of what has been translated from the "frozen copy" of 
 3. **Only** commit translated files under `french/`, do not commit files in `english/`.
    > If a file is only partly translated, indicate it in the file name. ex. `french/docs/AutoHotkey.part.htm` or `french/docs/AutoHotkey.htm.part`.
 
+## Tools
+- [**OmegaT**](https://omegat.org/) - Free open-source translation memory tool
+- [**POEdit**](https://poedit.net/) - Translation editor, free version available
+
 # Style d'écriture
 **Rajouter ici les choix faits lors de la traduction afin de garder un style homogène et cohérent**
 
