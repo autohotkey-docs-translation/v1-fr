@@ -15,7 +15,7 @@ The goal is to keep track of what has been translated from the "frozen copy" of 
 ## Steps to translate a file
 1. clone this repository
 2. copy a file from `english` that you aim to translate, to `french` (preserving relative paths, eg. `french/docs/AutoHotkey.htm`)
-3. **Only** commit translated files as ex. `french/docs/AutoHotkey.htm`, do not commit files in `english`.
+3. **Only** commit translated files under `french/`, do not commit files in `english/`.
    > If a file is only partly translated, indicate it in the file name. ex. `french/docs/AutoHotkey.part.htm` or `french/docs/AutoHotkey.htm.part`.
 
 # Style d'écriture
