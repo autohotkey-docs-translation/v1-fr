@@ -38,7 +38,7 @@ On préfère une reformulation à l'utilisation de "**tu**" ou "**vous**" puisqu
 
 Si vous n'êtes pas certain du nom d'une certaine touche, vous pouvez vous référer à: https://fr.wikipedia.org/wiki/Clavier_d%27ordinateur#Touches_les_plus_communes
 
-## La traduction pour certain termes (Conventions)
+## La traduction pour certains termes (Conventions)
 | English              | Français                 | Commentaire |
 |----------------------|--------------------------|-------------|
 | Hotkey               |                          | Ceci n'est pas traduit puisque le concept inclut plus que "raccourci clavier" et utilisé au féminin. |
