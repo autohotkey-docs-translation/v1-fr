@@ -12,6 +12,7 @@ If a file is only partly translated, indicate it in the filename. For example `W
 
 The goal is to keep track to keep track of what has been translated from the "frozen copy" of the original documentation, such that if a corresponding file under `english` does not exist under `french` then it has not yet been translated.
 
+## Steps to translate a file
 1. clone this repository
 2. copy a file from `english` that you aim to translate, to `french` (with `part` in the filename, if only partly translated as mentioned above).
    > eg. file to translate (let's say `english/docs/AutoHotkey.htm`) and copy it into `french` (preserving relative paths of course so `french/docs/AutoHotkey.htm`)
