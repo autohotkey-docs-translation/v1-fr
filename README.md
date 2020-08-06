@@ -19,8 +19,9 @@ The goal is to keep track of what has been translated from the "frozen copy" of 
    > If a file is only partly translated, indicate it in the file name. ex. `french/docs/AutoHotkey.part.htm` or `french/docs/AutoHotkey.htm.part`.
 
 ## Tools
-- [**OmegaT**](https://omegat.org/) - Free open-source translation memory tool
+- [**OmegaT**](https://omegat.org/) - Free open-source translation memory tool, computer-assisted translation (CAT) software
 - [**Microsoft Terminology Translation**](https://www.microsoft.com/en-us/language) - Useful for when you need a computer-term in a different language. These are used my Microsoft themselves for things like Windows, Office, Skype, Xbox, Bing, etc.
+  - You can download *.tbx glossary files here to help with computer-assisted translation (CAT) software: https://www.microsoft.com/en-us/language/Terminology
 - [**POEdit**](https://poedit.net/) - Translation editor, free version available
 
 # Style d'écriture
