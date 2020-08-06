@@ -63,7 +63,7 @@ Gui, Add, Edit</pre>
 <h2 id="Edit">Edit</h2>
 <p>Description: An area where free-form text can be typed by the user.</p>
 <p>For example:</p>
-<pre>Gui, Add, Edit, r9 vMyEdit w135, Text to appear inside the edit control (omit this parameter to start off empty).</pre>
+<pre>Gui, Add, Edit, r9 vMyEdit w135, Texte à apparaître dans le contrôle d'édition (omettez ce paramètre pour commencer vide).</pre>
 <p>Appearance:</p>
 <img src="../static/ctrl_edit.png" alt="Edit" />
 <p>The control will be multi-line if it has more than one row of text. For example, specifying <code>r3</code> in <em>Options</em> will create a 3-line edit control with the following default properties: a vertical scroll bar, word-wrapping enabled, and the <kbd>Enter</kbd> key captured as part of the input rather than triggering the window's <a href="#DefaultButton">default button</a>.</p>
