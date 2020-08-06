@@ -32,32 +32,24 @@ The goal is to keep track of what has been translated from the "frozen copy" of 
 # Style d'écriture
 **Rajouter ici les choix faits lors de la traduction afin de garder un style homogène et cohérent**
 
-AutoHotkey est utilisé comme nom propre masculin.
+**AutoHotkey** est utilisé comme nom propre masculin.
 
-On préfère une reformulation à l'utilisation de "tu" ou "vous" puisqu'on n'a pas la neutralité de "you" en français.
-
-"hotkey" n'est pas traduit puisque le concept inclut plus que "raccourci clavier" et utilisé au féminin.
+On préfère une reformulation à l'utilisation de "**tu**" ou "**vous**" puisqu'on n'a pas la neutralité de "you" en français.
 
 Si vous n'êtes pas certain du nom d'une certaine touche, vous pouvez vous référer à: https://fr.wikipedia.org/wiki/Clavier_d%27ordinateur#Touches_les_plus_communes
 
-"hotstring" pareil et utilisé au masculin.
-
-"OutputVar" est traduit par "VarSortie" (rq : pas forcément une bonne idée).
-
-"InputVar" est traduit par "VarEntree".
-
-<kbd>Shift</kbd> est traduit par <kbd>Maj</kbd>.
-
-<kbd>Caps Lock</kbd> est traduit par <kbd>Verr Maj</kbd>.
-
-<kbd>Backspace</kbd> est traduit par <kbd>Suppr arrière</kbd>.
-
-"Mouse Wheel" est traduit par "Roulette de la souris".
-
-"Joystick" restera "Joystick", et non des termes qui peuvent etre ambigu: "gâchettes", "stick", "bouton de tranche", etc.
-
-"Key(s)" est traduit par "Touche(s)" et non "clé(s)" ou "bouton(s)".
-
-"Numpad" est traduit par "Pavé numérique".
-
-"Modifier Key(s)" est traduit par "Touche(s) de combinaison".
+## La traduction pour certain termes (Conventions)
+| English              | Français                 | Commentaire |
+|----------------------|--------------------------|-------------|
+| Hotkey               |                          | Ceci n'est pas traduit puisque le concept inclut plus que "raccourci clavier" et utilisé au féminin. |
+| Hotstring            |                          | Pareil et utilisé au masculin. |
+| OutputVar            | VarSortie                | rq : pas forcément une bonne idée |
+| InputVar             | VarEntree                |             |
+| <kbd>Shift</kbd>     | <kbd>Maj</kbd>           | Strictment pour le nom de la touche comme tel |
+| <kbd>Caps Lock</kbd> | <kbd>Verr Maj</kbd>      | Pareil      |
+| <kbd>Backspace</kbd> | <kbd>Suppr arrière</kbd> | Pareil      |
+| Mouse Wheel          | Roulette de la souris    |             |
+| Joystick             |                          | Restera le meme, et non des termes qui peuvent etre ambigu: "gâchettes", "stick", "bouton de tranche", etc. |
+| Key(s)               | Touche(s)                | ... et non "clé(s)" ou "bouton(s)". |
+| Numpad               | Pavé numérique           |             |
+| Modifier Key(s)      | Touche(s) de combinaison |             |
