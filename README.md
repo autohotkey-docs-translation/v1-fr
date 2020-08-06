@@ -20,6 +20,7 @@ The goal is to keep track of what has been translated from the "frozen copy" of 
 
 ## Tools
 - [**OmegaT**](https://omegat.org/) - Free open-source translation memory tool
+- [**Microsoft Terminology Translation**](https://www.microsoft.com/en-us/language) - Useful for when you need a computer-term in a different language. These are used my Microsoft themselves for things like Windows, Office, Skype, Xbox, Bing, etc.
 - [**POEdit**](https://poedit.net/) - Translation editor, free version available
 
 # Style d'écriture
