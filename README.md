@@ -53,3 +53,4 @@ Si vous n'êtes pas certain du nom d'une certaine touche, vous pouvez vous réf�
 | Key(s)               | Touche(s)                | ... et non "clé(s)" ou "bouton(s)". |
 | Numpad               | Pavé numérique           |             |
 | Modifier Key(s)      | Touche(s) de combinaison |             |
+| Note:                | Remarque:                | "Notez (bien):" pourait être utilisé aussi |
