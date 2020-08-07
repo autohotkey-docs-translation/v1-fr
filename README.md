@@ -63,3 +63,4 @@ Si vous n'êtes pas certain du nom d'une certaine touche, vous pouvez vous réf�
 | Note:                  | Remarque:                | "Notez (bien):" pourait être utilisé aussi |
 | Deprecated             | Déconseillé              |             |
 | Scan Code              | Code de Balayage         |             |
+| (keyboard/mouse) hook  | hook (clavier/souris)    |             |
