@@ -50,10 +50,12 @@ Si vous n'êtes pas certain du nom d'une certaine touche, vous pouvez vous réf�
 | <kbd>Backspace</kbd>   | <kbd>Suppr arrière</kbd> | Pareil      |
 | <kbd>Insert</kbd>      | <kbd>Inser</kbd>         | Pareil      |
 | <kbd>Scroll Lock</kbd> | <kbd>Arrêt défil</kbd>   | Pareil      |
+| <kbd>Page Up</kbd>     | <kbd>Page ↑</kbd>        | Pareil      |
+| <kbd>Page Down</kbd>   | <kbd>Page ↓</kbd>        | Pareil      |
 | Mouse Wheel            | Roulette de la souris    |             |
 | Joystick               |                          | Restera le meme, et non des termes qui peuvent etre ambigu: "gâchettes", "stick", "bouton de tranche", etc. |
 | Key(s)                 | Touche(s)                | ... et non "clé(s)" ou "bouton(s)". |
 | Numpad                 | Pavé numérique           |             |
 | Modifier Key(s)        | Touche(s) de combinaison |             |
-| Note:                | Remarque:                | "Notez (bien):" pourait être utilisé aussi |
-| Deprecated           | Déconseillé              |             |
+| Note:                  | Remarque:                | "Notez (bien):" pourait être utilisé aussi |
+| Deprecated             | Déconseillé              |             |
