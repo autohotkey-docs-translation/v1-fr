@@ -54,6 +54,7 @@ Si vous n'êtes pas certain du nom d'une certaine touche, vous pouvez vous réf�
 | <kbd>Page Down</kbd>   | <kbd>Page ↓</kbd>        | Pareil      |
 | <kbd>Del</kbd>         | <kbd>Suppr</kbd>         | Pareil      |
 | <kbd>Control</kbd>     | <kbd>Ctrl</kbd>          | Pareil      |
+| <kbd>AppsKey</kbd>     | <kbd>≣ Menu</kbd>        | Pareil      |
 | Mouse Wheel            | Roulette de la souris    |             |
 | Joystick               |                          | Restera le meme, et non des termes qui peuvent etre ambigu: "gâchettes", "stick", "bouton de tranche", etc. |
 | Key(s)                 | Touche(s)                | ... et non "clé(s)" ou "bouton(s)". |
