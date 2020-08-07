@@ -52,6 +52,7 @@ Si vous n'êtes pas certain du nom d'une certaine touche, vous pouvez vous réf�
 | <kbd>Scroll Lock</kbd> | <kbd>Arrêt défil</kbd>   | Pareil      |
 | <kbd>Page Up</kbd>     | <kbd>Page ↑</kbd>        | Pareil      |
 | <kbd>Page Down</kbd>   | <kbd>Page ↓</kbd>        | Pareil      |
+| <kbd>Del</kbd>         | <kbd>Suppr</kbd>         | Pareil      |
 | Mouse Wheel            | Roulette de la souris    |             |
 | Joystick               |                          | Restera le meme, et non des termes qui peuvent etre ambigu: "gâchettes", "stick", "bouton de tranche", etc. |
 | Key(s)                 | Touche(s)                | ... et non "clé(s)" ou "bouton(s)". |
