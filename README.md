@@ -63,4 +63,4 @@ Si vous n'êtes pas certain du nom d'une certaine touche, vous pouvez vous réf�
 | Note:                  | Remarque:                | "Notez (bien):" pourait être utilisé aussi |
 | Deprecated             | Déconseillé              |             |
 | Scan Code              | Code de Balayage         |             |
-| (keyboard/mouse) hook  | hook (clavier/souris)    |             |
+| (keyboard/mouse) hook  | hook (clavier/souris)    | Ce terme (un anglisisme) ne se traduit pas par "crochet" car c'est un terme spécifique à la programmation. |
