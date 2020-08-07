@@ -48,6 +48,7 @@ Si vous n'êtes pas certain du nom d'une certaine touche, vous pouvez vous réf�
 | <kbd>Shift</kbd>     | <kbd>Maj</kbd>           | Strictment pour le nom de la touche comme tel |
 | <kbd>Caps Lock</kbd> | <kbd>Verr Maj</kbd>      | Pareil      |
 | <kbd>Backspace</kbd> | <kbd>Suppr arrière</kbd> | Pareil      |
+| <kbd>Insert</kbd>    | <kbd>Inser</kbd>         | Pareil      |
 | Mouse Wheel          | Roulette de la souris    |             |
 | Joystick             |                          | Restera le meme, et non des termes qui peuvent etre ambigu: "gâchettes", "stick", "bouton de tranche", etc. |
 | Key(s)               | Touche(s)                | ... et non "clé(s)" ou "bouton(s)". |
