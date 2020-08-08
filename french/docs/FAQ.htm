@@ -137,7 +137,7 @@ return</pre>
 <p>Se référer également à la question suivante :</p>
 
 <h3 id="uac">Comment contourner les problèmes engendrés par le contrôle du compte d'utilisateur (UAC) ?</h3>
-<p>Le <a href="https://docs.microsoft.com/fr-fr/windows/security/identity-protection/user-account-control/user-account-control-overview">contrôle du compte d'utilisateur</a> (anglais : <a href="https://docs.microsoft.com/en-us/windows/security/identity-protection/user-account-control/user-account-control-overview">UAC</a>) est une cause courante de problèmes, surtout lors du passage de Windows XP/Vista/7 à Vista/7/8/10. Bien que présent depuis Windows Vista, il est activé par défaut sur les nouveaux systèmes ou nouvelles installations, et est plus difficile à désactiver à partir de Windows 8.</p>
+<p>Le <a href="https://fr.wikipedia.org/wiki/User_Account_Control">contrôle du compte d'utilisateur</a> (anglais : <a href="https://docs.microsoft.com/en-us/windows/security/identity-protection/user-account-control/user-account-control-overview">UAC</a>) est une cause courante de problèmes, surtout lors du passage de Windows XP/Vista/7 à Vista/7/8/10. Bien que présent depuis Windows Vista, il est activé par défaut sur les nouveaux systèmes ou nouvelles installations, et est plus difficile à désactiver à partir de Windows 8.</p>
 <p>Par défaut, le contrôle du compte d'utilisateur protège les programmes "élevés" (c'est-à-dire, les programmes exécutés en tant qu'administrateurs) d'être automatisés par des programmes non-élevés, puisque cela leur permettrait de contourner des restrictions de sécurité. Les hotkeys sont aussi bloquées, donc par exemple, un programme non-élevé ne peut pas espionner les entrées destinées à un programme élevé.</p>
 <p>Le contrôle du compte d'utilisateur peut aussi empêcher <a href="commands/Send.htm#SendPlayDetail">SendPlay</a> et <a href="commands/BlockInput.htm">BlockInput</a> de fonctionner.</p>
 <p>Les solutions courantes sont les suivantes :</p>
@@ -228,7 +228,8 @@ Send {TOUCHE up}</pre>
 <p>Voir la <a href="https://www.autohotkey.com/download/">page de téléchargement de AutoHotkey</a>.</p>
 
 <h3 id="USB">Puis-je lancer AutoHotkey depuis un périphérique USB ?</h3>
-<p>Voir <a href="Program.htm#portability">Portabilité de AutoHotkey.exe</a>. A noter qu'en cas d'utilisation de bibliothèques de fonctions auto-incluses, AutoHotkey.exe et le dossier Lib doivent être un niveau au-dessus de Ahk2Exe.exe (par exemple \AutoHotkey.exe vs \Compiler\Ahk2Exe.exe). A noter également que Ahk2Exe enregistre les paramètres à la clé de registre suivante : <code>HKCU\Software\AutoHotkey\Ahk2Exe</code>.</p>
+<p>Voir <a href="Program.htm#portability">Portabilité de AutoHotkey.exe</a>.</p>
+<p>A noter qu'en cas d'utilisation de bibliothèques de fonctions auto-incluses, AutoHotkey.exe et le dossier Lib doivent être un niveau au-dessus de Ahk2Exe.exe (par exemple \AutoHotkey.exe vs \Compiler\Ahk2Exe.exe). A noter également que Ahk2Exe enregistre les paramètres à la clé de registre suivante : <code>HKCU\Software\AutoHotkey\Ahk2Exe</code>. Le compilateur lui-même (Ahk2Exe) n'est pas nécessaire pour exécuter des scripts.</p>
 
 <h3 id="output">Comment récupérer la sortie d'une opération en ligne de commande ?</h3>
 <p>L'expérimentation montre que grâce à la mise en mémoire cache des fichiers, un fichier temporaire peut être très rapide pour des sorties relativements petites. En fait, si le fichier est supprimé immédiatement après utilisation, il n'est souvent pas du tout écrit sur le disque. Par exemple :</p>
@@ -276,7 +277,7 @@ ContinuerExecutionWinZ := false  <em>; Remise à zéro en préparation de la pro
 return</pre>
 
 <h3 id="help">Comment utiliser de l'aide sensible au contexte pour les commandes AutoHotkey dans un éditeur quelconque ?</h3>
-<p>Rajat a créé <a href="scripts/ContextSensitiveHelp.htm">ce script</a>.</p>
+<p>Rajat a créé <a href="index.htm#ContextSensitiveHelp">ce script</a>.</p>
 
 <h3 id="load">Comment détecter quand une page web a fini de charger ?</h3>
 <p>Avec Internet Explorer, peut-être que la méthode la plus robuste est d'utiliser DllCall() et COM comme montré ici <a href="https://www.autohotkey.com/forum/topic19256.html">www.autohotkey.com/forum/topic19256.html</a>. Dans le même thème, le contenu de la barre d'adresse et de la barre de statut peut être récupéré comme montré ici <a href="https://www.autohotkey.com/forum/topic19255.html">www.autohotkey.com/forum/topic19255.html</a>.</p>
@@ -307,7 +308,7 @@ else
 <p>Voir <a href="misc/Winamp.htm">Automatiser Winamp</a>.</p>
 
 <h3 id="msgbox">Comment changer le texte des boutons de <a href="commands/MsgBox.htm">MsgBox</a> ?</h3>
-<p>Voici un <a href="scripts/MsgBoxButtonNames.htm">exemple</a>.</p>
+<p>Voici un <a href="scripts/index.htm#MsgBoxButtonNames">exemple</a>.</p>
 
 <h3 id="DefaultEditor">Comment changer l'éditeur par défaut, qui est accessible via le menu contextuel ou l'icône de la zone de notifications ?</h3>
 <p>Dans la section des exemples de <a href="commands/Edit.htm">Edit</a> se trouve un script permettant de changer l'éditeur par défaut.</p>
@@ -383,6 +384,6 @@ return</pre>
 <p>Voir <a href="KeyList.htm#SpecialKeys">Touches Spéciales</a>.</p>
 
 <h3 id="HotZero">Mon clavier numérique a une touche spéciale 000. Est-il possible de l'utiliser pour une hotkey ?</h3>
-<p>Oui. Ce  <a href="scripts/Numpad000.htm">script d'exemple</a> transforme la touche <kbd>000</kbd> en une touche égal. L'action peut être modifiée en remplaçant la ligne <code>Send, =</code> avec des lignes quelconques.</p>
+<p>Oui. Ce  <a href="scripts/index.htm#Numpad000">script d'exemple</a> transforme la touche <kbd>000</kbd> en une touche égal. L'action peut être modifiée en remplaçant la ligne <code>Send, =</code> avec des lignes quelconques.</p>
 </body>
 </html>
