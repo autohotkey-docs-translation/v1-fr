@@ -59,6 +59,7 @@ Si vous n'êtes pas certain du nom d'une certaine touche, vous pouvez vous réf�
 | Joystick               |                          | Restera le meme, et non des termes qui peuvent etre ambigu: "gâchettes", "stick", "bouton de tranche", etc. |
 | Key(s)                 | Touche(s)                | ... et non "clé(s)" ou "bouton(s)". |
 | Numpad                 | Pavé numérique           |             |
+| <kbd>Numpad*</kbd>     | <kbd>Pavnum*</kbd>       | Le prefix a utiliser pour les touches du pavé du numérique. Par exemple, <kbd>NumpadHome</kbd> devient <kbd>PavnumDébut</kbd> |
 | Modifier Key(s)        | Touche(s) de combinaison |             |
 | Note:                  | Remarque:                | "Notez (bien):" pourait être utilisé aussi |
 | Deprecated             | Déconseillé              |             |
