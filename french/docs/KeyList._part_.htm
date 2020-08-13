@@ -376,28 +376,28 @@
   </tr>
   <tr>
     <td>Pause</td>
-    <td><kbd>Pause</kbd> ou <kbd>Ctrl</kbd>+<kbd>Verr Num</kbd>. While the <kbd>Ctrl</kbd> key is held down, the <kbd>Pause</kbd> key produces the key code of <code>CtrlBreak</code> and <kbd>NumLock</kbd> produces <code>Pause</code>, so use <code>^CtrlBreak</code> in hotkeys instead of <code>^Pause</code>.</td>
+    <td><kbd>Pause</kbd> ou <kbd>Ctrl</kbd>+<kbd>Verr Num</kbd>. Tant que la touche <kbd>Ctrl</kbd> est maintenue enfoncée, la touche <kbd>Pause</kbd> produit le code de la touche <code>CtrlBreak</code> et <kbd>Verr Num</kbd> produit <code>Pause</code>, utilisez donc <code>^ CtrlBreak</code> dans les hotkeys au lieu de <code>^Pause</code>.</td>
   </tr>
   <tr>
     <td>Break</td>
-    <td><strong>Deprecated:</strong> Use the synonym <code>Pause</code> instead.</td>
+    <td><strong>Déconseillé:</strong> Utilisez plutôt le synonyme <code>Pause</code>.</td>
   </tr>
   <tr>
     <td>Help</td>
-    <td><kbd>Help</kbd>. Cela n'existe probablement pas sur la plupart des claviers. It's usually not the same as <kbd>F1</kbd>.</td>
+    <td><kbd>Aide</kbd>. Cela n'existe probablement pas sur la plupart des claviers. Ce n'est généralement pas la même chose que <kbd>F1</kbd>.</td>
   </tr>
   <tr>
     <td>Sleep</td>
-    <td><kbd>Sleep</kbd>. Notez que la touche de veille de certains claviers peut ne pas fonctionner avec cela.</td>
+    <td><kbd>Veille</kbd>. Notez que la touche de veille de certains claviers peut ne pas fonctionner avec cela.</td>
   </tr>
   <tr id="sc">
     <td>SC<b>nnn</b></td>
-    <td>Specify for <b>nnn</b> the scan code of a key. Recognizes unusual keys not mentioned above. See <a href="#SpecialKeys">Special Keys</a> for details.</td>
+    <td>Spécifiez pour <b>nnn</b> le code de balayage d'une touche. Reconnaît les touches inhabituelles non mentionnées ci-dessus. Veuillez voir <a href="#SpecialKeys">Touches Spéciales</a> pour plus de détails.</td>
   </tr>
   <tr id="vk">
     <td >VK<b>nn</b></td>
-    <td><p>Specify for <b>nn</b> the hexadecimal virtual key code of a key. This rarely-used method also prevents certain types of <a href="Hotkeys.htm">hotkeys</a> from requiring the <a href="commands/_InstallKeybdHook.htm">keyboard hook</a>. For example, the following hotkey does not use the keyboard hook, but as a side-effect it is triggered by pressing <em>either</em> <kbd>Home</kbd> or NumpadHome:</p>
-      <pre>^VK24::MsgBox You pressed Home or NumpadHome while holding down Control.
+    <td><p>Spécifiez pour <b>nn</b> le code hexadécimal de la touche virtuelle d'une touche. Cette méthode rarement utilisée empêche également certains types de <a href="Hotkeys.htm">hotkeys</a> d'exiger le <a href="commands/_InstallKeybdHook.htm">hook clavier</a>. Par exemple, le hotkey suivant n'utilise pas le hook clavier, mais comme effet secondaire, il est déclenché en appuyant sur <em>soit</em> <kbd>Début</kbd> ou PavnumDébut:</p>
+      <pre>^VK24::MsgBox Vous avez appuyé sur Début ou PavnumDébut tout en maintenant la touche Ctrl enfoncée.
 </pre>
       <p><strong>Known limitation:</strong> VK hotkeys that are forced to use the <a href="commands/_InstallKeybdHook.htm">keyboard hook</a>, such as <code>*VK24</code> or <code>~VK24</code>, will fire for only one of the keys, not both (e.g. NumpadHome but not <kbd>Home</kbd>).
       For more information about the VKnn method, see <a href="#SpecialKeys">Special Keys</a>.</p>
