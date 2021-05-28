@@ -16,7 +16,7 @@
 <p>AutoHotkey 1.1 est également connu sous le nom de "AutoHotkey_L", tandis qu'AutoHotkey 1.0 a été rétrospectivement étiqueté "AutoHotkey Basic". Certaines anciennes versions d'AutoHotkey_L utilisaient les numéros de version 1.0. *, Donc pour plus de clarté, ce document fait référence aux deux branches d'AutoHotkey par nom plutôt que par numéro de version.</p>
 <p class="note"><strong>Remarque:</strong> Certains des problèmes les plus courants sont causés par les modifications requises pour prendre en charge le texte Unicode et peuvent être évités en utilisant simplement la version ANSI d'AutoHotkey_L.</p>
 
-<h2 id="toc">Table des matières</h2>
+<h2 id="toc">Table des Matières</h2>
 <h3>Basic</h3>
 <p>Impact élevé</p>
 <ul>
@@ -111,7 +111,7 @@
 <p>The following commands now set <a href="Variables.htm#LastError">A_LastError</a> to assist with debugging: FileAppend, FileRead, FileReadLine, FileDelete, FileCopy, FileMove, FileGetAttrib/Time/Size/Version, FileSetAttrib/Time, FileCreateDir, RegRead, RegWrite, RegDelete.  Using any of these commands causes the previous value of A_LastError to be overwritten.</p>
 
 <h3 id="MsgBox">MsgBox</h3>
-<p><a href="commands/MsgBox.htm">MsgBox</a>'s smart comma handling has been changed to improve flexibility and consistency with all other commands.  In most cases, MsgBox will just work as intended.  In some rare cases, scripts relying on the old quirky behaviour may observe a change in behaviour.  For instance:</p>
+<p><a href="commands/MsgBox.htm">MsgBox</a>'s smart comma handling has been changed to improve flexibility and consistency with all other commands. In most cases, MsgBox will just work as intended. In some rare cases, scripts relying on the old quirky behaviour may observe a change in behaviour. Par exemple :</p>
 <pre><em>; This is now interpreted as an expression (Options) followed by text (Title)
 ; instead of as a single expression (Text) with multiple <a href="Variables.htm#comma">sub-expressions</a>:</em>
 MsgBox % x, y
@@ -187,7 +187,7 @@ MsgBox,, Title
 <p class="Indent"><em>Semantic note:</em> Technically, some Unicode characters are represented by <i>two</i> 16-bit code units, collectively known as a "surrogate pair."  Similarly, some <a href="http://msdn.microsoft.com/en-us/library/dd317752.aspx">ANSI code pages</a> (commonly known as <a href="http://msdn.microsoft.com/en-us/library/dd317794.aspx">Double Byte Character Sets</a>) contain some double-byte characters.  However, for practical reasons these are almost always treated as two individual units (referred to as "characters" for simplicity).</p>
 
 <h3 id="VarSetCapacity">VarSetCapacity</h3>
-<p>VarSetCapacity sets the capacity of a var <i>in bytes</i>.  To set a variable's capacity based on the number of characters, the size of a character must be taken into account.  For example:</p>
+<p>VarSetCapacity sets the capacity of a var <i>in bytes</i>. To set a variable's capacity based on the number of characters, the size of a character must be taken into account. Par exemple :</p>
 <pre>VarSetCapacity(ansi_var,    capacity_in_chars)
 VarSetCapacity(unicode_var, capacity_in_chars * 2)
 VarSetCapacity(native_var,  capacity_in_chars * (A_IsUnicode ? 2 : 1))
@@ -212,13 +212,11 @@ VarSetCapacity(native_var,  t_size(capacity_in_chars))  <em>; see <a href="#NumP
 <p>In general, if a script calls a function via DllCall() which accepts a string as a parameter, one of the following approaches must be taken:</p>
 <ol>
   <li>If both Unicode (W) and ANSI (A) versions of the function are available, call the appropriate one for the current build.  In the following example, "DeleteFile" is internally known as "DeleteFileA" or "DeleteFileW".  Since "DeleteFile" itself doesn't really exist, DllCall() automatically tries "A" or "W" as appropriate for the current build:
-  
   <pre>DllCall("DeleteFile", "Ptr", &amp;filename)
 DllCall("DeleteFile", "Str", filename)</pre>
   <p>In this example, <code>&amp;filename</code> passes the address of the string exactly as-is, so the function must expect a string in the same format as the "Str" type. Note that "UInt" must be used in place of "Ptr" in AutoHotkey Basic, but the resulting code may not be 64-bit compatible.</p>
   <p class="note"><b>Note:</b> If the function cannot be found exactly as specified, AutoHotkey_L appends the "A" or "W" suffix regardless of which DLL is specified.  However, AutoHotkey Basic appends the "A" suffix only for functions in User32.dll, Kernel32.dll, ComCtl32.dll, or Gdi32.dll.</p></li>
   <li>If the function only accepts a specific type of string as input, the script may use the appropriate string type:
-  
   <pre>DllCall("DeleteFileA", "AStr", filename)
 DllCall("DeleteFileW", "WStr", filename)</pre></li>
   <li>If the function must modify a string (in a non-native format), the script must allocate a buffer as described <a href="#VarSetCapacity">above</a> and pass its address to the function.  If the parameter accepts input, the script must also convert the input string to the appropriate format; this can be done using <a href="commands/StrPut.htm">StrPut()</a>.</li>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <!--Tutorial by tidbit, from http://ahkscript.github.io/AHK_Tutorial/
                 Modified to fit with the AutoHotkey documentation.-->
@@ -86,8 +86,7 @@
     <li>Pendant l'installation de AutoHotkey, il faudra choisir entre UNICODE et ANSI. Pour résumer, UNICODE est en général préférable. Il permet l'utilisation de lettres, nombres et caractères non-anglais. Continuer jusqu'au bouton "Install".</li>
     <li>Une fois que c'est fini, super ! Continuer en section b.</li>
 </ol>
-<p class="note">Pour des instructions en vidéo, regarder
-<a href="https://youtu.be/HcgQlGeaPHw">Install and Hello World</a> sur YouTube.</p>
+<p class="note">Pour des instructions en vidéo, regarder <a href="https://youtu.be/HcgQlGeaPHw">Install and Hello World</a> sur YouTube.</p>
 
 <h3 id="s12">b. Comment créer un script</h3>
 <p>Une fois AutoHotkey installé, il serait bien que ça fasse quelque chose. AutoHotkey n'est pas de la magie, tout le monde aimerait bien, mais ce n'en est pas. Donc il va falloir lui dire quoi faire. Ce processus est appelé "Scripting".</p>
@@ -97,7 +96,7 @@
     <li>Clic droit sur le bureau.</li>
     <li>Trouver "Nouveau" dans le menu.</li>
     <li>Cliquer "AutoHotkey Script" dans le menu "Nouveau".</li>
-    <li>Donner un nouveau nom au script. Il doit terminer par l'extension .ahk, par exemple : MonScript.ahk</li>
+    <li>Donner un nouveau nom au script. Il doit terminer par l'extension .ahk. Par exemple : MonScript.ahk</li>
     <li>Trouver le fichier nouvellement créé sur le bureau et faire un clic droit dessus.</li>
     <li>Cliquer "Edit Script".</li>
     <li>Une fenêtre devrait s'ouvrir, probablement Notepad. Si c'est le cas, SUCCES !
@@ -136,7 +135,7 @@ return</pre>
 <p>Méthode 2 :</p>
 <ol>
     <li>Aller sur le bureau.</li>
-    <li>Trouver et ouvrir <b>Poste de travail</b> ou <b>Ordinateur</b>.</li>
+    <li>Trouver <b>Poste de travail</b> ou <b>Ordinateur</b>. Ouvrez-le.</li>
     <li>Aller dans le disque contenant <b>AutoHotkey</b>. Probablement <b>C:\</b>.</li>
     <li>Chercher <b>AutoHotkey</b> dans tous les dossiers de <b>Program Files</b>.</li>
     <li>Chercher <b>AutoHotkey.chm</b> ou un fichier intitulé AutoHotkey avec un point d'interrogation jaune dessus.</li>
@@ -168,8 +167,8 @@ return</pre>
 MsgBox, Wow !
 MsgBox, Il y a
 Run, notepad.exe
-WinActivate, Sans titre - Bloc-notes
-WinWaitActive, Sans titre - Bloc-notes
+WinActivate, Sans titre - Bloc-notes
+WinWaitActive, Sans titre - Bloc-notes
 Send, 7 lignes {!}{Enter}
 SendInput, dans la hotkey CTRL{+}J.
 return</pre>
@@ -224,19 +223,19 @@ return</pre>
 <pre>#IfWinActive
 #IfWinExist</pre>
 <p>Ces commandes spéciales (de nom technique "directives") créent des hotkeys et hotstrings sensibles au contexte. Il suffit d'indiquer un titre de fenêtre. Mais dans certains cas il peut être nécessaire de spécifier d'autres critères comme HWND, le groupe ou la classe. Ces critères sont un peu avancés et sont abordés plus en détail ici : <a href="misc/WinTitle.htm">Le paramètre WinTitle &amp; la Dernière Fenêtre Trouvée (Last Found Window)</a>.</p>
-<pre>#IfWinActive Sans titre - Bloc-notes
+<pre>#IfWinActive Sans titre - Bloc-notes
 #Space::
 MsgBox, Vous avez appuyé sur WIN+ESPACE dans Notepad.
 return</pre>
 <p>Pour désactiver la sensibilité au contexte pour les hotkeys ou hotstrings suivants, spécifier une directive #IfWin quelconque sans spécifier de paramètre. Par exemple :</p>
 <pre>
-<em>; Sans titre - Bloc-notes</em>
-#IfWinActive Sans titre - Bloc-notes
+<em>; Sans titre - Bloc-notes</em>
+#IfWinActive Sans titre - Bloc-notes
 !q::
 MsgBox, Vous avez appuyé sur ALT+Q dans Notepad.
 return
 
-<em>; Toute fenêtre qui n'est pas Sans titre - Bloc-notes</em>
+<em>; Toute fenêtre qui n'est pas Sans titre - Bloc-notes</em>
 #IfWinActive
 !q::
 MsgBox, Vous avez appuyé sur ALT+Q dans une fenêtre quelconque.
@@ -258,7 +257,7 @@ return
 ::msg::Vous avez tapé msg dans MSPaint !</pre>
 <p class="note">Pour plus de détails et de commandes similaires, voir la page <a href="commands/_IfWinActive.htm">#IfWinActive</a>.</p>
 <h3 id="s23">c. Plusieurs hotkeys/hotstrings par fichier</h3>
-<p>Ce n'est parfois pas clair donc mettons les choses au point : AutoHotkey permet d'avoir un nombre <i>quelconque</i> de hotkeys et de hotstrings dans un même fichier. Que ce soit 1, ou 3253 (ou plus).</p>
+<p>Cela, pour une raison quelconque, traverse l'esprit de certaines personnes. Alors je vais être clair : AutoHotkey permet d'avoir un nombre <i>quelconque</i> de hotkeys et de hotstrings dans un même fichier. Que ce soit 1, ou 3253 (ou plus).</p>
 <pre>#i::
 Run, https://www.google.com/
 return
@@ -293,7 +292,7 @@ SendInput, [b]{Ctrl down}v{Ctrl up}[/b] <em>; Met le texte sélectionné entre t
 return  <em>; Termine la hotkey. Le code en-dessous ne sera pas activé.</em></pre>
 
 <h2 id="s3">3 - Envoyer des Frappes</h2>
-<p>Une fois décidé quoi envoyer (écrire) dans un programme, cet envoi est réalisable avec la commande <a href="commands/Send.htm">Send</a>. Cette commande envoie des appuis de touche, pour simuler la frappe d'un texte ou des frappes quelconques.</p>
+<p>Vous avez donc décidé d'envoyer (taper) des touches à un programme. Nous pouvons le faire. Utilisez la commande <a href="commands/Send.htm">Send</a>. Cette commande envoie des appuis de touche, pour simuler la frappe d'un texte ou des frappes quelconques.</p>
 <p>Mais avant de continuer, il convient d'aborder quelques problèmes couramment rencontrés.</p>
 <p>Comme pour les hotkeys, la commande Send a aussi des touches spéciales. <a href="commands/Send.htm">Vraiment beaucoup</a>. Voici les quatre symboles les plus courants :</p>
 <table class="info">
@@ -315,8 +314,7 @@ return  <em>; Termine la hotkey. Le code en-dessous ne sera pas activé.</em></p
     </tr>
     <tr>
         <td>#</td>
-        <td>Envoie la touche <kbd>Win</kbd> (la touche avec le logo Windows), ainsi
-        <code>Send #e</code> maintiendrait appuyée la touche <kbd>Win</kbd> puis appuierait sur la lettre "e".</td>
+        <td>Envoie la touche <kbd>Win</kbd> (la touche avec le logo Windows), ainsi <code>Send #e</code> maintiendrait appuyée la touche <kbd>Win</kbd> puis appuierait sur la lettre "e".</td>
     </tr>
 </table>
 <p>Le <a href="commands/Send.htm">gigantesque tableau sur la page de Send</a> montre à peu près toutes les touches spéciales intégrées à AutoHotkey. Par exemple : <code>{Enter}</code> et <code>{Space}</code>.</p>
@@ -370,10 +368,10 @@ Les pommes sont des fruits.
 <p class="note"><strong>Note :</strong> Il y a différentes formes de Send. Chacune a ses particularités propres. Si une forme de Send n'est pas adaptée, essayer une autre forme de Send. Il suffit de remplacer le nom de la commande "Send" par un des noms suivants : SendRaw, SendInput, SendPlay, SendEvent. Pour plus de détails sur ce que fait chaque commande, <a href="commands/Send.htm">lire ceci</a>.</p>
 
 <h3 id="s31">a. Jeux </h3>
-<p class="warning"><strong>Important :</strong> Beaucoup de jeux, surtout les plus modernes, sont muni d'outils anti-triche comme GameGuard, Hackshield, PunkBuster et plusieurs autres. Non seulement passer outre ces systèmes est une violation des termes de ces jeux et peut engendrer un ban, il est en plus compliqué de les contourner.</p>
+<p class="warning"><strong>Important :</strong> Beaucoup de jeux, surtout les plus modernes, sont muni d'outils anti-triche. Des choses comme GameGuard, Hackshield, PunkBuster et plusieurs autres. Non seulement passer outre ces systèmes est une violation des termes de ces jeux et peut engendrer un ban, il est en plus compliqué de les contourner.</p>
 <p>Si un jeu dispose d'un système anti-triche et que les hotkeys, hotstrings et commandes Send ne fonctionnent pas, pas de chance. Bien qu'il existe des méthodes augmentant les chances de fonctionnement pour certains jeux, il n'y a pas de recette miracle <i>"faites que ça marche tout de suite !!!"</i>. Avant d'abandonner, <b>TOUT</b> essayer.</p>
 
-<p>Il y a aussi des problèmes avec DirectX. Si il est su qu'un jeu utilise DirectX et que le jeu pose problème, essayer les propositions détaillées dans la <a href="FAQ.htm#games">FAQ</a>. Davantage de problèmes liés à DirectX peuvent être rencontrés en cas d'utilisation de <a href="commands/PixelSearch.htm">PixelSearch</a>, <a href="commands/PixelGetColor.htm">PixelGetColor</a> ou <a href="commands/ImageSearch.htm">ImageSearch</a>. Les couleurs peuvent être obtenues noires (0x000000) peu importe la couleur cible. Si possible, lancer le jeu en fenêtré permet de résoudre certains problèmes liés à DirectX.</p>
+<p>Il y a aussi des problèmes avec DirectX. Si il est su qu'un jeu utilise DirectX et que le jeu pose problème, essayer les propositions détaillées dans la <a href="FAQ.htm#games">FAQ</a>. Davantage de problèmes liés à DirectX peuvent être rencontrés en cas d'utilisation de <a href="commands/PixelSearch.htm">PixelSearch</a>, <a href="commands/PixelGetColor.htm">PixelGetColor</a> ou <a href="commands/ImageSearch.htm">ImageSearch</a>. Les couleurs peuvent être obtenues noires (0x000000) peu importe la couleur cible. Vous devriez également essayer d'exécuter le jeu en mode fenêtré, si possible. Cela résout certains problèmes de DirectX.</p>
 <p>Il n'y a pas de solution unique pour que AutoHotkey fonctionne dans tous les programmes. Si toutes les solutions tentées échouent, il est possible que AutoHotkey ne puisse simplement pas être utilisé.</p>
 
 <h2 id="s4">4 - Lancer Programmes &amp; Sites Web</h2>
@@ -460,7 +458,7 @@ Output := SubStr("Génial je scripte !", 16)</pre>
     ExitApp</pre>
 <p>C'est parfaitement normal puisque l'instruction if (si) n'avait qu'une seule ligne de code associée. Le même code, mais sans l'indentation sur la seconde ligne pour montrer qu'elle est séparée de l'instruction if :</p>
 <pre>if (MaVar = 5)
-    MsgBox, MaVar vaut %MaVar%!!
+    MsgBox, MaVar vaut %MaVar% !!
 MsgBox, Ici est 'l'extérieur' de l'instruction if. Pas besoin d'accolades puisqu'il n'y avait qu'une ligne.</pre>
 
 <h2 id="s6">6 - Variables</h2>
@@ -636,7 +634,7 @@ if Var1 &lt; %Var2%  <em>; Sans parenthèses, le IF (si) est dépassé. Toutefoi
     <dt>Notation point (dot)</dt>
     <dd>
         <pre class="NoIndent">MonObjet.NouvelleClef := "Shiny"</pre>
-        <p>Comme ci-dessus avec la notation point.</p>
+        <p>Comme ci-dessus mais avec la notation point.</p>
     </dd>
     <dt>Méthode InsertAt (insérer à)</dt>
     <dd>
@@ -756,7 +754,7 @@ else
     <li>Être poli.</li>
     <li>Être ouvert.</li>
     <li>Être gentil.</li>
-    <li>S'amuser !</li>
+    <li>Bonne fin de lecture !</li>
 </ul>
 <p>Sans aucune réponse, attendez au moins une journée (24 heures) avant de redemander de l'aide. Nous adorons aider, mais nous le faisons aussi gratuitement sur notre temps libre. Nous sommes peut-être au travail, en train de dormir, de jouer, avec de la famille ou juste trop occupés pour aider.</p>
 <p>Et pendant que vous attendez de l'aide, vous pouvez essayer d'apprendre et de résoudre le problème seul. C'est un sentiment agréable, de faire quelque chose sans l'aide de personne.</p>

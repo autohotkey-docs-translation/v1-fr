@@ -11,7 +11,7 @@
 </head>
 <body>
 <h1>Liste des Touches<span class="headnote">(Clavier, Souris et Joystick)</span></h1>
-<h2 id="toc">Table des matières</h2>
+<h2 id="toc">Table des Matières</h2>
 <ul>
   <li><a href="#mouse">Souris</a>
     <ul>
@@ -81,7 +81,7 @@
   </tr>
 </table>
 <h2 id="keyboard">Clavier</h2>
-<p class="note"><strong>Remarque</strong>: Les noms des touches de saisie de texte (alphabétiques et numériques) sont les mêmes que la lettre ou le chiffre comme tel. Par exemple: b c'est la touche <kbd>B</kbd> et 5 c'est la touche <kbd>5</kbd>.</p>
+<p class="note"><strong>Remarque</strong>: Les noms des touches de saisie de texte (alphabétiques et numériques) sont les mêmes que la lettre ou le chiffre comme tel. Par exemple : b c'est la touche <kbd>B</kbd> et 5 c'est la touche <kbd>5</kbd>.</p>
 <p>Bien que n'importe quel caractère unique puisse être utilisé comme nom de touche, sa signification (code de balayage ou code de touche virtuel) dépend de la disposition actuelle du clavier. En outre, certains caractères spéciaux doivent être échappés ou placés entre accolades, selon le contexte. <span class="ver">[v1.1.27+]:</span> Les lettres a-z ou A-Z peuvent être utilisées pour désigner les codes de touches virtuels correspondants (généralement vk41-vk5A) même s'ils ne sont pas inclus dans la disposition actuelle du clavier.</p>
 <h3 id="general">Touches générales</h3>
 <table class="info">
@@ -406,10 +406,20 @@
 </table>
 <h2 id="Joystick">Joystick</h2>
 <p><strong>Joy1 à Joy32</strong>: Les boutons du joystick. Pour vous aider à déterminer les numéros de boutons de votre joystick, utilisez ce <a href="scripts/index.htm#JoystickTest">script de test</a>. Notez que les <a href="Hotkeys.htm">symboles de préfixe de hotkey</a> tels que ^ (contrôle) et + (décalage) ne sont pas pris en charge (bien que <a href="commands/GetKeyState.htm">GetKeyState</a> puisse être utilisé comme substitut). Notez également que la détection des boutons du joystick "passe à travers" à la fenêtre active si cette fenêtre est conçue pour détecter la pression des boutons du joystick.</p>
-<p>Bien que les noms de contrôle du joystick suivants ne puissent pas être utilisés comme hotkey, ils peuvent être utilisés avec <a href="commands/GetKeyState.htm">GetKeyState</a>:<br> <strong>JoyX, JoyY et JoyZ</strong>: ​​Les axes X (horizontal), Y (vertical) et Z (altitude / profondeur) du joystick.<br> <strong>JoyR</strong>: Le gouvernail ou le 4ème axe du joystick. <br> <strong>JoyU et JoyV</strong>: Les 5ème et 6ème axes du joystick. <br> <strong>JoyPOV</strong>: Le contrôle du point-de-vue (chapeau).<br> <strong>JoyName</strong>: Le nom du joystick ou de son pilote. <br> <strong>JoyButtons</strong>: Le nombre de boutons pris en charge par le joystick (pas toujours précis). <br> <strong>JoyAxes</strong>: Le nombre d'axes supportés par le joystick.<br> <strong>JoyInfo</strong>: Fournit une chaîne de texte composée de zéro ou plus des lettres suivantes pour indiquer les capacités du joystick: <strong>Z</strong> (a l'axe Z), <strong>R</strong> (a l'axe R), <strong>U</strong> (a l'axe U), <strong>V</strong> (a l'axe V), <strong>P</strong> (a la contrôle point-de-vue / POV), <strong>D</strong> (La contrôle point-de-vue / POV a un nombre limité de paramètres discrètes/distincts), <strong>C</strong> (la contrôle point-de-vue / POV est continu/fin). Exemple de chaîne de texte: ZRUVPD</p>
+<p>Bien que les noms de contrôle du joystick suivants ne puissent pas être utilisés comme hotkey, ils peuvent être utilisés avec <a href="commands/GetKeyState.htm">GetKeyState</a>:<br>
+  <strong>JoyX, JoyY et JoyZ</strong>: ​​Les axes X (horizontal), Y (vertical) et Z (altitude / profondeur) du joystick.<br>
+  <strong>JoyR</strong>: Le gouvernail ou le 4ème axe du joystick. <br>
+  <strong>JoyU et JoyV</strong>: Les 5ème et 6ème axes du joystick. <br>
+  <strong>JoyPOV</strong>: Le contrôle du point-de-vue (chapeau).<br>
+  <strong>JoyName</strong>: Le nom du joystick ou de son pilote. <br>
+  <strong>JoyButtons</strong>: Le nombre de boutons pris en charge par le joystick (pas toujours précis). <br>
+  <strong>JoyAxes</strong>: Le nombre d'axes supportés par le joystick.<br>
+  <strong>JoyInfo</strong>: Fournit une chaîne de texte composée de zéro ou plus des lettres suivantes pour indiquer les capacités du joystick: <strong>Z</strong> (a l'axe Z), <strong>R</strong> (a l'axe R), <strong>U</strong> (a l'axe U), <strong>V</strong> (a l'axe V), <strong>P</strong> (a la contrôle point-de-vue / POV), <strong>D</strong> (La contrôle point-de-vue / POV a un nombre limité de paramètres discrètes/distincts), <strong>C</strong> (la contrôle point-de-vue / POV est continu/fin). Exemple de chaîne de texte: ZRUVPD</p>
 <p><strong>Joysticks multiples</strong>: Si l'ordinateur possède plus d'un joystick et que vous voulez en utiliser un au-delà du premier, incluez le numéro du joystick (max 16) devant le nom du contrôle. Par exemple, 2joy1 est le premier bouton du deuxième joystick.</p>
 <p class="note"><strong>Remarque</strong>: Si vous rencontrez des difficultés pour qu'un script reconnaisse votre joystick, une personne a signalé le besoin de spécifier un numéro de joystick autre que 1 même si un seul joystick était présent. On ne sait pas comment cette situation se produit ou si elle est normale, mais vous pouvez expérimenter le numéro du joystick dans le <a href="scripts/index.htm#JoystickTest">script de test du joystick</a> pour aider à déterminer si cela s'applique à votre système.</p>
-<p><strong>Voir aussi</strong>:<br> <a href="misc/RemapJoystick.htm">Remappage du joystick:</a> méthodes d'envoi de frappes et de clics de souris avec un joystick.<br> <a href="scripts/index.htm#JoystickMouse">Script Joystick-To-Mouse</a>: utilisation d'un joystick comme souris.</p>
+<p><strong>Voir aussi</strong>:<br>
+<a href="misc/RemapJoystick.htm">Remappage du joystick:</a> méthodes d'envoi de frappes et de clics de souris avec un joystick.<br>
+<a href="scripts/index.htm#JoystickMouse">Script Joystick-To-Mouse</a>: utilisation d'un joystick comme souris.</p>
 <h2 id="remote">Télécommandes portables</h2>
 <p>Répondez aux signaux des télécommandes portables via le <a href="scripts/index.htm#WinLIRC">script client WinLIRC</a>.</p>
 <h2 id="SpecialKeys">Touches Spéciales</h2>
@@ -433,13 +443,14 @@ return</pre></li>
 <p><strong>Solutions alternatives</strong>: si votre touche ou le bouton de la souris n'est pas détectable par l'écran <a href="commands/KeyHistory.htm">Historique des touches</a>, l'une des solutions suivantes peut vous aider:</p>
 <ol>
   <li>
-    <p>Reconfigurez le logiciel fourni avec votre souris ou votre clavier (parfois accessible dans le Panneau de configuration ou le menu Démarrer) pour que la "touche mystère" envoie une autre frappe. Une telle frappe peut alors être définie comme un Hotkey dans un script. Par exemple, si vous configurez une touche mystère pour envoyer <kbd>Contrôle</kbd>+<kbd>F1</kbd>, vous pouvez alors indirectement faire de cette touche un hotkey en utilisant <code>^ F1::</code></p>
+    <p>Reconfigurez le logiciel fourni avec votre souris ou votre clavier (parfois accessible dans le Panneau de configuration ou le menu Démarrer) pour que la "touche mystère" envoie une autre frappe. Ces frappes peuvent ensuite être définies comme hotkey dans un script. Par exemple, si vous configurez une touche mystère pour envoyer <kbd>Contrôle</kbd>+<kbd>F1</kbd>, vous pouvez alors indirectement faire de cette touche un hotkey en utilisant <code>^ F1::</code></p>
   </li>
   <li>
     <p>Essayez <a href="https://www.autohotkey.com/board/topic/38015-ahkhid-an-ahk-implementation-of-the-hid-functions/">AHKHID</a>. Vous pouvez également essayer de rechercher sur le <a href="https://www.autohotkey.com/boards/">forum</a> des mots clés tels que <code>RawInput *</code>, <code>USB HID</code> ou <code>AHKHID</code>.</p>
   </li>
   <li>
-    <p>Ce qui suit est un dernier recours et ne doit généralement être tenté qu'en cas de désespoir. En effet, les chances de succès sont faibles et peuvent entraîner des effets secondaires indésirables difficiles à annuler:<br> Désactivez ou supprimez tout logiciel supplémentaire fourni avec votre clavier ou votre souris ou remplacez son pilote par un pilote plus standard, tel que celui intégré au système d'exploitation. Cela suppose qu'il existe un tel pilote pour votre clavier ou souris et que vous pouvez vivre sans les fonctionnalités fournies par son pilote et son logiciel personnalisés.</p>
+    <p>Ce qui suit est un dernier recours et ne doit généralement être tenté qu'en cas de désespoir. En effet, les chances de succès sont faibles et peuvent entraîner des effets secondaires indésirables difficiles à annuler:<br>
+      Désactivez ou supprimez tout logiciel supplémentaire fourni avec votre clavier ou votre souris ou remplacez son pilote par un pilote plus standard, tel que celui intégré au système d'exploitation. Cela suppose qu'il existe un tel pilote pour votre clavier ou souris et que vous pouvez vivre sans les fonctionnalités fournies par son pilote et son logiciel personnalisés.</p>
   </li>
 </ol>
 

@@ -1,9 +1,9 @@
 <!DOCTYPE HTML>
-<html lang="en">
+<html lang="fr">
 <head>
 <title>Scripts - Définition &amp; Utilisation | AutoHotkey</title>
 <meta name="description" content="Apprendre les détails sur les scripts en général, découper les lignes longues, compiler un script, passer des paramètres de ligne de commande, page de code et débogage." />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="static/theme.css" rel="stylesheet" type="text/css" />
 <script src="static/content.js" type="text/javascript"></script>
@@ -33,25 +33,25 @@
 <p>Le programme charge le script en mémoire ligne par ligne, et chaque ligne peut être constituée d'au maximum 16383 caractères. Pendant le chargement, le script est <a href="misc/Performance.htm">optimisé</a> et validé. Les erreurs de syntaxe seront affichées, et doivent être corrigées pour que le script puisse être exécuté.</p>
 <h2 id="auto">Le Haut du Script (Section d'Auto-exécution)</h2>
 <p>Une fois que le script a été chargé, l'exécution commence à la ligne du haut, et continue jusqu'à ce que <a href="commands/Return.htm">Return</a>, <a href="commands/Exit.htm">Exit</a>, ou un <a href="Hotkeys.htm">label hotkey/hotstring</a>, ou la fin physique du script soit atteinte (selon ce qui arrive en premier). La partie en haut du script est appelée la section d'<em>auto-exécution</em>.</p>
-<p class="warning"><strong>Note :</strong> Bien que le <em>premier</em> label hotkey/hotstring ait le même effet que <a href="commands/Return.htm">return</a>, ce n'est pas le cas des autres hotkeys et labels.</p>
+<p class="warning"><strong>Note :</strong> Alors que le <em>premier</em> hotkey/hotstring du script a le même effet qu'un <a href="commands/Return.htm">return</a>, ce n'est pas le cas des autres hotkeys et labels.</p>
 <p>Un script qui n'est pas <a href="commands/_Persistent.htm">persistant</a> et sans <a href="Hotkeys.htm">hotkeys</a>, <a href="Hotstrings.htm">hotstrings</a>, <a href="commands/OnMessage.htm">OnMessage()</a>, ni <a href="commands/Gui.htm">GUI</a> terminera après la fin de la section d'auto-exécution. Sinon, son exécution continuera dans un état de veille, et réagira aux évènements liés aux hotkeys, hotstrings, <a href="commands/Gui.htm#label">évènements de GUI</a>, <a href="commands/Menu.htm">éléments de menu personnalisé</a>, et <a href="commands/SetTimer.htm">minuteries</a>.</p>
 <p>Chaque <a href="misc/Threads.htm">fil d'exécution</a> (thread) lancé par <a href="Hotkeys.htm">hotkey</a>, <a href="Hotstrings.htm">hotstring</a>, <a href="commands/Menu.htm">élément de menu</a>, <a href="commands/Gui.htm#label">évènement de GUI</a>, ou <a href="commands/SetTimer.htm">minuterie</a> démarre de zéro avec les valeurs par défaut pour les attributs suivants telles que définies dans la section d'auto-exécution. Si non spécifiées, les valeurs par défaut standards sont utilisées (ainsi que documenté sur chacune des pages suivantes) : <a href="commands/AutoTrim.htm">AutoTrim</a>, <a href="commands/CoordMode.htm">CoordMode</a>, <a href="commands/Critical.htm">Critical</a>, <a href="commands/DetectHiddenText.htm">DetectHiddenText</a>, <a href="commands/DetectHiddenWindows.htm">DetectHiddenWindows</a>, <a href="commands/FileEncoding.htm">FileEncoding</a>, <a href="commands/ListLines.htm">ListLines</a>, <a href="commands/SendLevel.htm">SendLevel</a>, <a href="commands/SendMode.htm">SendMode</a>, <a href="commands/SetBatchLines.htm">SetBatchLines</a>, <a href="commands/SetControlDelay.htm">SetControlDelay</a>, <a href="commands/SetDefaultMouseSpeed.htm">SetDefaultMouseSpeed</a>, <a href="commands/SetFormat.htm">SetFormat</a>, <a href="commands/SetKeyDelay.htm">SetKeyDelay</a>, <a href="commands/SetMouseDelay.htm">SetMouseDelay</a>, <a href="commands/SetRegView.htm">SetRegView</a>, <a href="commands/SetStoreCapslockMode.htm">SetStoreCapsLockMode</a>, <a href="commands/SetTitleMatchMode.htm">SetTitleMatchMode</a>, <a href="commands/SetWinDelay.htm">SetWinDelay</a>, <a href="commands/StringCaseSense.htm">StringCaseSense</a>, et <a href="commands/Thread.htm">Thread</a>.</p>
 <p>Si la section d'auto-exécution prend longtemps à terminer (ou ne termine jamais), les valeurs par défaut des paramètres ci-dessus prendront effet après 100 millisecondes. Quand la section d'auto-exécution termine enfin (si elle termine), les valeurs par défaut sont mises à jour à nouveau pour être telles qu'à la fin de la section d'auto-exécution. Ainsi, il est en général mieux de faire tout changement souhaité des valeurs par défaut en haut des scripts qui contiennent des <a href="Hotkeys.htm">hotkeys</a>, <a href="Hotstrings.htm">hotstrings</a>, <a href="commands/SetTimer.htm">minuteries</a>, ou des <a href="commands/Menu.htm">éléments de menu personnalisé</a>. A noter que chaque <a href="misc/Threads.htm">fil d'exécution</a> a son propre ensemble de valeurs pour les paramètres ci-dessus. Les changements apportés à ces paramètres n'affecteront pas les autres <a href="misc/Threads.htm">fils d'exécution</a>.</p>
 
 <h2 id="continuation">Diviser une Longue Ligne en une Série de Lignes Plus Courtes</h2>
 <p>Les longues lignes peuvent être divisées en un ensemble de lignes plus courtes pour améliorer la lisibilité et la maintenabilité. Ceci ne réduit pas la vitesse d'exécution du script puisque de telles lignes sont fusionnées dans la mémoire au moment où le script est lancé.</p>
-<p id="continuation-line"><strong>Méthode #1</strong> : Une ligne qui commence par &quot;and&quot;, &quot;or&quot;, ||, &amp;&amp;, une virgule, ou un <a href="Variables.htm#concat">point</a> est automatiquement fusionnée avec la ligne directement au-dessus (en v1.0.46+, ceci est aussi vrai pour tous les autres <a href="Variables.htm#Operators">opérateurs d'expression</a> sauf ++ et --). Dans l'exemple suivant, la seconde ligne est ajoutée à la première car elle commence par une virgule :</p>
+<p id="continuation-line"><strong>Méthode #1</strong> : Une ligne qui commence par "and", "or", ||, &amp;&amp;, une virgule, ou un <a href="Variables.htm#concat">point</a> est automatiquement fusionnée avec la ligne directement au-dessus (en v1.0.46+, ceci est aussi vrai pour tous les autres <a href="Variables.htm#Operators">opérateurs d'expression</a> sauf ++ et --). Dans l'exemple suivant, la seconde ligne est ajoutée à la première car elle commence par une virgule :</p>
 <pre>FileAppend, Ceci est le texte à ajouter.`n   <em>; Un commentaire est autorisé ici.</em>
     , %A_ProgramFiles%\UneApplication\FichierJournal.txt  <em>; Commentaire.</em></pre>
-<p>De manière similaire, les lignes suivantes seraient fusionnées en une seule puisque les deux dernières commencent avec &quot;and&quot; ou &quot;or&quot; :</p>
-<pre>if (Couleur = &quot;Rouge&quot; or Couleur = &quot;Vert&quot;  or Couleur = &quot;Bleu&quot;   <em>; Commentaire.</em>
-    <strong>or</strong> Couleur = &quot;Noir&quot; or Couleur = &quot;Gris&quot; or Couleur = &quot;Blanc&quot;)   <em>; Commentaire.</em>
+<p>De manière similaire, les lignes suivantes seraient fusionnées en une seule puisque les deux dernières commencent avec "and" ou "or" :</p>
+<pre>if (Couleur = "Rouge" or Couleur = "Vert"  or Couleur = "Bleu"   <em>; Commentaire.</em>
+    <strong>or</strong> Couleur = "Noir" or Couleur = "Gris" or Couleur = "Blanc")   <em>; Commentaire.</em>
     <strong>and</strong> ProduitDisponibleDansCetteCouleur(Produit, Couleur)   <em>; Commentaire.</em></pre>
 <p>L'<a href="Variables.htm#ternary">opérateur ternaire</a> est aussi un bon candidat :</p>
-<pre>ProduitDisponible := (Couleur = &quot;Rouge&quot;)
+<pre>ProduitDisponible := (Couleur = "Rouge")
     <strong>?</strong> false  <em>; Pas de produit rouge disponible, pas besoin d'appeler la fonction.</em>
     <strong>:</strong> ProduitDisponibleDansCetteCouleur(Produit, Couleur)</pre>
-<p>Bien que l'indentation utilisée dans les exemples ci-dessus soit facultative, elle peut améliorer la clarté en indiquant les lignes appartenant à celles au-dessus. <!--Also, it is not necessary to include extra spaces for lines starting with the words &quot;AND&quot; and &quot;OR&quot;; the program does this automatically.--> Enfin, des lignes vides ou des <a href="Language.htm#comments">commentaires</a> peuvent être ajoutés entre les lignes, ou à la fin de chaque ligne comme dans les exemples ci-dessus.</p>
+<p>Bien que l'indentation utilisée dans les exemples ci-dessus soit facultative, elle peut améliorer la clarté en indiquant les lignes appartenant à celles au-dessus. Also, it is not necessary to include extra spaces for lines starting with the words "AND" and "OR"; the program does this automatically. Enfin, des lignes vides ou des <a href="Language.htm#comments">commentaires</a> peuvent être ajoutés entre les lignes, ou à la fin de chaque ligne comme dans les exemples ci-dessus.</p>
 <p id="continuation-section"><strong>Méthode #2</strong> : Cette méthode devrait être utilisée pour fusionner un grand nombre de lignes ou quand les lignes ne permettent pas d'utiliser la Méthode #1. Bien que cette méthode soit surtout utile pour les <a href="Hotstrings.htm">hotstrings à remplacement automatique</a>, elle peut aussi être utilisée avec n'importe quelle commande ou <a href="Variables.htm#Expressions">expression</a>. Par exemple :</p>
 <pre><em>; EXEMPLE #1 :</em>
 Var =
@@ -70,7 +70,7 @@ Une ligne de texte.
 ), C:\Mon Fichier.txt</pre>
 <p>Dans les exemples ci-dessus, une série de ligne est délimitée en haut et en bas par une paire de parenthèses. Ceci est appelé une <em>section de continuation</em>. A noter que la ligne du bas contiens le dernier paramètre de <a href="commands/FileAppend.htm">FileAppend</a> après la parenthèse fermante. Faire ainsi est facultatif ; ceci est fait dans des cas similaires afin que la virgule soit vue comme un délimiteur de paramètre plutôt qu'une virgule littérale.</p>
 <p>Le comportement par défaut d'une section de continuation peut être modifié en incluant une ou plus des options suivantes à droite de la parenthèse ouvrante de la section. Si plus d'une option est présente, elles sont séparées par des espaces. Par exemple : <code>( LTrim Join| %</code>.</p>
-<p id="Join"><strong>Join</strong> : Indique comment les lignes devraient être jointes ensemble. Si cette option est omise, chaque ligne sauf la dernière sera suivie d'un caractère retour à la ligne (`n). Si le mot <em>Join</em> est indiqué seul, les lignes sont jointes directement sans aucun caractère entre. Sinon, le mot <em>Join</em> devrait être immédiatement suivi d'au plus 15 caractères. Par exemple, <code>Join`s</code> insèrerait un espace après chaque ligne sauf la dernière (&quot;`s&quot; indique un espace littéral -- il s'agit d'une séquence d'échappement spéciale reconnue seulement par <em>Join</em>). Un autre exemple est <code>Join`r`n</code>, qui insère CR+LF entre les lignes. De même, <code>Join|</code> insère unne barre verticale entre les lignes. Pour que la dernière ligne de la section soit également suivie de la chaîne de caractères indiquée à Join, inclure une ligne vide immédiatement au-dessus de la parenthèse fermante de la section.</p>
+<p id="Join"><strong>Join</strong> : Indique comment les lignes devraient être jointes ensemble. Si cette option est omise, chaque ligne sauf la dernière sera suivie d'un caractère retour à la ligne (`n). Si le mot <em>Join</em> est indiqué seul, les lignes sont jointes directement sans aucun caractère entre. Sinon, le mot <em>Join</em> devrait être immédiatement suivi d'au plus 15 caractères. Par exemple, <code>Join`s</code> insèrerait un espace après chaque ligne sauf la dernière ("`s" indique un espace littéral -- il s'agit d'une séquence d'échappement spéciale reconnue seulement par <em>Join</em>). Un autre exemple est <code>Join`r`n</code>, qui insère CR+LF entre les lignes. De même, <code>Join|</code> insère unne barre verticale entre les lignes. Pour que la dernière ligne de la section soit également suivie de la chaîne de caractères indiquée à Join, inclure une ligne vide immédiatement au-dessus de la parenthèse fermante de la section.</p>
 <p>Limitation connue: Si la chaîne de caractères indiquée à Join finit par un deux-points, ce ne doit pas être la dernière option sur la ligne. Par exemple, <code>(Join:</code> est vu comme le label "(Join" et <code>(LTrim Join:</code> n'est pas pris en charge, mais <code>(Join: C</code> va.</p>
 <p id="LTrim"><strong>LTrim</strong> : Ignore les espaces et les tabulations au début de chaque ligne. Ceci est principalement utilisé pour permettre d'indenter dans une section de continuation. De plus, cette option peut être activée pour plusieurs sections de continuation en indiquant <code>#LTrim</code> sur une ligne séparée. <code>#LTrim</code> est positionnelle : elle affecte toutes les sections de continuation sous elle. L'option peut être désactivée avec <code>#LTrim Off</code>.</p>
 <p><strong>RTrim0</strong> (RTrim suivi d'un zéro) : Désactive l'omission des espaces et tabulations à la fin de chaque ligne.</p>
@@ -107,8 +107,8 @@ FileAppend, %Var%, C:\Mon Fichier.txt</pre>
 <p>Une fois qu'un script est compilé, il devient un exécutable indépendant ; c'est-à-dire que AutoHotkey.exe n'est pas requis pour exécuter le script. Le processus de compilation créé un fichier exécutable qui contient : l'interpréteur AutoHotkey, le script, tout fichier que le script <a href="commands/_Include.htm">inclut</a>, et tout fichier incorporé via la commande <a href="commands/FileInstall.htm">FileInstall</a>.</p>
 <p>Ahk2Exe peut être utilisé des manières suivantes :</p>
 <ol>
-  <li><strong>Interface GUI</strong> : Lancer l'option &quot;Convert .ahk to .exe&quot; (Convertir .ahk en .exe) dans le Menu Démarrer.</li>
-  <li><strong>Clic droit</strong> : Dans une fenêtre de l'explorateur de fichier, il est possible de clic droit tout fichier .ahk et de choisir &quot;Compile Script&quot; (Compiler le Script) (seulement disponible si l'option compilateur de script a été choisie à l'installation de AutoHotkey). Ceci créé un fichier EXE de même nom de fichier de base que le script, qui apparaît après un court instant dans le même dossier. Note : Le fichier EXE est généré avec les mêmes icône personnalisée, fichier .bin et utilise le paramètre <a href="#mpress">MPRESS</a> ayant été utilisés la dernière fois par la Méthode #1 ci-dessus.</li>
+  <li><strong>Interface GUI</strong> : Lancer l'option "Convert .ahk to .exe" (Convertir .ahk en .exe) dans le Menu Démarrer.</li>
+  <li><strong>Clic droit</strong> : Dans une fenêtre de l'explorateur de fichier, il est possible de clic droit tout fichier .ahk et de choisir "Compile Script" (Compiler le Script) (seulement disponible si l'option compilateur de script a été choisie à l'installation de AutoHotkey). Ceci créé un fichier EXE de même nom de fichier de base que le script, qui apparaît après un court instant dans le même dossier. Note : Le fichier EXE est généré avec les mêmes icône personnalisée, fichier .bin et utilise le paramètre <a href="#mpress">MPRESS</a> ayant été utilisés la dernière fois par la Méthode #1 ci-dessus.</li>
   <li id="ahk2exeCmd"><strong>Ligne de Commande</strong> : Le compilateur peut être exécuté depuis la ligne de commande avec les paramètres suivants :
   <pre class="no-highlight">Ahk2Exe.exe /in MonScript.ahk [/out MonScript.exe] [/icon MonIcone.ico] [/bin AutoHotkeySC.bin] [/mpress 0ou1]</pre>
   Par exemple :
@@ -116,18 +116,18 @@ FileAppend, %Var%, C:\Mon Fichier.txt</pre>
 Utilisation :
 <ul>
 <li>Les paramètres contenant des espaces doivent être entourés de guillemets.</li>
-<li>Si le fichier de sortie &quot;out&quot; est omis, l'EXE aura le même nom de fichier de base que le script.</li>
+<li>Si le fichier de sortie "out" est omis, l'EXE aura le même nom de fichier de base que le script.</li>
 </ul></li>
 </ol>
 <p>Notes :</p>
 <ul>
   <li>La compilation n'améliore en général pas la performance d'un script.</li>
   <li>A partir de v1.1.01, la protection par mot de passe et le commutateur /NoDecompile ne sont plus pris en charge.</li>
-  <li>Les commandes <a href="commands/_NoTrayIcon.htm">#NoTrayIcon</a> et &quot;<a href="commands/Menu.htm">Menu, Tray, ShowMainWindow</a>&quot; affectent le comportement des scripts compilés.</li>
-  <li>Des informations de version personnalisées (comme vu dans les paramètres de fichier dans l'explorateur) peuvent être ajoutées aux scripts compilés en utilisant un utilitaire tel que <a href="http://www.angusj.com/resourcehacker/">Resource Hacker</a> (logiciel gratuit) pour modifier le fichier &quot;AutoHotkeySC.bin&quot;. Ce fichier est contenu dans le sous-dossier &quot;Compiler&quot; où AutoHotkey a été installé. <a href="https://github.com/mercury233/compile-ahk">Compile AHK</a> peut être utilisé pour faciliter ce processus. A partir de v1.1.01, le script compilé peut être modifié à la place de AutoHotkeySC.bin.</li>
+  <li>Les commandes <a href="commands/_NoTrayIcon.htm">#NoTrayIcon</a> et "<a href="commands/Menu.htm">Menu, Tray, ShowMainWindow</a>" affectent le comportement des scripts compilés.</li>
+  <li>Des informations de version personnalisées (comme vu dans les paramètres de fichier dans l'explorateur) peuvent être ajoutées aux scripts compilés en utilisant un utilitaire tel que <a href="http://www.angusj.com/resourcehacker/">Resource Hacker</a> (logiciel gratuit) pour modifier le fichier "AutoHotkeySC.bin". Ce fichier est contenu dans le sous-dossier "Compiler" où AutoHotkey a été installé. <a href="https://github.com/mercury233/compile-ahk">Compile AHK</a> peut être utilisé pour faciliter ce processus. A partir de v1.1.01, le script compilé peut être modifié à la place de AutoHotkeySC.bin.</li>
   <li>La méthode ci-dessus peut aussi être utilisée pour changer des icônes existantes ou en ajouter à tout script compilé.</li>
   <li>La variable intégrée A_IsCompiled contient 1 si le script est exécuté sous forme compilée. Dans le cas contraire, elle est vide.</li>
-  <li>Quand des paramètres sont donnés à Ahk2Exe, un message indicatif du succès ou de l'échec de la compilation est écrit dans stdout (sortie standard). Bien que le message n'apparaisse pas dans le terminal, il peut être &quot;attrapé&quot; par des méthodes telles que la redirection de la sortie vers un fichier. <span class="ver">[v1.0.43+]</span></li>
+  <li>Quand des paramètres sont donnés à Ahk2Exe, un message indicatif du succès ou de l'échec de la compilation est écrit dans stdout (sortie standard). Bien que le message n'apparaisse pas dans le terminal, il peut être "attrapé" par des méthodes telles que la redirection de la sortie vers un fichier. <span class="ver">[v1.0.43+]</span></li>
   <li>De plus en cas d'échec, Ahk2Exe a des codes de sortie indiquant le type d'erreur s'étant produite. Ces codes d'erreur peuvent être trouvés ici : <a href="https://github.com/fincs/Ahk2Exe/blob/master/ErrorCodes.md">GitHub (ErrorCodes.md)</a>. <span class="ver">[v1.1.22.03+]</span></li>
 </ul>
 <p>Le code source du compilateur et des versions plus récentes peuvent être trouvées sur <a href="https://github.com/fincs/Ahk2Exe">GitHub</a>.</p>
@@ -192,7 +192,7 @@ Utilisation :
 <p>Le nom de fichier <code><i>AutoHotkey</i>.ahk</code> dépend du nom de l'exécutable utilisé pour lancer le script. Par exemple, en renommant AutoHotkey.exe en MonScript.exe, le programme cherchera <code>MonScript.ahk</code>. Si AutoHotkeyU32.exe est lancé sans paramètres, il cherchera AutoHotkeyU32.ahk.</p>
 <p>Note : Dans de vieilles versions avant la <a href="AHKL_ChangeLog.htm#L51">révision 51</a>, le programme cherchait AutoHotkey.ini dans le répertoire de travail ou AutoHotkey.ahk dans Mes Documents.</p>
 <p><span class="ver">[v1.1.17+] :</span> Indiquer un astérisque (*) pour le nom de fichier pour que le texte du script soit lu depuis l'entrée standard (stdin). Pour un exemple, voir <a href="commands/Run.htm#ExecScript">ExecScript()</a>.</p>
-<p id="cmd_args"><strong>Paramètres du Script :</strong> Le(s) chaîne(s) de caractères à passer au script, chacune séparée de la suivante par un espace. Tout paramètre contenant des espaces doit être entouré de guillemets. Un guillemet littéral peut être passé en le précédant d'un antislash (\&quot;). En conséquence, tout antislash terminant un paramètre entre guillemets (comme &quot;C:\Mes Documents<span class="red">\&quot;</span>) est traité comme un guillemet littéral (c'est-à-dire, le script recevrait la chaîne de caractères C:\My Documents<span class="red">&quot;</span>). Pour enlever de tels guillemets, utiliser <code><a href="commands/StringReplace.htm">StringReplace</a>, 1, 1, <span class="red">&quot;</span>,, All</code>.</p>
+<p id="cmd_args"><strong>Paramètres du Script :</strong> Le(s) chaîne(s) de caractères à passer au script, chacune séparée de la suivante par un espace. Tout paramètre contenant des espaces doit être entouré de guillemets. Un guillemet littéral peut être passé en le précédant d'un antislash (\"). En conséquence, tout antislash terminant un paramètre entre guillemets (comme "C:\Mes Documents<span class="red">\"</span>) est traité comme un guillemet littéral (c'est-à-dire, le script recevrait la chaîne de caractères C:\My Documents<span class="red">"</span>). Pour enlever de tels guillemets, utiliser <code><a href="commands/StringReplace.htm">StringReplace</a>, 1, 1, <span class="red">"</span>,, All</code>.</p>
 <p><span class="ver">[v1.1.27+] :</span> Les paramètres d'entrée, si présents, sont stockés sous forme de tableau dans la variable intégrée <strong>A_Args</strong>, et peuvent être obtenus en utilisant la <a href="Objects.htm#Usage_Simple_Arrays">syntaxe de tableau</a>. <code>A_Args[1]</code> contient le premier paramètre. L'exemple suivant termine le script quand un nombre insuffisant de paramètres lui est passé :</p>
 <pre>if A_Args.Length() &lt; 3
 {
@@ -213,13 +213,13 @@ Utilisation :
     MsgBox Le chemin long avec casse corrigée du fichier`n%CheminDonné%`nest :`n%CheminLong%
 }</pre>
 <p><strong>Problème connu :</strong> déposer des fichiers sur un script .ahk peut échouer à fonctionner correctement si les noms (courts) 8-dot-3 ont été désactivé dans un système de fichier NTFS. Une solution est de <a href="#ahk2exe">compiler</a> le script puis de déposer les fichiers sur l'EXE résultant.</p>
-<p id="cmd_args_old"><strong>Dépassé :</strong> Les paramètres de ligne de commande sont aussi stockés dans les <a href="Variables.htm">variables</a> %1%, %2%, et ainsi de suite, comme dans les versions précédant <span class="ver">[v1.1.27]</span>. De plus, %0% contient le nombre de paramètres passés (0 si aucun). Toutefois, ces variables ne peuvent pas être utilisées directement dans une expression puisqu'elles seraient interprétées comme des nombres plutôt que comme des variables. L'exemple suivant termine le script si un nombre insuffisant de paramètres lui est passé :</p>
+<p id="cmd_args_old"><strong>Dépassé :</strong> Les paramètres de ligne de commande sont aussi stockés dans les <a href="Variables.htm">variables</a> %1%, %2%, et ainsi de suite, comme dans les versions précédant <span class="ver">[v1.1.27]</span>. De plus, %0% contient le nombre de paramètres passés (0 si aucun). Toutefois, ces variables ne peuvent pas être utilisées directement dans une expression puisqu'elles seraient interprétées comme des nombres plutôt que comme des variables. L'exemple suivant termine le script quand un nombre insuffisant de paramètres lui est passé :</p>
 <pre>if 0 &lt; 3  <em>; Le côté gauche d'une <a href="commands/IfEqual.htm">instruction if non-expression</a> est toujours le nom d'une variable.</em>
 {
     MsgBox Ce script nécessite au moins 3 paramètres d'entrée mais n'en a reçu que %0%.
     ExitApp
 }</pre>
-<p>Si le nombre de paramètres passés à un script varie (par exemple l'utilisateur glisse-dépose un ensemble de fichiers sur un script), l'exemple suivant peut être utilisé pour les extraire un par un :</p>
+<p>Si le nombre de paramètres passés à un script est variable (par exemple l'utilisateur glisse-dépose un ensemble de fichiers sur un script), l'exemple suivant peut être utilisé pour les extraire un par un :</p>
 <pre>Loop, %0%  <em>; Pour chaque paramètre :</em>
 {
     param := %A_Index%  <em>; Récupérer le contenu de la variable dont le nom est contenu dans A_Index.</em>
@@ -228,7 +228,7 @@ Utilisation :
         break
 }</pre>
 <p>Si les paramètres sont des noms de fichier, l'exemple suivant peut être utilisé pour les convertir en leurs noms longs avec casse corrigée (tel que stocké dans le système de fichier), comprenant le chemin complet/absolu :</p>
-<pre>Loop %0%  <em>; Pour chaque paramètre (ou fichier déposé sur un script) :</em>
+<pre>Loop %0%  <em>; Pour chaque paramètre (ou fichier déposé sur un script):</em>
 {
     CheminDonné := %A_Index%  <em>; Récupérer le contenu de la variable dont le nom est contenu dans A_Index.</em>
     Loop %CheminDonné%, 1
@@ -244,12 +244,10 @@ Utilisation :
   <li>Dans tous les autres cas, le codepage par défaut du système ANSI est utilisé.</li>
 </ul>
 <p>A noter que ceci ne s'applique qu'aux fichiers chargés par AutoHotkey, pas aux opérations d'entrée-sortie effectuées sur des fichiers au sein du script même. <a href="commands/FileEncoding.htm">FileEncoding</a> contrôle l'encodage par défaut des fichiers lus ou écrits par le script, tandis que <a href="commands/IniRead.htm">IniRead</a> et <a href="commands/IniWrite.htm">IniWrite</a> utilisent toujours UTF-16 ou ANSI.</p>
-<p>Comme tout le texte est converti (si nécessaire) vers le <a href="Compat.htm#Format">format natif de chaîne de caractères</a>, les caractères qui sont invalides ou n'existent pas dans le codepage natif sont remplacés par : en ANSI '?' ou en Unicode '&#65533;'. Dans les constructions (builds) Unicode, ceci ne devrait arriver qu'en cas d'erreur d'encodage dans le fichier de script ou si les codepages utilisés pour la sauvegarde et le chargement du fichier sont différents.</p>
+<p>Comme tout le texte est converti (si nécessaire) vers le <a href="Compat.htm#Format">format natif de chaîne de caractères</a>, les caractères qui sont invalides ou n'existent pas dans le codepage natif sont remplacés par : en ANSI '?' ou en Unicode '�'. Dans les constructions (builds) Unicode, ceci ne devrait arriver qu'en cas d'erreur d'encodage dans le fichier de script ou si les codepages utilisés pour la sauvegarde et le chargement du fichier sont différents.</p>
 <p><a href="commands/RegWrite.htm">RegWrite</a> peut être utilisée pour définir le codepage par défaut pour les scripts lancés depuis l'explorateur (par exemple en double-cliquant un fichier) :</p>
-<pre><em>
-; Décommenter la ligne appropriée ci-dessous ou les laisser toutes
-;   commentées pour revenir au codepage par défaut de la construction
-;   actuelle. Modifier selon le besoin :
+<pre><em>; Décommenter la ligne appropriée ci-dessous ou les laisser toutes
+;   commentées pour revenir au codepage par défaut de la construction ;   actuelle. Modifier selon le besoin :
 ; codepage := 0        ; Codepage par défaut du système ANSI
 ; codepage := 65001    ; UTF-8
 ; codepage := 1200     ; UTF-16
@@ -265,11 +263,11 @@ else            <em>; Modifer pour l'utilisateur actuel seulement.</em>
 <p>Ceci suppose que AutoHotkey a déjà été installé. Le résultat peut être loin d'être idéal dans le cas contraire.</p>
 
 <h2 id="debug">Déboguer un Script</h2>
-<p>Des commandes comme <a href="commands/ListVars.htm">ListVars</a> et <a href="commands/Pause.htm">Pause</a> peuvent aider à déboguer script. Par exemple, les deux lignes suivantes, insérées temporairement à des endroits choisis soigneusement, crééent des &quot;points d'arrêt&quot; dans le script :</p>
+<p>Des commandes comme <a href="commands/ListVars.htm">ListVars</a> et <a href="commands/Pause.htm">Pause</a> peuvent aider à déboguer script. Par exemple, les deux lignes suivantes, insérées temporairement à des endroits choisis soigneusement, crééent des "points d'arrêt" dans le script :</p>
 <pre>ListVars
 Pause</pre>
-<p>Quand le script rencontre ces deux lignes, il affiche le contenu actuel de toutes les variables pour inspection. Une fois prêt à reprendre l'exécution, la pause du script peut être enlevée via le menu fichier ou zone de notification. Le script continuera ensuite jusqu'à atteindre le prochain &quot;point d'arrêt&quot; (s'il y en a un).</p>
-<p>Il est en général mieux d'insérer ces &quot;points d'arrêt&quot; à des positions où la fenêtre active n'a pas d'influence sur le script, comme par exemple immédiatement avant une commande WinActivate. Ceci permet au script de reprendre correctement ses opérations quand la pause est enlevée.</p>
+<p>Quand le script rencontre ces deux lignes, il affiche le contenu actuel de toutes les variables pour inspection. Une fois prêt à reprendre l'exécution, la pause du script peut être enlevée via le menu fichier ou zone de notification. Le script continuera ensuite jusqu'à atteindre le prochain "point d'arrêt" (s'il y en a un).</p>
+<p>Il est en général mieux d'insérer ces "points d'arrêt" à des positions où la fenêtre active n'a pas d'influence sur le script, comme par exemple immédiatement avant une commande WinActivate. Ceci permet au script de reprendre correctement ses opérations quand la pause est enlevée.</p>
 <p>Les commandes suivantes sont aussi utiles pour le débogage : <a href="commands/ListLines.htm">ListLines</a>, <a href="commands/KeyHistory.htm">KeyHistory</a>, et <a href="commands/OutputDebug.htm">OutputDebug</a>.</p>
 <p>Certaines erreurs courantes, comme des fautes de frappes et des déclarations manquantes de "globales", peuvent être détectées en <a href="commands/_Warn.htm">activant les avertissements</a>.</p>
 <h3 id="idebug">Débogage Interactif <span class="ver">[AHK_L 11+]</span></h3>
