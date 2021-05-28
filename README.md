@@ -1,24 +1,17 @@
 # AHK-Docs_FR
-Traduction française de la documentation d'AutoHotkey
+French translation of AutoHotkey's documentation
 
 # How to contribute
-The folder `english` aims to be the same as a copy of the [original docs repository commit #5e18a14](https://github.com/Lexikos/AutoHotkey_L-Docs/commit/5e18a14fb51344d63cf354159e259d02e1c1e2d6)
+1. Ask joedf in the forum (via [PM](https://www.autohotkey.com/boards/ucp.php?i=pm&mode=compose&u=55) or [thread](https://www.autohotkey.com/boards/viewtopic.php?f=81&t=936)) to get write access to this project
+2. Download and run [OmegaT](https://omegat.org/)
+3. Click in the menu bar on Project > Download Team Project...
+4. Enter `https://github.com/ahkscript/AHK-Docs_FR.git` in the first input field
+5. Specify your new local project folder in the next field
+6. Click on OK
 
-In order to maintain consistency, the documents to be translated need to be "frozen in time" so we can later know what is out of date when everything has been translated.
+At some point during the synchronization you will be asked for your GitHub username and password. You only need to enter this information once.
 
-Do not commit anything to `english`. If a file has been translated, save and commit it under `french` in its corresponding folder.
-
-If a file is only partly translated, indicate it in the filename. For example `Welcome.htm` could be `Welcome.part.htm` or `Welcome.htm.part`.
-
-The goal is to keep track of what has been translated from the "frozen copy" of the original documentation, such that if a corresponding file under `english` does not exist under `french` then it has not yet been translated.
-
-**Note:** Do not translate the file names or html code, such as `<tags>`, `attributes="some value"`, anchors `#my_page_section`, etc.
-
-## Steps to translate a file
-1. clone this repository
-2. copy a file from `english` that you aim to translate, to `french` (preserving relative paths, eg. `french/docs/AutoHotkey.htm`)
-3. **Only** commit translated files under `french/`, do not commit files in `english/`.
-   > If a file is only partly translated, indicate it in the file name. ex. `french/docs/AutoHotkey.part.htm` or `french/docs/AutoHotkey.htm.part`.
+That's it. Now you can translate as you like. Your new translations will be uploaded automatically on a regular basis and at various events such as save, close, etc. If you want to check the current translated state of the document, click on Project > Create Translated Documents and then on Project > Access Project Contents > Current Target Document. When you think it's ready for publishing for now, click on Project > Commit Target Files and let us know via PM, so we can publish the docs. If you have questions, feel free to ask us.
 
 ## Tools
 - [**OmegaT**](https://omegat.org/) - Free open-source translation memory tool, computer-assisted translation (CAT) software
@@ -27,7 +20,6 @@ The goal is to keep track of what has been translated from the "frozen copy" of 
 - [**Microsoft Terminology Translation**](https://www.microsoft.com/en-us/language) - Useful for when you need a computer-term in a different language. These are used my Microsoft themselves for things like Windows, Office, Skype, Xbox, Bing, etc.
   - You can download *.tbx glossary files here to help with CAT software: 
   https://www.microsoft.com/en-us/language/Terminology
-- [**POEdit**](https://poedit.net/) - Translation editor, free version available
 
 # Style d'écriture
 **Rajouter ici les choix faits lors de la traduction afin de garder un style homogène et cohérent**
