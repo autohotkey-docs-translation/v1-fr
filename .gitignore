@@ -1,1 +1,4 @@
-omegaT/*
+*.chm
+# Ignore auto-generated files
+Index.hhk
+Table of Contents.hhc
