@@ -190,6 +190,22 @@
     </tu>
     <tu>
       <tuv lang="en">
+        <seg>../static/ctrl_edit.png</seg>
+      </tuv>
+      <tuv lang="fr" changeid="Ragnar-F" changedate="20210528T120822Z" creationid="Ragnar-F" creationdate="20210528T120812Z">
+        <seg>../static/ctrl_edit_fr.png</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en">
+        <seg>../static/ctrl_text.png</seg>
+      </tuv>
+      <tuv lang="fr" changeid="Ragnar-F" changedate="20210528T120807Z" creationid="Ragnar-F" creationdate="20210528T120803Z">
+        <seg>../static/ctrl_text_fr.png</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en">
         <seg>/*&lt;/e1&gt;&lt;/c0&gt; and &lt;c2&gt;&lt;e3&gt;*/&lt;/e3&gt;&lt;/c2&gt; symbols can be used to comment out an entire section, &lt;e4&gt;but only if the symbols appear at the beginning of a line&lt;/e4&gt; (excluding whitespace), as in this example:</seg>
       </tuv>
       <tuv lang="fr" changeid="OmegaT Aligner" changedate="20210528T095908Z" creationid="OmegaT Aligner" creationdate="20210528T095908Z">
@@ -17615,6 +17631,17 @@
         <seg>Text</seg>
       </tuv>
       <tuv lang="fr" changeid="Ragnar-F" changedate="20210528T112235Z" creationid="Ragnar-F" creationdate="20210528T112235Z">
+        <seg>Text</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <prop type="file">docs/commands/GuiControls.htm</prop>
+      <prop type="prev">Appearance:</prop>
+      <prop type="next">../static/ctrl_text.png</prop>
+      <tuv lang="en">
+        <seg>Text</seg>
+      </tuv>
+      <tuv lang="fr" changeid="Ragnar-F" changedate="20210528T121209Z" creationid="Ragnar-F" creationdate="20210528T121209Z">
         <seg>Text</seg>
       </tuv>
     </tu>

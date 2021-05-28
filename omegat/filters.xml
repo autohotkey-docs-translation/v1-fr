@@ -80,7 +80,7 @@
         <option name="translateHref" value="true"/>
         <option name="translateHreflang" value="true"/>
         <option name="translateLang" value="true"/>
-        <option name="translateSrc" value="false"/>
+        <option name="translateSrc" value="true"/>
         <option name="translateValue" value="true"/>
     </filter>
     <filter className="org.omegat.filters2.latex.LatexFilter" enabled="true">

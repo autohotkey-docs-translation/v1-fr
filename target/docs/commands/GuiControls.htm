@@ -36,7 +36,7 @@
 <p>Par exemple :</p>
 <pre>Gui, Add, Text,, S'il vous plaît veuillez entrer votre nom:</pre>
 <p>Appearance:</p>
-<img src="../static/ctrl_text.png" alt="Text" />
+<img src="../static/ctrl_text_fr.png" alt="Text" />
 <p>In this case, the last parameter is the string to display. It may contain linefeeds (`n) to start new lines. In addition, a single long line can be broken up into several shorter ones by means of a <a href="../Scripts.htm#continuation">continuation section</a>.</p>
 <p>If a width (W) is specified in <em>Options</em> but no <a href="Gui.htm#R">rows (R)</a> or height (H), the text will be word-wrapped as needed, and the control's height will be set automatically.</p>
 <p>Since the control's contents are in the last parameter of the Gui command, literal commas do not need to be escaped. This is also true for the last parameter of all other commands.</p>
@@ -65,7 +65,7 @@ Gui, Add, Edit</pre>
 <p>Par exemple :</p>
 <pre>Gui, Add, Edit, r9 vMyEdit w135, Texte à apparaître dans le contrôle d'édition (omettez ce paramètre pour commencer vide).</pre>
 <p>Appearance:</p>
-<img src="../static/ctrl_edit.png" alt="Edit" />
+<img src="../static/ctrl_edit_fr.png" alt="Edit" />
 <p>The control will be multi-line if it has more than one row of text. For example, specifying <code>r3</code> in <em>Options</em> will create a 3-line edit control with the following default properties: a vertical scroll bar, word-wrapping enabled, and the <kbd>Enter</kbd> key captured as part of the input rather than triggering the window's <a href="#DefaultButton">default button</a>.</p>
 <p>To start a new line in a multi-line edit control, the last parameter (contents) may contain either a solitary linefeed (`n) or a carriage return and linefeed (`r`n). Both methods produce literal `r`n pairs inside the Edit control. However, when the control is saved to its variable via <a href="Gui.htm#Submit">Gui Submit</a> or <a href="GuiControlGet.htm">GuiControlGet</a>, each `r`n in the text is always translated to a plain linefeed (`n). To write the text to a file, follow this example: <code><a href="FileAppend.htm">FileAppend</a>, %MyEdit%, C:\Saved File.txt</code>.</p>
 <p>If the control has word-wrapping enabled (which is the default for multi-line edit controls), any wrapping that occurs as the user types will not produce linefeed characters (only the <kbd>Enter</kbd> keystroke can do that).</p>
