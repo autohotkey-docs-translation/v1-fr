@@ -1,0 +1,3 @@
+Wheel	Roulette	Roulette de la souris
+Numpad	Pavé numérique
+Touches de combinaison	modifier keys
