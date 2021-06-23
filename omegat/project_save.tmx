@@ -8422,6 +8422,14 @@
     </tu>
     <tu>
       <tuv lang="en">
+        <seg>If these characters are used in other contexts, such as on the left hand side of an assignment, in the name of a command's input/output variable or between %percent% signs, an error message is displayed and the script is prevented from launching.</seg>
+      </tuv>
+      <tuv lang="fr" changeid="Frost" changedate="20210623T182246Z" creationid="Frost" creationdate="20210623T182246Z">
+        <seg>Si ces caractères sont utilisés dans d'autres contextes, comme à la gauche d'une affectation, dans le nom d'une variable d'entrée/sortie d'une commande ou entre des signes %pourcentage%, un message d'erreur s'affiche et le script ne peut pas se lancer.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en">
         <seg>If they cannot be seen -- or if your mouse has more than five buttons that you want to use -- you can try configuring the software that came with the mouse (sometimes accessible in the Control Panel or Start Menu) to send a keystroke whenever you press one of these buttons.</seg>
       </tuv>
       <tuv lang="fr" changeid="OmegaT Aligner" changedate="20210528T094500Z" creationid="OmegaT Aligner" creationdate="20210528T094500Z">
