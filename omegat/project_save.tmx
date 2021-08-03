@@ -4454,6 +4454,14 @@
     </tu>
     <tu>
       <tuv lang="en">
+        <seg>As hinted above, a variable can be used to hold a false value simply by making it blank or assigning 0 to it.</seg>
+      </tuv>
+      <tuv lang="fr" changeid="joedf" changedate="20210803T214517Z" creationid="joedf" creationdate="20210803T214517Z">
+        <seg>Comme indiqué ci-dessus, une variable peut être utilisée pour contenir une valeur fausse simplement en la rendant vide ou en lui attribuant 0.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en">
         <seg>As of v1.1.01, password protection and the /NoDecompile switch are not supported.</seg>
       </tuv>
       <tuv lang="fr" changeid="OmegaT Aligner" changedate="20210528T101352Z" creationid="OmegaT Aligner" creationdate="20210528T101352Z">
