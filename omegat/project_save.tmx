@@ -4910,6 +4910,14 @@
     </tu>
     <tu>
       <tuv lang="en">
+        <seg>Built-in Variables</seg>
+      </tuv>
+      <tuv lang="fr" changeid="joedf" changedate="20210803T213409Z" creationid="joedf" creationdate="20210803T213409Z">
+        <seg>Variables intégrées</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en">
         <seg>But before we get into things, we should talk about some common issues that people have.</seg>
       </tuv>
       <tuv lang="fr" changeid="OmegaT Aligner" changedate="20210528T103836Z" creationid="OmegaT Aligner" creationdate="20210528T103836Z">
@@ -7486,6 +7494,14 @@
     </tu>
     <tu>
       <tuv lang="en">
+        <seg>Hexadecimal numbers all start with the prefix 0x.</seg>
+      </tuv>
+      <tuv lang="fr" changeid="joedf" changedate="20210803T214215Z" creationid="joedf" creationdate="20210803T214215Z">
+        <seg>Les nombres hexadécimaux commencent tous par le préfixe 0x.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en">
         <seg>High impact:</seg>
       </tuv>
       <tuv lang="fr" changeid="OmegaT Aligner" changedate="20210528T093746Z" creationid="OmegaT Aligner" creationdate="20210528T093746Z">
@@ -9662,6 +9678,14 @@
     </tu>
     <tu>
       <tuv lang="en">
+        <seg>Learn details about variables, expressions, operators, built-in variables and capacity and memory of variables.</seg>
+      </tuv>
+      <tuv lang="fr" changeid="joedf" changedate="20210803T213507Z" creationid="joedf" creationdate="20210803T213507Z">
+        <seg>Apprenez des détails sur les variables, les expressions, les opérateurs, les variables intégrées et la capacité et la mémoire des variables.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en">
         <seg>Learn how to download and install AutoHotkey, to create a script, to use hotkeys and hotstrings, to send keystrokes, to run programs, etc.</seg>
       </tuv>
       <tuv lang="fr" changeid="OmegaT Aligner" changedate="20210528T103836Z" creationid="OmegaT Aligner" creationdate="20210528T103836Z">
@@ -9738,6 +9762,14 @@
       </tuv>
       <tuv lang="fr" changeid="OmegaT Aligner" changedate="20210528T103836Z" creationid="OmegaT Aligner" creationdate="20210528T103836Z">
         <seg>Affectation dépassée de variable</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en">
+        <seg>Like the two methods of storing values, there are also two methods for retrieving them:</seg>
+      </tuv>
+      <tuv lang="fr" changeid="joedf" changedate="20210803T213549Z" creationid="joedf" creationdate="20210803T213549Z">
+        <seg>Comme les deux méthodes de stockage des valeurs, il existe également deux méthodes pour les récupérer :</seg>
       </tuv>
     </tu>
     <tu>
@@ -11306,6 +11338,14 @@
       </tuv>
       <tuv lang="fr" changeid="OmegaT Aligner" changedate="20210528T095908Z" creationid="OmegaT Aligner" creationdate="20210528T095908Z">
         <seg>Opérateurs pour Objets</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en">
+        <seg>Operators in Expressions</seg>
+      </tuv>
+      <tuv lang="fr" changeid="joedf" changedate="20210803T213401Z" creationid="joedf" creationdate="20210803T213401Z">
+        <seg>Opérateurs dans les expressions</seg>
       </tuv>
     </tu>
     <tu>
@@ -13998,6 +14038,14 @@
     </tu>
     <tu>
       <tuv lang="en">
+        <seg>The legacy method requires that each variable name be enclosed in percent signs to retrieve its contents.</seg>
+      </tuv>
+      <tuv lang="fr" changeid="joedf" changedate="20210803T213608Z" creationid="joedf" creationdate="20210803T213608Z">
+        <seg>La méthode héritée requiert que chaque nom de variable soit entouré de signes de pourcentage pour récupérer son contenu.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en">
         <seg>The line break between the close-parenthesis and open-brace is optional.</seg>
       </tuv>
       <tuv lang="fr" changeid="OmegaT Aligner" changedate="20210528T095908Z" creationid="OmegaT Aligner" creationdate="20210528T095908Z">
@@ -16278,6 +16326,14 @@
     </tu>
     <tu>
       <tuv lang="en">
+        <seg>Variable Capacity and Memory</seg>
+      </tuv>
+      <tuv lang="fr" changeid="joedf" changedate="20210803T213416Z" creationid="joedf" creationdate="20210803T213416Z">
+        <seg>Capacité et mémoire variables</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en">
         <seg>Variable and Function Names</seg>
       </tuv>
       <tuv lang="fr" changeid="OmegaT Aligner" changedate="20210528T093746Z" creationid="OmegaT Aligner" creationdate="20210528T093746Z">
@@ -16306,6 +16362,22 @@
       </tuv>
       <tuv lang="fr" changeid="OmegaT Aligner" changedate="20210528T095908Z" creationid="OmegaT Aligner" creationdate="20210528T095908Z">
         <seg>Les noms de variable doivent être entre signes pourcentage &lt;e0&gt;seulement&lt;/e0&gt; du côté droit de l'opérateur.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en">
+        <seg>Variables and Expressions</seg>
+      </tuv>
+      <tuv lang="fr" changeid="joedf" changedate="20210803T213332Z" creationid="joedf" creationdate="20210803T213332Z">
+        <seg>Variables et expressions</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en">
+        <seg>Variables and Expressions - Definition &amp; Usage | AutoHotkey</seg>
+      </tuv>
+      <tuv lang="fr" changeid="joedf" changedate="20210803T213444Z" creationid="joedf" creationdate="20210803T213444Z">
+        <seg>Variables et expressions - Définition et utilisation | AutoHotkey</seg>
       </tuv>
     </tu>
     <tu>
@@ -17594,6 +17666,14 @@
       </tuv>
       <tuv lang="fr" changeid="OmegaT Aligner" changedate="20210528T103836Z" creationid="OmegaT Aligner" creationdate="20210528T103836Z">
         <seg>elles affectent tous les hotkeys et hotstrings situés sous elles dans le script.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en">
+        <seg>they yield 1 for true and 0 for false.</seg>
+      </tuv>
+      <tuv lang="fr" changeid="joedf" changedate="20210803T214205Z" creationid="joedf" creationdate="20210803T214205Z">
+        <seg>ils donnent 1 pour vrai et 0 pour faux.</seg>
       </tuv>
     </tu>
     <tu>
