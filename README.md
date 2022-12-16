@@ -1,6 +1,8 @@
-# French translation
+# French translation (v1 docs)
 
-# Style d'écriture
+For details on how to contribute and general information, see the [organization's README file](https://github.com/autohotkey-docs-translation).
+
+## Style d'écriture
 **Rajouter ici les choix faits lors de la traduction afin de garder un style homogène et cohérent**
 
 **AutoHotkey** est utilisé comme nom propre masculin.
@@ -9,7 +11,7 @@ On préfère une reformulation à l'utilisation de "**tu**" ou "**vous**" puisqu
 
 Si vous n'êtes pas certain du nom d'une certaine touche, vous pouvez vous référer à: https://fr.wikipedia.org/wiki/Clavier_d%27ordinateur#Touches_les_plus_communes
 
-## La traduction pour certains termes (Conventions)
+### La traduction pour certains termes (Conventions)
 | English                | Français                 | Commentaire |
 |------------------------|--------------------------|-------------|
 | Hotkey                 |                          | Ceci n'est pas traduit puisque le concept inclut plus que "raccourci clavier" et utilisé au féminin. |
