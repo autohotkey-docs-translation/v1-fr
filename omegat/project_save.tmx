@@ -22,10 +22,10 @@
     </tu>
     <tu>
       <tuv lang="en">
-        <seg>"AutoHotkey Help",,,"docs\AutoHotkey.htm","docs\AutoHotkey.htm",,,,,0x73500,,0x10200e,[200,0,1080,700],,,,,3,,0</seg>
+        <seg>"AutoHotkey Help",,,"docs\index.htm","docs\index.htm",,,,,0x73500,,0x10200e,[200,0,1080,700],,,,,3,,0</seg>
       </tuv>
       <tuv lang="fr" changeid="OmegaT Aligner" changedate="20210528T092045Z" creationid="OmegaT Aligner" creationdate="20210528T092045Z">
-        <seg>"Aide pour AutoHotkey",,,"docs\AutoHotkey.htm","docs\AutoHotkey.htm",,,,,0x73500,,0x10200e,[200,0,1080,700],,,,,3,,0</seg>
+        <seg>"Aide pour AutoHotkey",,,"docs\index.htm","docs\index.htm",,,,,0x73500,,0x10200e,[200,0,1080,700],,,,,3,,0</seg>
       </tuv>
     </tu>
     <tu>
@@ -11814,18 +11814,18 @@
     </tu>
     <tu>
       <tuv lang="en">
-        <seg>Redirecting to &lt;a0&gt;AutoHotkey.htm&lt;/a0&gt;.</seg>
+        <seg>Redirecting to &lt;a0&gt;index.htm&lt;/a0&gt;.</seg>
       </tuv>
       <tuv lang="fr" changeid="OmegaT Aligner" changedate="20210528T092505Z" creationid="OmegaT Aligner" creationdate="20210528T092505Z">
-        <seg>Redirection vers &lt;a0&gt;AutoHotkey.htm&lt;/a0&gt;.</seg>
+        <seg>Redirection vers &lt;a0&gt;index.htm&lt;/a0&gt;.</seg>
       </tuv>
     </tu>
     <tu>
       <tuv lang="en">
-        <seg>Redirecting to &lt;a0&gt;docs/AutoHotkey.htm&lt;/a0&gt;.</seg>
+        <seg>Redirecting to &lt;a0&gt;docs/index.htm&lt;/a0&gt;.</seg>
       </tuv>
       <tuv lang="fr" changeid="OmegaT Aligner" changedate="20210528T092354Z" creationid="OmegaT Aligner" creationdate="20210528T092354Z">
-        <seg>Redirection vers &lt;a0&gt;docs/AutoHotkey.htm&lt;/a0&gt;.</seg>
+        <seg>Redirection vers &lt;a0&gt;docs/index.htm&lt;/a0&gt;.</seg>
       </tuv>
     </tu>
     <tu>
@@ -17800,7 +17800,7 @@
       </tuv>
     </tu>
     <tu>
-      <prop type="file">docs/commands/GuiControls.htm</prop>
+      <prop type="file">docs/lib/GuiControls.htm</prop>
       <prop type="prev">Appearance:</prop>
       <prop type="next">../Scripts.htm#continuation</prop>
       <tuv lang="en">
@@ -17811,7 +17811,7 @@
       </tuv>
     </tu>
     <tu>
-      <prop type="file">docs/commands/GuiControls.htm</prop>
+      <prop type="file">docs/lib/GuiControls.htm</prop>
       <prop type="prev">Appearance:</prop>
       <prop type="next">../static/ctrl_text.png</prop>
       <tuv lang="en">
@@ -17822,7 +17822,7 @@
       </tuv>
     </tu>
     <tu>
-      <prop type="file">docs/commands/GuiControls.htm</prop>
+      <prop type="file">docs/lib/GuiControls.htm</prop>
       <prop type="prev">Custom</prop>
       <prop type="next">Description:</prop>
       <tuv lang="en">
