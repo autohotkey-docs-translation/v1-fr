@@ -3,8 +3,6 @@
 <head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<!--Tutorial by tidbit, from http://ahkscript.github.io/AHK_Tutorial/
-                Modified to fit with the AutoHotkey documentation.-->
 <meta name="author" content="tidbit" />
 <meta name="description" content="Apprendre comment télécharger et installer AutoHotkey, créer un script, utiliser des hotkeys et des hotstrings, envoyer des appuis de touche, lancer des programmes, etc." />
 <meta name="keywords" content="ahk, autohotkey, tutoriel, guide débutant" />
@@ -79,7 +77,7 @@
 </script>
 <p>Avant d'apprendre à utiliser AutoHotkey (AHK), il faut le télécharger. Après l'avoir téléchargé, l'installation peut être nécessaire. Mais cela dépend de la version voulue. Dans ce guide sera utilisé l'installateur puisque c'est la méthode la plus simple.</p>
 
-<h4>Instructions textuelles :</h4>
+<p>Instructions textuelles :</p>
 <ol>
     <li>Aller sur la page d'accueil de AutoHotkey : <a href="https://www.autohotkey.com/">https://www.autohotkey.com/</a></li>
     <li>Cliquer "Download" : <a href="https://www.autohotkey.com/download/ahk-install.exe">https://www.autohotkey.com/download/ahk-install.exe</a></li>
@@ -91,7 +89,7 @@
 <h3 id="s12">b. Comment créer un script</h3>
 <p>Une fois AutoHotkey installé, il serait bien que ça fasse quelque chose. AutoHotkey n'est pas de la magie, tout le monde aimerait bien, mais ce n'en est pas. Donc il va falloir lui dire quoi faire. Ce processus est appelé "Scripting".</p>
 
-<h4>Instructions textuelles :</h4>
+<p>Instructions textuelles :</p>
 <ol>
     <li>Clic droit sur le bureau.</li>
     <li>Trouver "Nouveau" dans le menu.</li>
@@ -101,7 +99,7 @@
     <li>Cliquer "Edit Script".</li>
     <li>Une fenêtre devrait s'ouvrir, probablement Notepad. Si c'est le cas, SUCCES !
     <p>Maintenant que le script est créé, il faut ajouter du contenu au fichier. Pour une liste de toutes les commandes, fonctions et variables intégrées, voir la <a href="#s5">section 5</a>.</p>
-    <p>Voici un script très simple contenant une hotkey qui écrit du texte en utilisant la commande <a href="commands/Send.htm">Send</a> quand la hotkey est utilisée :</p>
+    <p>Voici un script très simple contenant une hotkey qui écrit du texte en utilisant la commande <a href="lib/Send.htm">Send</a> quand la hotkey est utilisée :</p>
     <pre>^j::
 Send, Mon Premier Script
 return</pre>
@@ -177,27 +175,27 @@ return</pre>
 <p>Il est légitime de se demander <i>"Comment je suis censé savoir que ^ signifie <kbd>Ctrl</kbd> ?!"</i>. C'est une bonne question. Pour apprendre à quoi ^ et d'autres symboles correspondent, les regards se dirigent sur ce tableau :</p>
 <table class="info">
     <tr>
-        <th>Symbole</th>
-        <th>Description</th>
+        <th class="center">Symbole</th>
+        <th abbr="Descr">Description</th>
     </tr>
     <tr>
-        <td><strong>#</strong></td>
+        <td class="center bold">#</td>
         <td><kbd>Win</kbd> (touche logo Windows)</td>
     </tr>
     <tr>
-        <td><strong>!</strong></td>
+        <td class="center bold">!</td>
         <td><kbd>Alt</kbd></td>
     </tr>
     <tr>
-        <td><strong>^</strong></td>
-        <td><kbd>Control</kbd></td>
+        <td class="center bold">^</td>
+        <td><kbd>Ctrl</kbd></td>
     </tr>
     <tr>
-        <td><strong>+</strong></td>
+        <td class="center bold">+</td>
         <td><kbd>Shift</kbd></td>
     </tr>
     <tr>
-        <td><strong>&amp;</strong></td>
+        <td class="center bold">&amp;</td>
         <td>Une esperluette peut être utilisée entre deux touches ou boutons de la souris quelconques pour former une hotkey personnalisée.</td>
     </tr>
 </table>
@@ -255,7 +253,7 @@ return
 MsgBox, Vous avez appuyé sur WIN+ESPACE dans MSPaint !
 return
 ::msg::Vous avez tapé msg dans MSPaint !</pre>
-<p class="note">Pour plus de détails et de commandes similaires, voir la page <a href="commands/_IfWinActive.htm">#IfWinActive</a>.</p>
+<p class="note">Pour plus de détails et de commandes similaires, voir la page <a href="lib/_IfWinActive.htm">#IfWinActive</a>.</p>
 <h3 id="s23">c. Plusieurs hotkeys/hotstrings par fichier</h3>
 <p>Cela, pour une raison quelconque, traverse l'esprit de certaines personnes. Alors je vais être clair : AutoHotkey permet d'avoir un nombre <i>quelconque</i> de hotkeys et de hotstrings dans un même fichier. Que ce soit 1, ou 3253 (ou plus).</p>
 <pre>#i::
@@ -285,39 +283,39 @@ return
 <pre class="NoIndent">:*:btw::by the way  <em>; Remplace "btw" par "by the way" sans attendre de caractère final.</em></pre>
 <pre class="NoIndent">^n::  <em>; hotkey CTRL+N</em>
 Run, notepad.exe  <em>; Lancer Notepad en faisant CTRL+N.</em>
-return  <em>; Termine la hotkey. Le code en-dessous ne sera pas activé.</em></pre>
+return  <em>; This ends the hotkey. The code below this will not be executed when pressing the hotkey.</em></pre>
 <pre class="NoIndent">^b::  <em>; hotkey CTRL+B</em>
 Send, {Ctrl down}c{Ctrl up}  <em>; Copie le texte sélectionné. ^c pourrait aussi être utilisé, mais cette méthode est plus sûre.</em>
 SendInput, [b]{Ctrl down}v{Ctrl up}[/b] <em>; Met le texte sélectionné entre tags BBCode pour l'afficher en gras sur un forum.</em>
-return  <em>; Termine la hotkey. Le code en-dessous ne sera pas activé.</em></pre>
+return  <em>; This ends the hotkey. The code below this will not be executed when pressing the hotkey.</em></pre>
 
 <h2 id="s3">3 - Envoyer des Frappes</h2>
-<p>Vous avez donc décidé d'envoyer (taper) des touches à un programme. Nous pouvons le faire. Utilisez la commande <a href="commands/Send.htm">Send</a>. Cette commande envoie des appuis de touche, pour simuler la frappe d'un texte ou des frappes quelconques.</p>
+<p>Vous avez donc décidé d'envoyer (taper) des touches à un programme. Nous pouvons le faire. Utilisez la commande <a href="lib/Send.htm">Send</a>. Cette commande envoie des appuis de touche, pour simuler la frappe d'un texte ou des frappes quelconques.</p>
 <p>Mais avant de continuer, il convient d'aborder quelques problèmes couramment rencontrés.</p>
-<p>Comme pour les hotkeys, la commande Send a aussi des touches spéciales. <a href="commands/Send.htm">Vraiment beaucoup</a>. Voici les quatre symboles les plus courants :</p>
+<p>Comme pour les hotkeys, la commande Send a aussi des touches spéciales. <a href="lib/Send.htm">Vraiment beaucoup</a>. Voici les quatre symboles les plus courants :</p>
 <table class="info">
     <tr>
-        <th>Symbole</th>
-        <th>Description</th>
+        <th class="center">Symbole</th>
+        <th abbr="Descr">Description</th>
     </tr>
     <tr>
-        <td>!</td>
-        <td>Envoie la touche <kbd>Alt</kbd>. Par exemple, <code>Send, Ceci est du texte !a</code> enverrait les touches "This is text" puis appuierait sur <kbd>Alt</kbd>+<kbd>A</kbd>. <strong>Note</strong> : <code>!A</code> peut avoir dans certains programmes un effet différent de <code>!a</code>, car <code>!A</code> appuie sur <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>A</kbd> tandis que <code>!a</code> appuie sur <kbd>Alt</kbd>+<kbd>A</kbd>. Dans le doute, utiliser les minuscules.</td>
+        <td class="center bold">!</td>
+        <td>Sends <kbd>Alt</kbd>. Par exemple, <code>Send, Ceci est du texte !a</code> enverrait les touches "This is text" puis appuierait sur <kbd>Alt</kbd>+<kbd>A</kbd>. <strong>Note</strong> : <code>!A</code> peut avoir dans certains programmes un effet différent de <code>!a</code>, car <code>!A</code> appuie sur <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>A</kbd> tandis que <code>!a</code> appuie sur <kbd>Alt</kbd>+<kbd>A</kbd>. Dans le doute, utiliser les minuscules.</td>
     </tr>
     <tr>
-        <td>+</td>
-        <td>Envoie la touche <kbd>Shift</kbd> (majuscule). Par exemple, <code>Send, +abC</code> enverrait le texte "AbC", et <code>Send, !+a</code> appuierait sur <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>A</kbd>.</td>
+        <td class="center bold">+</td>
+        <td>Sends <kbd>Shift</kbd>. Par exemple, <code>Send, +abC</code> enverrait le texte "AbC", et <code>Send, !+a</code> appuierait sur <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>A</kbd>.</td>
     </tr>
     <tr>
-        <td>^</td>
-        <td>Envoie la touche <kbd>Control</kbd> (<kbd>Ctrl</kbd>). Par exemple, <code>Send, ^!a</code> appuierait sur <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>A</kbd>, et <code>Send, ^{Home}</code> enverrait <kbd>Ctrl</kbd>+<kbd>Home</kbd>. <strong>Note</strong> : <code>^A</code> peut avoir dans certains programmes un effet différent de <code>^a</code>, car <code>^A</code> appuie sur <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>A</kbd> tandis que <code>^a</code> appuie sur <kbd>Ctrl</kbd>+<kbd>A</kbd>. Dans le doute, utiliser les minuscules.</td>
+        <td class="center bold">^</td>
+        <td>Sends <kbd>Ctrl</kbd>. For example, <code>Send, ^!a</code> would press <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>A</kbd>, and <code>Send, ^{Home}</code> would send <kbd>Ctrl</kbd>+<kbd>Home</kbd>. <strong>Note</strong>: <code>^A</code> produces a different effect in some programs than <code>^a</code>. This is because <code>^A</code> presses <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>A</kbd> and <code>^a</code> presses <kbd>Ctrl</kbd>+<kbd>A</kbd>. Dans le doute, utiliser les minuscules.</td>
     </tr>
     <tr>
-        <td>#</td>
-        <td>Envoie la touche <kbd>Win</kbd> (la touche avec le logo Windows), ainsi <code>Send #e</code> maintiendrait appuyée la touche <kbd>Win</kbd> puis appuierait sur la lettre "e".</td>
+        <td class="center bold">#</td>
+        <td>Sends <kbd>Win</kbd> (the key with the Windows logo) therefore <code>Send #e</code> would hold down <kbd>Win</kbd> and then press <kbd>E</kbd>.</td>
     </tr>
 </table>
-<p>Le <a href="commands/Send.htm">gigantesque tableau sur la page de Send</a> montre à peu près toutes les touches spéciales intégrées à AutoHotkey. Par exemple : <code>{Enter}</code> et <code>{Space}</code>.</p>
+<p>Le <a href="lib/Send.htm">gigantesque tableau sur la page de Send</a> montre à peu près toutes les touches spéciales intégrées à AutoHotkey. Par exemple : <code>{Enter}</code> et <code>{Space}</code>.</p>
 <p class="warning"><strong>Attention :</strong> Ce tableau <b>ne</b> s'applique <b>pas</b> aux <a href="Hotkeys.htm">hotkeys</a>. C'est-à-dire, il n'y a pas à mettre <kbd>Ctrl</kbd> ou <kbd>Enter</kbd> (ou toute autre touche) entre accolades pour créer une hotkey.</p>
 <p>Un exemple de ce qu'il ne faut pas faire pour une hotkey :</p>
 <pre><em>; Pour une hotkey...
@@ -330,7 +328,7 @@ return
 LCtrl::
 Send, AutoHotkey
 return</pre>
-<p>Un problème courant est de penser que les accolades mises dans la documentation ne sont là que pour faire joli, alors qu'<b>elles sont nécessaires</b>. C'est la manière pour AutoHotkey de savoir que <code>{!}</code> veut dire "point d'exclamation" et pas "appuyer sur la touche <kbd>Alt</kbd>". Il faut donc penser à consulter le tableau sur la page de <a href="commands/Send.htm">Send</a> pour être certain que les accolades sont au bon endroit. Par exemple :</p>
+<p>Un problème courant est de penser que les accolades mises dans la documentation ne sont là que pour faire joli, alors qu'<b>elles sont nécessaires</b>. It's how AHK knows that <code>{!}</code> means "exclamation point" and not "press <kbd>Alt</kbd>". Il faut donc penser à consulter le tableau sur la page de <a href="lib/Send.htm">Send</a> pour être certain que les accolades sont au bon endroit. Par exemple :</p>
 <pre>Send, Ce texte a été écrit {!} <em>; Si le ! n'était pas entre accolades, AutoHotKey appuierait sur la touche Alt</em>
 </pre>
 <pre><em>; Comme ci-dessus, mais avec la touche entrée. AutoHotkey écrirait "Enter" si
@@ -365,23 +363,23 @@ Ligne 1
 Ligne 2
 Les pommes sont des fruits.
 )</pre>
-<p class="note"><strong>Note :</strong> Il y a différentes formes de Send. Chacune a ses particularités propres. Si une forme de Send n'est pas adaptée, essayer une autre forme de Send. Il suffit de remplacer le nom de la commande "Send" par un des noms suivants : SendRaw, SendInput, SendPlay, SendEvent. Pour plus de détails sur ce que fait chaque commande, <a href="commands/Send.htm">lire ceci</a>.</p>
+<p class="note"><strong>Note :</strong> Il y a différentes formes de Send. Chacune a ses particularités propres. Si une forme de Send n'est pas adaptée, essayer une autre forme de Send. Il suffit de remplacer le nom de la commande "Send" par un des noms suivants : SendRaw, SendInput, SendPlay, SendEvent. Pour plus de détails sur ce que fait chaque commande, <a href="lib/Send.htm">lire ceci</a>.</p>
 
 <h3 id="s31">a. Jeux </h3>
 <p class="warning"><strong>Important :</strong> Beaucoup de jeux, surtout les plus modernes, sont muni d'outils anti-triche. Des choses comme GameGuard, Hackshield, PunkBuster et plusieurs autres. Non seulement passer outre ces systèmes est une violation des termes de ces jeux et peut engendrer un ban, il est en plus compliqué de les contourner.</p>
 <p>Si un jeu dispose d'un système anti-triche et que les hotkeys, hotstrings et commandes Send ne fonctionnent pas, pas de chance. Bien qu'il existe des méthodes augmentant les chances de fonctionnement pour certains jeux, il n'y a pas de recette miracle <i>"faites que ça marche tout de suite !!!"</i>. Avant d'abandonner, <b>TOUT</b> essayer.</p>
 
-<p>Il y a aussi des problèmes avec DirectX. Si il est su qu'un jeu utilise DirectX et que le jeu pose problème, essayer les propositions détaillées dans la <a href="FAQ.htm#games">FAQ</a>. Davantage de problèmes liés à DirectX peuvent être rencontrés en cas d'utilisation de <a href="commands/PixelSearch.htm">PixelSearch</a>, <a href="commands/PixelGetColor.htm">PixelGetColor</a> ou <a href="commands/ImageSearch.htm">ImageSearch</a>. Les couleurs peuvent être obtenues noires (0x000000) peu importe la couleur cible. Vous devriez également essayer d'exécuter le jeu en mode fenêtré, si possible. Cela résout certains problèmes de DirectX.</p>
+<p>Il y a aussi des problèmes avec DirectX. Si il est su qu'un jeu utilise DirectX et que le jeu pose problème, essayer les propositions détaillées dans la <a href="FAQ.htm#games">FAQ</a>. Davantage de problèmes liés à DirectX peuvent être rencontrés en cas d'utilisation de <a href="lib/PixelSearch.htm">PixelSearch</a>, <a href="lib/PixelGetColor.htm">PixelGetColor</a> ou <a href="lib/ImageSearch.htm">ImageSearch</a>. Les couleurs peuvent être obtenues noires (0x000000) peu importe la couleur cible. Vous devriez également essayer d'exécuter le jeu en mode fenêtré, si possible. Cela résout certains problèmes de DirectX.</p>
 <p>Il n'y a pas de solution unique pour que AutoHotkey fonctionne dans tous les programmes. Si toutes les solutions tentées échouent, il est possible que AutoHotkey ne puisse simplement pas être utilisé.</p>
 
 <h2 id="s4">4 - Lancer Programmes &amp; Sites Web</h2>
-Pour lancer un programme comme <i>mspaint.exe, calc.exe, script.ahk</i> ou même un dossier, la commande <a href="commands/Run.htm">Run</a> peut être utilisée. Elle permet aussi d'ouvrir des URLs comme <a href="https://www.autohotkey.com/">https://www.autohotkey.com/</a>. Si l'ordinateur est paramétré pour lancer le type de programme à lancer, c'est très simple :
+<p>Pour lancer un programme comme <i>mspaint.exe, calc.exe, script.ahk</i> ou même un dossier, la commande <a href="lib/Run.htm">Run</a> peut être utilisée. Elle permet aussi d'ouvrir des URLs comme <a href="https://www.autohotkey.com/">https://www.autohotkey.com/</a>. Si l'ordinateur est paramétré pour lancer le type de programme à lancer, c'est très simple :</p>
 <pre><em>; Lancer un programme. Pour la plupart des programmes, il faut utiliser un chemin COMPLET :</em>
 Run, %A_ProgramFiles%\Un_Programme\Programme.exe
 
 <em>; Ouvrir un site web :</em>
 Run, https://www.autohotkey.com</pre>
-<p>Il y a aussi d'autres fonctionnalités avancées, comme les paramètres de ligne de commande et CLSID. Pour en apprendre plus à ce sujet, voir la page <a href="commands/Run.htm">Run</a>. </p>
+<p>Il y a aussi d'autres fonctionnalités avancées, comme les paramètres de ligne de commande et CLSID. Pour en apprendre plus à ce sujet, voir la page <a href="lib/Run.htm">Run</a>. </p>
 <p>Quelques exemples supplémentaires :</p>
 <pre><em>; Plusieurs programmes n'ont pas besoin d'un chemin complet, comme les programmes standards de Windows :</em>
 Run, notepad.exe
@@ -393,24 +391,24 @@ Run, %A_MyDocuments%
 <em>; Ouvrir des sites web :</em>
 Run, https://www.autohotkey.com
 Run, https://www.google.com</pre>
-<p class="note">Pour plus d'informations et d'examples, voir la page <a href="commands/Run.htm">Run</a>.</p>
+<p class="note">Pour plus d'informations et d'examples, voir la page <a href="lib/Run.htm">Run</a>.</p>
 
 <h2 id="s5">5 - Commandes vs. Fonctions()</h2>
 <p>AutoHotkey permet à un scripter d'écrire du code de deux principales manières : en utilisant des Commandes et des Fonctions.</p>
-<p class="note">Une liste de toutes les commandes et fonctions intégrées peut être trouvée <a href="commands/index.htm">ici</a>.</p>
-<h3>Commandes</h3>
+<p class="note">Une liste de toutes les commandes et fonctions intégrées peut être trouvée <a href="lib/index.htm">ici</a>.</p>
+<h3 id="Commands">Commandes</h3>
 <p>Une commande se reconnaît à sa syntaxe. Les commandes n'utilisent pas de parenthèses autour des paramètres comme le font les fonctions. Donc une commande ressemblerait à :</p>
 <pre>Commande, Parametre1, Parametre2, Parametre3</pre>
-<p>En utilisant des commandes, il est impossible de mettre plusieurs commandes sur une même ligne (sauf : <a href="commands/IfEqual.htm">IfEqual</a>). Il est impossible de mettre des commandes en paramètres d'autres commandes. Par exemple :</p>
+<p>En utilisant des commandes, il est impossible de mettre plusieurs commandes sur une même ligne (sauf : <a href="lib/IfEqual.htm">IfEqual</a>). Il est impossible de mettre des commandes en paramètres d'autres commandes. Par exemple :</p>
 <pre>MsgBox, Bonjour Run, notepad.exe   <em>; Incorrect</em>
 MsgBox, Bonjour, Run, notepad.exe  <em>; Incorrect</em>
 
 MsgBox, Bonjour      <em>; Correct</em>
 Run, notepad.exe</pre>
 
-Les commandes sont aussi différentes des fonctions au sens où elles utilisent une "syntaxe dépassée". Il <strong>faut</strong> donc utiliser des signes pourcentage autour d'une variable, comme <code>%Var%</code>, et tout texte ou nombre n'a pas besoin d'être entre guillemets, comme <code>Ceci est du texte</code>. De plus, il n'y a pas de calcul possible dans les paramètres, au contraire des fonctions.
+<p>Les commandes sont aussi différentes des fonctions au sens où elles utilisent une "syntaxe dépassée". Il <strong>faut</strong> donc utiliser des signes pourcentage autour d'une variable, comme <code>%Var%</code>, et tout texte ou nombre n'a pas besoin d'être entre guillemets, comme <code>Ceci est du texte</code>. De plus, il n'y a pas de calcul possible dans les paramètres, au contraire des fonctions.</p>
 <p class="note">Il est possible de faire des calculs dans les paramètres en forçant une expression avec un seul <code>%</code>, mais ce ne sera pas abordé ici.</p>
-<h3>Fonctions</h3>
+<h3 id="Functions">Fonctions</h3>
 <p>Comme indiqué ci-dessus, les fonctions sont différentes car elles utilisent des parenthèses. Une fonction typique ressemble à :</p>
 <pre>Fonction(Parametre1, Parametre2, Parametre3)</pre>
 <p>Les fonctions ont quelques principales différences :</p>
@@ -436,7 +434,7 @@ SubStr(A_Hour - 12, 2)</pre>
 <p>En résumé :</p>
 <pre><em>; Il y a des commandes :</em>
 MsgBox, Ceci est du texte.
-StringReplace, Output, Input, AutoHotkey, AutoHotKey, All
+StringReplace, Output, Input, AutoHotKey, AutoHotkey, All
 SendInput, C'est génial {!}{!}{!}
 
 <em>; Et voici des fonctions :</em>
@@ -445,7 +443,7 @@ FileExist(VariableContenantChemin)
 Output := SubStr("Génial je scripte !", 16)</pre>
 
 <h3 id="s51">a. Blocs de code</h3>
-<p>Les <a href="commands/Block.htm">blocs de code</a> sont des lignes de codes entre accolades (<code>{</code> et <code>}</code>). Ils regroupent une section de code et indiquent à AutoHotkey qu'ils forment une seule grande famille et doivent rester ensemble. Ils sont le plus souvent utilisés avec des fonctions et des structures de flux de contrôle comme <a href="commands/IfExpression.htm">If</a> et <a href="commands/Loop.htm">Loop</a>. Sans eux, seule la première ligne du bloc est appelée.</p>
+<p>Les <a href="lib/Block.htm">blocs de code</a> sont des lignes de codes entre accolades (<code>{</code> et <code>}</code>). Ils regroupent une section de code et indiquent à AutoHotkey qu'ils forment une seule grande famille et doivent rester ensemble. Ils sont le plus souvent utilisés avec des fonctions et des structures de flux de contrôle comme <a href="lib/IfExpression.htm">If</a> et <a href="lib/Loop.htm">Loop</a>. Sans eux, seule la première ligne du bloc est appelée.</p>
 <p>Dans le code suivant, les deux lignes ne sont exécutées que si <em>MaVar</em> vaut 5 :</p>
 <pre>if (MaVar = 5)
 {
@@ -522,7 +520,7 @@ MsgBox, Ici est 'l'extérieur' de l'instruction if. Pas besoin d'accolades puisq
 </ul>
 
 <h3 id="s62">b. Entrée utilisateur</h3>
-<p>Parfois il est souhaitable que l'utilisateur choisisse une valeur dans un but quelconque. Il y a plusieurs manières de faire, mais la plus simple est <a href="commands/InputBox.htm">InputBox</a>. Voici un exemple simple de comment poser quelques questions à l'utilisateur et utiliser les réponses :</p>
+<p>Parfois il est souhaitable que l'utilisateur choisisse une valeur dans un but quelconque. Il y a plusieurs manières de faire, mais la plus simple est <a href="lib/InputBox.htm">InputBox</a>. Voici un exemple simple de comment poser quelques questions à l'utilisateur et utiliser les réponses :</p>
 <pre>InputBox, VarSortie, Question 1, Quel est votre prénom ?
 if (VarSortie = "Bill")
     MsgBox, C'est un super nom`, %VarSortie%.
@@ -534,8 +532,8 @@ else
     MsgBox, %VarSortie%`, Cela m'attriste.</pre>
 
 <h3 id="s63">c. D'autres exemples ?</h3>
-<pre class="NoIndent"><a href="commands/MsgBox.htm">MsgBox</a>, 4,, Aimeriez-vous continuer ?
-<a href="commands/IfMsgBox.htm">IfMsgBox</a>, No
+<pre class="NoIndent"><a href="lib/MsgBox.htm">MsgBox</a>, 4,, Aimeriez-vous continuer ?
+<a href="lib/IfMsgBox.htm">IfMsgBox</a>, No
     return  <em>; Si c'est non (No), empêcher le code d'aller plus loin.</em>
 MsgBox, Vous avez choisi OUI.  <em>; Sinon, l'utilisateur a choisi oui.</em></pre>
 <pre class="NoIndent"><em>; Quelques exemples de quand utiliser ou non les signes pourcentage :</em>
@@ -596,7 +594,7 @@ if Var1 &lt; %Var2%  <em>; Sans parenthèses, le IF (si) est dépassé. Toutefoi
 <h3 id="s72">b. Utiliser les Objets</h3>
 <p>Il y a plein de manières d'utiliser les objets, y compris récupérer des valeurs, en définir, ajouter plus de valeurs, et bien plus.</p>
 
-<h4>Pour définir des valeurs :</h4>
+<h4 id="To_set_values">Pour définir des valeurs :</h4>
 <dl>
     <dt>Notation crochet (bracket)</dt>
     <dd>
@@ -610,7 +608,7 @@ if Var1 &lt; %Var2%  <em>; Sans parenthèses, le IF (si) est dépassé. Toutefoi
     </dd>
 </dl>
 
-<h4>Pour récupérer des valeurs :</h4>
+<h4 id="To_retrieve_values">Pour récupérer des valeurs :</h4>
 <dl>
     <dt>Notation crochet (bracket)</dt>
     <dd>
@@ -624,7 +622,7 @@ if Var1 &lt; %Var2%  <em>; Sans parenthèses, le IF (si) est dépassé. Toutefoi
     </dd>
 </dl>
 
-<h4>Pour ajouter des nouvelles clés et valeurs :</h4>
+<h4 id="To_add_new_keys_and_values">Pour ajouter des nouvelles clés et valeurs :</h4>
 <dl>
     <dt>Notation crochet (bracket)</dt>
     <dd>
@@ -648,12 +646,12 @@ if Var1 &lt; %Var2%  <em>; Sans parenthèses, le IF (si) est dépassé. Toutefoi
     </dd>
 </dl>
 
-<h4>Pour enlever des clés et valeurs :</h4>
+<h4 id="To_remove_keys_and_values">Pour enlever des clés et valeurs :</h4>
 <dl>
     <dt>Affecter la valeur vide</dt>
     <dd>
         <pre class="NoIndent">Banane.Consistance := ""</pre>
-        <p>La manière la plus simple d'enlever une valeur est de la modifier en valeur vide, en la définissant à <code>""</code>, aussi appelé <i>chaîne de caractère vide</i>. Ceci n'enlève pas la clé, mais la valeur apparaîtra indistincte d'une valeur non définie. Il est possible de voir que la clé existe encore en utilisant la méthode <a href="objects/Object.htm#HasKey">HasKey</a>, et la clé sera toujours traitée dans une boucle <a href="commands/For.htm">For</a>.</p>
+        <p>La manière la plus simple d'enlever une valeur est de la modifier en valeur vide, en la définissant à <code>""</code>, aussi appelé <i>chaîne de caractère vide</i>. Ceci n'enlève pas la clé, mais la valeur apparaîtra indistincte d'une valeur non définie. Il est possible de voir que la clé existe encore en utilisant la méthode <a href="lib/Object.htm#HasKey">HasKey</a>, et la clé sera toujours traitée dans une boucle <a href="lib/For.htm">For</a>.</p>
     </dd>
     <dt>Méthode Delete (supprimer)</dt>
     <dd>
@@ -680,7 +678,7 @@ if Var1 &lt; %Var2%  <em>; Sans parenthèses, le IF (si) est dépassé. Toutefoi
 
 <h3 id="s81">a. Les mystérieux crochets</h3>
 <p>A travers la documentation, ces deux symboles (<code>[</code> et <code>]</code>) peuvent être vus entourant du code dans la zone jaune de syntaxe en haut de presque toutes les pages. Tout ce qui est entre ces crochets est <b><i>OPTIONEL</i></b>. C'est-à-dire que ce qui est à l'intérieur peut ne pas être précisé si il n'y en a pas besoin. Dans l'écriture du code, il est très important de <b>NE PAS</b> écrire ces crochets dans le code.</p>
-<p>Sur la page <a href="commands/ControlGetText.htm">ControlGetText</a> par exemple :</p>
+<p>Sur la page <a href="lib/ControlGetText.htm">ControlGetText</a> par exemple :</p>
 <pre class="Syntax"><span class="func">ControlGetText</span>, VarSortie <span class="optional">, Control, WinTitle, WinText, ExcludeTitle, ExcludeText</span></pre>
 <p>Donc si cela suffit il est possible de simplement écrire :</p>
 <pre>ControlGetText, VarSortie</pre>

@@ -3,7 +3,7 @@
 <head>
 <title>ControlGet - Syntax &amp; Usage | AutoHotkey</title>
 <meta name="description" content="The ControlGet command retrieves various types of information about a control." />
-<meta name="ahk:equiv-v2" content="commands/Control.htm" />
+<meta name="ahk:equiv-v2" content="lib/Control.htm" />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -16,10 +16,10 @@
 <p>Retrieves various types of information about a control.</p>
 <pre class="Syntax"><span class="func">ControlGet</span>, OutputVar, <a href="#SubCommands">SubCommand</a> <span class="optional">, Value, Control, WinTitle, WinText, ExcludeTitle, ExcludeText</span></pre>
 
-<h2>Parameters</h2>
+<h2 id="Parameters">Parameters</h2>
 <dl>
   <dt>VarSortie</dt>
-  <dd>The name of the variable in which to store the result of <em>SubCommand</em>.</dd>
+  <dd>The name of the output variable in which to store the result of <em>SubCommand</em>.</dd>
 
   <dt>SubCommand, Value</dt>
   <dd>These are dependent upon each other and their usage is described <a href="#SubCommands">below</a>.</dd>
@@ -27,7 +27,7 @@
   <dt>Control</dt>
   <dd>
     <p>Can be either ClassNN (the classname and instance number of the control) or the control's text, both of which can be determined via Window Spy. When using text, the matching behavior is determined by <a href="SetTitleMatchMode.htm">SetTitleMatchMode</a>. If this parameter is blank, the target window's topmost control will be used.</p>
-    <p>To operate upon a control's HWND (window handle), leave the <em>Control</em> parameter blank and specify <code>ahk_id %ControlHwnd%</code> for the <em>WinTitle</em> parameter (this also works on hidden controls even when <a href="DetectHiddenWindows.htm">DetectHiddenWindows</a> is Off). The HWND of a control is typically retrieved via <a href="ControlGet.htm#Hwnd">ControlGet Hwnd</a>, <a href="MouseGetPos.htm">MouseGetPos</a>, or <a href="DllCall.htm">DllCall()</a>.</p>
+    <p>To operate upon a control's HWND (window handle), leave the <em>Control</em> parameter blank and specify <code>ahk_id %ControlHwnd%</code> for the <em>WinTitle</em> parameter (this also works on hidden controls even when <a href="DetectHiddenWindows.htm">DetectHiddenWindows</a> is Off). The HWND of a control is typically retrieved via <a href="#Hwnd">ControlGet Hwnd</a>, <a href="MouseGetPos.htm">MouseGetPos</a>, or <a href="DllCall.htm">DllCall()</a>.</p>
   </dd>
 
   <dt>WinTitle</dt>
@@ -67,10 +67,14 @@
 <p>Retrieves a list of items from a ListView, ListBox, ComboBox, or DropDownList. For ListView, additional options can be specified.</p>
 <pre class="Syntax"><span class="func">ControlGet</span>, OutputVar, List <span class="optional">, Options, Control, WinTitle, WinText, ExcludeTitle, ExcludeText</span></pre>
 
-<h4>ListView</h4>
+<h4 id="ListView">ListView</h4>
 <p>If the <em>Options</em> parameter is blank or omitted, all the text in the control is retrieved. Each row except the last will end with a linefeed character (`n). Within each row, each field (column) except the last will end with a tab character (`t).</p>
 <p>Specify for <em>Options</em> zero or more of the following words, each separated from the next with a space or tab:</p>
 <table class="info">
+  <tr>
+    <th>Option</th>
+    <th abbr="Descr">Description</th>
+  </tr>
   <tr>
     <td>Selected</td>
     <td>Retrieves only the selected (highlighted) rows rather than all rows. If none, <em>OutputVar</em> is made blank.</td>
@@ -112,9 +116,9 @@ Loop, Parse, SelectedItems, `n  <em>; Rows are delimited by linefeeds (`n).</em>
         MsgBox Row #%RowNumber% Col #%A_Index% is %A_LoopField%.
 }</pre>
 <p>On a related note, the columns in a ListView can be resized via <a href="PostMessage.htm">SendMessage</a> as shown in this example:</p>
-<pre>SendMessage, 4126, 0, 80, SysListView321, <i>WinTitle</i>  <em>; 4126 is LVM_SETCOLUMNWIDTH.</em></pre>
+<pre>SendMessage, 0x101E, 0, 80, SysListView321, <i>WinTitle</i>  <em>; 0x101E is LVM_SETCOLUMNWIDTH.</em></pre>
 <p>In the above, 0 indicates the first column (specify 1 for the second, 2 for the third, etc.) Also, 80 is the new width. Replace 80 with -1 to autosize the column. Replace it with -2 to do the same but also take into account the header text width.</p>
-<h4>ListBox, ComboBox, DropDownList</h4>
+<h4 id="ListBox_ComboBox_DropDownList">ListBox, ComboBox, DropDownList</h4>
 <p>All the text is retrieved from the control (that is, the ListView options above such as <em>Count</em> and <em>Selected</em> are not supported).</p>
 <p>Each item except the last will be terminated by a linefeed character (`n). To access the items individually, use a <a href="LoopParse.htm">parsing loop</a> as in this example:</p>
 <pre>ControlGet, Items, List,, ComboBox1, <i>WinTitle</i>
@@ -149,8 +153,8 @@ TabCount := ErrorLevel</pre>
 <p>Retrieves the name of the currently selected entry in a ListBox or ComboBox.</p>
 <pre class="Syntax"><span class="func">ControlGet</span>, OutputVar, Choice <span class="optional">,, Control, WinTitle, WinText, ExcludeTitle, ExcludeText</span></pre>
 <p>To instead retrieve the position of the selected item, follow this example (use only one of the first two lines):</p>
-<pre><a href="PostMessage.htm">SendMessage</a>, 0x188, 0, 0, ListBox1, <i>WinTitle</i>  <em>; 0x188 is LB_GETCURSEL (for a ListBox).</em>
-<a href="PostMessage.htm">SendMessage</a>, 0x147, 0, 0, ComboBox1, <i>WinTitle</i>  <em>; 0x147 is CB_GETCURSEL (for a DropDownList or ComboBox).</em>
+<pre><a href="PostMessage.htm">SendMessage</a>, 0x0188, 0, 0, ListBox1, <i>WinTitle</i>  <em>; 0x0188 is LB_GETCURSEL (for a ListBox).</em>
+<a href="PostMessage.htm">SendMessage</a>, 0x0147, 0, 0, ComboBox1, <i>WinTitle</i>  <em>; 0x0147 is CB_GETCURSEL (for a DropDownList or ComboBox).</em>
 ChoicePos := ErrorLevel&lt;&lt;32&gt;&gt;32  <em>; Convert UInt to Int to have -1 if there is no item selected.</em>
 ChoicePos += 1  <em>; Convert from 0-based to 1-based, i.e. so that the first item is known as 1, not 0.</em></pre>
 
@@ -194,27 +198,27 @@ ChoicePos += 1  <em>; Convert from 0-based to 1-based, i.e. so that the first it
 <pre class="Syntax"><span class="func">ControlGet</span>, OutputVar, Hwnd <span class="optional">,, Control, WinTitle, WinText, ExcludeTitle, ExcludeText</span></pre>
 <p>Par exemple : <code>ControlGet, OutputVar, Hwnd,, Edit1, <i>WinTitle</i></code>. A control's HWND is often used with <a href="PostMessage.htm">PostMessage</a>, <a href="PostMessage.htm">SendMessage</a>, and <a href="DllCall.htm">DllCall()</a>. On a related note, a control's HWND can also be retrieved via <a href="MouseGetPos.htm">MouseGetPos</a>. Finally, a control's HWND can be used directly as an <a href="../misc/WinTitle.htm#ahk_id">ahk_id WinTitle</a> (this also works on hidden controls even when <a href="DetectHiddenWindows.htm">DetectHiddenWindows</a> is Off).</p>
 
-<h2>Error Handling</h2>
+<h2 id="Error_Handling">Error Handling</h2>
 <p><span class="ver">[v1.1.04+]</span>: This command is able to throw an exception on failure. For more information, see <a href="Catch.htm#RuntimeErrors">Runtime Errors</a>.</p>
 <p>Upon success, <a href="../misc/ErrorLevel.htm">ErrorLevel</a> is set to 0. If a problem occurred -- such as a nonexistent window or control -- <a href="../misc/ErrorLevel.htm">ErrorLevel</a> is set to 1 and <em>OutputVar</em> is made blank.</p>
 
-<h2>Remarques</h2>
+<h2 id="Remarks">Remarques</h2>
 <p>Unlike commands that change a control, ControlGet does not have an automatic delay; that is, <a href="SetControlDelay.htm">SetControlDelay</a> does not affect it.</p>
 <p>To discover the ClassNN or HWND of the control that the mouse is currently hovering over, use <a href="MouseGetPos.htm">MouseGetPos</a>. To retrieve a list of all controls in a window, use <a href="WinGet.htm#ControlList">WinGet ControlList</a>.</p>
 <p>Window titles and text are case sensitive. Hidden windows are not detected unless <a href="DetectHiddenWindows.htm">DetectHiddenWindows</a> has been turned on.</p>
 
-<h2>Related</h2>
+<h2 id="Related">Related</h2>
 <p><a href="Control.htm">Control</a>, <a href="GuiControlGet.htm">GuiControlGet</a>, <a href="ControlMove.htm">ControlMove</a>, <a href="ControlGetText.htm">ControlGetText</a>, <a href="ControlSetText.htm">ControlSetText</a>, <a href="ControlGetPos.htm">ControlGetPos</a>, <a href="ControlClick.htm">ControlClick</a>, <a href="ControlFocus.htm">ControlFocus</a>, <a href="ControlSend.htm">ControlSend</a>, <a href="WinGet.htm">WinGet</a></p>
 
-<h2>Exemples</h2>
+<h2 id="Examples">Exemples</h2>
 
 <div class="ex" id="ExLine">
-<p><a href="#ExLine">#1</a>: Retrieves the first line of the first Edit control:</p>
+<p><a class="ex_number" href="#ExLine"></a> Retrieves the first line of the first Edit control.</p>
 <pre>ControlGet, OutputVar, Line, 1, Edit1, Some Window Title</pre>
 </div>
 
 <div class="ex" id="ExTab">
-<p><a href="#ExTab">#2</a>: Retrieves the currently active tab of the first Tab control:</p>
+<p><a class="ex_number" href="#ExTab"></a> Retrieves the currently active tab of the first Tab control.</p>
 <pre>ControlGet, WhichTab, Tab,, SysTabControl321, Some Window Title
 if ErrorLevel
     MsgBox There was a problem.

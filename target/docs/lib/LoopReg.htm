@@ -16,7 +16,7 @@
 <h2 id="new">New Syntax <span class="ver">[v1.1.21+]</span></h2>
 <pre class="Syntax"><span class="func">Loop, Reg</span>, KeyName <span class="optional">, Mode</span></pre>
 
-<h3>Parameters</h3>
+<h3 id="New_Parameters">Parameters</h3>
 <dl>
 
   <dt>Reg</dt>
@@ -27,10 +27,13 @@
       <p>This must start with HKEY_LOCAL_MACHINE, HKEY_USERS, HKEY_CURRENT_USER, HKEY_CLASSES_ROOT, or HKEY_CURRENT_CONFIG (or the abbreviations for each of these, such as HKLM). To access a <a href="#remote">remote registry</a>, prepend the computer name and a colon, as in this example: \\workstation01:HKEY_LOCAL_MACHINE</p></dd>
 
   <dt>Mode</dt>
-  <dd><p>Zero or more of the following letters:</p>
-      <p><code>K</code>: Include keys.<br>
-      <code>V</code>: Include values. Values are also included if both K and V are omitted.<br>
-      <code>R</code>: Recurse into subkeys. If R is omitted, keys and values within subkeys of <em>KeyName</em> are not included.</p></dd>
+  <dd><p>If blank or omitted, only values are included and subkeys are not recursed into. Otherwise, specify one or more of the following letters:</p>
+    <ul>
+      <li>K = Include keys.</li>
+      <li>V = Include values. Values are also included if both K and V are omitted.</li>
+      <li>R = Recurse into subkeys. If R is omitted, keys and values within subkeys of <em>KeyName</em> are not included.</li>
+    </ul>
+  </dd>
 
 </dl>
 
@@ -38,7 +41,7 @@
 <p class="warning"><strong>Deprecated:</strong> This syntax is not recommended for use in new scripts. Use the <a href="#new">new syntax</a> instead.</p>
 <pre class="Syntax"><span class="func">Loop</span>, RootKey <span class="optional">, Key, IncludeSubkeys?, Recurse?</span></pre>
 
-<h3>Parameters</h3>
+<h3 id="Old_Parameters">Parameters</h3>
 <dl>
 
   <dt>RootKey</dt>
@@ -49,20 +52,32 @@
   <dd><p>The name of the key (e.g. Software\SomeApplication). If blank or omitted, the contents of <em>RootKey</em> will be retrieved.</p></dd>
   
   <dt>IncludeSubkeys?</dt>
-  <dd><p>0 (default) Subkeys contained within <em>Key</em> are not retrieved (only the values).<br>
-      1 All values and subkeys are retrieved.<br>
-      2 Only the subkeys are retrieved (not the values).</p></dd>
+  <dd><p>If blank or omitted, it defaults to 0 (only values are retrieved). Otherwise, specify one of the following digits:</p>
+    <ul>
+      <li>0 = Subkeys contained within <em>Key</em> are not retrieved (only the values).</li>
+      <li>1 = All values and subkeys are retrieved.</li>
+      <li>2 = Only the subkeys are retrieved (not the values).</li>
+    </ul>
+  </dd>
 
   <dt>Recurse?</dt>
-  <dd>0 (default) Subkeys are not recursed into.<br>
-      1 Subkeys are recursed into, so that all values and subkeys contained therein are retrieved.</dd>
+  <dd><p>If blank or omitted, it defaults to 0 (subkeys are not recursed into). Otherwise, specify one of the following digits:</p>
+    <ul>
+      <li>0 = Subkeys are not recursed into.</li>
+      <li>1 = Subkeys are recursed into, so that all values and subkeys contained therein are retrieved.</li>
+    </ul>
+  </dd>
 
 </dl>
 
-<h2>Remarques</h2>
+<h2 id="Remarks">Remarques</h2>
 <p>A registry-loop is useful when you want to operate on a collection registry values or subkeys, one at a time. The values and subkeys are retrieved in reverse order (bottom to top) so that <a href="RegDelete.htm">RegDelete</a> can be used inside the loop without disrupting the loop.</p>
 <p id="vars">The following variables exist within any registry-loop. If an inner registry-loop is enclosed by an outer registry-loop, the innermost loop's registry item will take precedence:</p>
 <table class="info">
+  <tr>
+    <th abbr="Var">Variable</th>
+    <th abbr="Descr">Description</th>
+  </tr>
   <tr>
     <td>A_LoopRegName</td>
     <td>Name of the currently retrieved item, which can be either a value name or the name of a subkey. Value names displayed by Windows RegEdit as "(Default)" will be retrieved if a value has been assigned to them, but A_LoopRegName will be blank for them.</td>
@@ -87,15 +102,19 @@
 <p>When used inside a registry-loop, the following commands can be used in a simplified way to indicate that the currently retrieved item should be operated upon:</p>
 <table class="info">
   <tr>
-    <td style="width:21%"><a href="RegRead.htm">RegRead</a>, OutputVar</td>
+    <th style="min-width: 11em;">Syntax</th>
+    <th abbr="Descr">Description</th>
+  </tr>
+  <tr>
+    <td><code><a href="RegRead.htm">RegRead</a>, OutputVar</code></td>
     <td>Reads the current item. If the current item is a key, ErrorLevel will be set to 1 and <em>OutputVar</em> will be made empty.</td>
   </tr>
   <tr>
-    <td><a href="RegWrite.htm">RegWrite</a> [, Value]</td>
+    <td><code><a href="RegWrite.htm">RegWrite</a>, Value</code><br><code><a href="RegWrite.htm">RegWrite</a></code></td>
     <td>Writes to the current item. If <em>Value</em> is omitted, the item will be made 0 or blank depending on its type. If the current item is a key, ErrorLevel will be set to 1 and there will be no other effect.</td>
   </tr>
   <tr>
-    <td><a href="RegDelete.htm">RegDelete</a></td>
+    <td><code><a href="RegDelete.htm">RegDelete</a></code></td>
     <td>Deletes the current item. If the current item is a key, it will be deleted along with any subkeys and values it contains.</td>
   </tr>
 </table>
@@ -110,18 +129,18 @@
 </ul>
 <p>See <a href="Loop.htm">Loop</a> for information about <a href="Block.htm">Blocks</a>, <a href="Break.htm">Break</a>, <a href="Continue.htm">Continue</a>, and the A_Index variable (which exists in every type of loop).</p>
 
-<h2>Related</h2>
+<h2 id="Related">Related</h2>
 <p><a href="Loop.htm">Loop</a>, <a href="Break.htm">Break</a>, <a href="Continue.htm">Continue</a>, <a href="Block.htm">Blocks</a>, <a href="RegRead.htm">RegRead</a>, <a href="RegWrite.htm">RegWrite</a>, <a href="RegDelete.htm">RegDelete</a>, <a href="SetRegView.htm">SetRegView</a></p>
 
-<h2>Exemples</h2>
+<h2 id="Examples">Exemples</h2>
 <div class="ex" id="ExRegDelete">
-<p><a href="#ExRegDelete">#1</a>: Delete Internet Explorer's history of URLs typed by the user:</p>
+<p><a class="ex_number" href="#ExRegDelete"></a> Deletes Internet Explorer's history of URLs typed by the user.</p>
 <pre>Loop, HKEY_CURRENT_USER, Software\Microsoft\Internet Explorer\TypedURLs
     RegDelete</pre>
 </div>
 
 <div class="ex" id="ExBasic">
-<p><a href="#ExBasic">#2</a>: A working test script:</p>
+<p><a class="ex_number" href="#ExBasic"></a> A working test script.</p>
 <pre>Loop, Reg, HKEY_CURRENT_USER\Software\Microsoft\Windows, KVR
 {
     if (A_LoopRegType = "key")
@@ -138,7 +157,7 @@
 </div>
 
 <div class="ex" id="ExRegSearch">
-<p><a href="#ExRegSearch">#3</a>: A working example to recursively search the entire registry for particular value(s).</p>
+<p><a class="ex_number" href="#ExRegSearch"></a> Recursively searches the entire registry for particular value(s).</p>
 <pre>SetBatchLines -1  <em>; Makes searching occur at maximum speed.</em>
 RegSearchTarget := "Notepad"  <em>; Tell the subroutine what to search for.</em>
 Gosub, RegSearch

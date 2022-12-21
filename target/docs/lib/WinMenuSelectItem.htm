@@ -3,7 +3,7 @@
 <head>
 <title>WinMenuSelectItem - Syntax &amp; Usage | AutoHotkey</title>
 <meta name="description" content="The WinMenuSelectItem command invokes a menu item from the menu bar of the specified window." />
-<meta name="ahk:equiv-v2" content="commands/MenuSelect.htm" />
+<meta name="ahk:equiv-v2" content="lib/MenuSelect.htm" />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -16,7 +16,7 @@
 <p>Invokes a menu item from the menu bar of the specified window.</p>
 
 <pre class="Syntax"><span class="func">WinMenuSelectItem</span>, WinTitle, WinText, Menu <span class="optional">, SubMenu1, SubMenu2, SubMenu3, SubMenu4, SubMenu5, SubMenu6, ExcludeTitle, ExcludeText</span></pre>
-<h2>Parameters</h2>
+<h2 id="Parameters">Parameters</h2>
 <dl>
 
   <dt>WinTitle</dt>
@@ -53,11 +53,11 @@
 
 </dl>
 
-<h2>Error Handling</h2>
+<h2 id="Error_Handling">Error Handling</h2>
 <p><span class="ver">[v1.1.04+]</span>: This command is able to throw an exception on failure. For more information, see <a href="Catch.htm#RuntimeErrors">Runtime Errors</a>.</p>
 <p><a href="../misc/ErrorLevel.htm">ErrorLevel</a> is set to 1 if there was a problem or 0 otherwise.</p>
 
-<h2>Remarques</h2>
+<h2 id="Remarks">Remarques</h2>
 <p>For this command to work, the target window need not be active. However, some windows might need to be in a <a href="WinRestore.htm">non-minimized</a> state.</p>
 <p>This command <strong>will not work</strong> with applications that use non-standard menu bars. Examples include Microsoft Outlook and Outlook Express, which use disguised toolbars for their menu bars. In these cases, consider using <a href="ControlSend.htm">ControlSend</a> or <a href="PostMessage.htm">PostMessage</a>, which should be able to interact with some of these non-standard menu bars.</p>
 <p>The menu name parameters can also specify positions. This method exists to support menus that don't contain text (perhaps because they contain pictures of text rather than actual text). Position 1&amp; is the first menu item (e.g. the File menu), position 2&amp; is the second menu item (e.g. the Edit menu), and so on. Menu separator lines count as menu items for the purpose of determining the position of a menu item.</p>
@@ -71,19 +71,28 @@ WinMenuSelectItem ahk_exe cmd.exe,, 0&amp;, Edit, Paste</pre>
 <p class="warning"><strong>Caution:</strong> Use this only on windows which have custom items in their system menu.</p>
 <p>If the window does not already have a custom system menu, a copy of the standard system menu will be created and assigned to the target window as a side effect. This copy is destroyed by the system when the script exits, leaving other scripts unable to access it. Therefore, avoid using 0&amp; for the standard items which appear on all windows. Instead, post the <a href="https://msdn.microsoft.com/library/ms646360">WM_SYSCOMMAND</a> message directly. Par exemple :</p>
 <pre><em>; Like "<a href="WinMinimize.htm">WinMinimize</a> A", but also play the system sound for minimizing.</em>
-WM_SYSCOMMAND := 0x112
+WM_SYSCOMMAND := 0x0112
 SC_MINIMIZE := 0xF020
 PostMessage WM_SYSCOMMAND, SC_MINIMIZE, 0,, A</pre>
 
-<h2>Related</h2>
+<h2 id="Related">Related</h2>
 <p><a href="ControlSend.htm">ControlSend</a>, <a href="PostMessage.htm">PostMessage</a></p>
-<h2>Exemples</h2>
+<h2 id="Examples">Exemples</h2>
 <div class="ex" id="ExBasic">
-<p><a href="#ExBasic">#1</a>: This will select File-&gt;Open in Notepad:</p>
-<pre>WinMenuSelectItem, Untitled - Notepad, , File, Open
+<p><a class="ex_number" href="#ExBasic"></a> Selects <code class="no-highlight">File -&gt; Open</code> in Notepad. This example may fail on Windows 11 or later, as it requires the classic version of Notepad.</p>
+<pre>WinMenuSelectItem, Untitled - Notepad,, File, Open</pre>
+</div>
 
-<em>; Same as above except it's done by position vs. name:</em>
-WinMenuSelectItem, Untitled - Notepad, , 1&amp;, 2&amp;</pre>
+<div class="ex" id="ExPos">
+<p><a class="ex_number" href="#ExPos"></a> Same as above except it is done by position instead of name. On Windows 10, 2&amp; must be replaced with 3&amp; due to the new "New Window" menu item. This example may fail on Windows 11 or later, as it requires the classic version of Notepad.</p>
+<pre>WinMenuSelectItem, Untitled - Notepad,, 1&amp;, 2&amp;</pre>
+</div>
+
+<div class="ex" id="ExMainWin">
+<p><a class="ex_number" href="#ExMainWin"></a> Selects <code class="no-highlight">View -&gt; Lines most recently executed</code> in the <a href="../Program.htm#main-window">main window</a>.</p>
+<pre>#Persistent
+WinShow, ahk_class AutoHotkey
+WinMenuSelectItem, ahk_class AutoHotkey,, View, Lines most recently executed</pre>
 </div>
 
 </body>

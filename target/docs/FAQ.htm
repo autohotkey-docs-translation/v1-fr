@@ -73,19 +73,21 @@
 <p>Les guillemets (") ont un sens particulier seulement dans les <a href="Variables.htm#Expressions">expressions</a>. Partout ailleurs, ils sont traités littéralement comme s'ils étaient un caractère normal. Toutefois, quand un script lance un programme ou un document, le système d'exploitation a souvent besoin des guillemets autour de tout paramètre de ligne de commande qui contient des espaces, comme dans cet exemple : <code>Run, Notepad.exe "C:\Mes Documents\Liste Adresses.txt"</code>.</p>
 <h3 id="percent">Quand exactement utiliser les signes pourcentage autour d'un nom de variable ?</h3>
 <p>Les noms de variables sont toujours entourés de signes pourcentage sauf dans les cas illustrés en <strong>gras</strong> ci-dessous :</p>
-<p>1) Dans les paramètres qui sont des variables d'entrée ou de sortie : <code><a href="commands/StringLen.htm">StringLen</a>, <strong>VarSortie</strong>, <strong>VarEntree</strong></code><br>
-  2) Du côté gauche d'une affectation : <code><strong>Var</strong> = 123abc</code><br>
-  3) Du côté gauche d'une <a href="commands/IfEqual.htm">instruction if traditionnelle (non-expression)</a> : <code>If <strong>Var1</strong> &lt; %Var2%</code><br>
-4) Partout dans les <a href="Variables.htm#Expressions">expressions</a>. Par exemple :</p>
-<pre>If (<strong>Var1</strong> &lt;&gt; <strong>Var2</strong>)
-    <strong>Var1 <a href="commands/SetExpression.htm">:=</a> Var2</strong> + 100</pre>
+<ul>
+  <li>Dans les paramètres qui sont des variables d'entrée ou de sortie : <code><a href="lib/StringLen.htm">StringLen</a>, <strong>VarSortie</strong>, <strong>VarEntree</strong></code></li>
+  <li>Du côté gauche d'une affectation : <code><strong>Var</strong> = 123abc</code></li>
+  <li>Du côté gauche d'une <a href="lib/IfEqual.htm">instruction if traditionnelle (non-expression)</a> : <code>If <strong>Var1</strong> &lt; %Var2%</code></li>
+  <li>Partout dans les <a href="Variables.htm#Expressions">expressions</a>. Par exemple :
+  <pre>If (<strong>Var1</strong> &lt;&gt; <strong>Var2</strong>)
+      <strong>Var1 <a href="lib/SetExpression.htm">:=</a> Var2</strong> + 100</pre></li>
+</ul>
 <p>Pour des explications plus poussées de comment utiliser les signes pourcentage, voir <a href="Language.htm#legacy-syntax">Syntaxe Dépassée</a> et <a href="Language.htm#dynamic-variables">Variables Dynamiques</a>. Les signes pourcentage peuvent aussi avoir d'autres interprétations :</p>
 <ul>
   <li>Le <a href="Language.htm#-expression">préfixe pourcent-espace</a> permet d'interpréter un paramètre comme une expression.</li>
-  <li>Les signes pourcentage <a href="commands/_EscapeChar.htm#Remarks">échappés</a> (<code>`%</code>) et ceux dans les <a href="Language.htm#strings">chaînes de caractères littérales entre guillemets</a> n'ont pas de sens particulier (ils sont interprétés littéralement comme des signes pourcentage).</li>
+  <li>Les signes pourcentage <a href="misc/EscapeChar.htm">échappés</a> (<code>`%</code>) et ceux dans les <a href="Language.htm#strings">chaînes de caractères littérales entre guillemets</a> n'ont pas de sens particulier (ils sont interprétés littéralement comme des signes pourcentage).</li>
 </ul>
-<h3 id="esc">Quand <a href="commands/_EscapeChar.htm">échapper</a> les signes pourcentage et les virgules ?</h3>
-<p>Les signes pourcentage littéraux doivent être <a href="commands/_EscapeChar.htm">échappés</a> en les précédant d'un accent grave ou backtick. Par exemple : <code>MsgBox Le pourcentage actuel est 25`%.</code> Les virgules littérales doivent aussi être échappées (<code>`,</code>) sauf si elles sont utilisées dans une <a href="commands/MsgBox.htm">MsgBox</a> ou dans le dernier paramètre de n'importe quelle commande (auquel cas le backtick peut être mis mais est non nécessaire).</p>
+<h3 id="esc">Quand <a href="misc/EscapeChar.htm">échapper</a> les signes pourcentage et les virgules ?</h3>
+<p>Les signes pourcentage littéraux doivent être <a href="misc/EscapeChar.htm">échappés</a> en les précédant d'un accent grave ou backtick. Par exemple : <code>MsgBox Le pourcentage actuel est 25`%.</code> Les virgules littérales doivent aussi être échappées (<code>`,</code>) sauf si elles sont utilisées dans une <a href="lib/MsgBox.htm">MsgBox</a> ou dans le dernier paramètre de n'importe quelle commande (auquel cas le backtick peut être mis mais est non nécessaire).</p>
 <p> Quand des virgules ou des signes pourcentage sont entourés de guillemets dans une <a href="Variables.htm#Expressions">expression</a>, le backtick peut être mis mais n'est pas nécessaire. Par exemple : <code>Var := "15%"</code>.</p>
 
 <h2 id="general-troubleshooting">Dépannage Général</h2>
@@ -113,7 +115,7 @@
 <p>Il peut aussi être nécessaire de réparer les valeurs par défaut du registre, soit en réinstallant AutoHotkey soit en lançant AutoHotkey Setup (depuis le menu Démarrer) et en sélectionnant <em>apply</em> vers le haut de la fenêtre.</p>
 
 <h3 id="autoexec">Pourquoi certaines lignes de mon script ne s'exécutent-elles jamais ?</h3>
-<p>Toutes les lignes à exécuter immédiatement au lancement du script devraient apparaître tout en haut du script, avant le premier <a href="Hotkeys.htm">hotkey</a>, <a href="Hotstrings.htm">hotstring</a>, ou <a href="commands/Return.htm">Return</a>. Pour des détails, voir <a href="Scripts.htm#auto">section d'auto-exécution</a>.</p>
+<p>Toutes les lignes à exécuter immédiatement au lancement du script devraient apparaître tout en haut du script, avant le premier <a href="Hotkeys.htm">hotkey</a>, <a href="Hotstrings.htm">hotstring</a>, ou <a href="lib/Return.htm">Return</a>. Pour des détails, voir <a href="Scripts.htm#auto">section d'auto-exécution</a>.</p>
 <p>De plus, une <a href="Hotkeys.htm">hotkey</a> qui exécute plus d'une ligne doit avoir sa première ligne <em>sous</em> la hotkey, pas sur la même ligne. Par exemple :</p>
 <pre>#space::  <em>; Win+Espace</em>
 Run Notepad
@@ -128,13 +130,12 @@ return</pre>
   <li>Certaines fenêtres refusent d'être automatisées (par exemple le Gestionnaire de périphériques ignore Send).</li>
 </ul>
 <p>En cas de changement de système d'exploitation, il y a des chances que quelque chose d'autre ait aussi changé et affecte le script. Par exemple, en cas de changement d'ordinateur, d'autres drivers ou logiciels peuvent être installés. Si en plus AutoHotkey a été mis à jour vers une version plus récente, trouver la version précédente et lire le <a href="AHKL_ChangeLog.htm">journal des changements (changelog)</a> et <a href="Compat.htm">les notes de compatibilité</a>.</p>
-<p><a href="commands/SoundGet.htm">SoundGet</a>, <a href="commands/SoundSet.htm">SoundSet</a>, <a href="commands/SoundGetWaveVolume.htm">SoundGetWaveVolume</a> et <a href="commands/SoundSetWaveVolume.htm">SoundSetWaveVolume</a> se comportement différemment sur Vista et au-delà que sur des versions plus vieilles de Windows. En particulier, les nombres de périphérique sont différents et certains composants peuvent être indisponibles. Le comportement dépend des pilotes audio, qui sont forcément différents de ceux utilisés sous XP. Le <a href="commands/SoundSet.htm#Ex">script d'analyse carte son</a> permet de trouver les nombres de périphérique corrects.</p>
+<p><a href="lib/SoundGet.htm">SoundGet</a>, <a href="lib/SoundSet.htm">SoundSet</a>, <a href="lib/SoundGetWaveVolume.htm">SoundGetWaveVolume</a> et <a href="lib/SoundSetWaveVolume.htm">SoundSetWaveVolume</a> se comportement différemment sur Vista et au-delà que sur des versions plus vieilles de Windows. En particulier, les nombres de périphérique sont différents et certains composants peuvent être indisponibles. Le comportement dépend des pilotes audio, qui sont forcément différents de ceux utilisés sous XP. Le <a href="lib/SoundSet.htm#Ex">script d'analyse carte son</a> permet de trouver les nombres de périphérique corrects.</p>
 <p>Se référer également à la question suivante :</p>
 
 <h3 id="uac">Comment contourner les problèmes engendrés par le contrôle du compte d'utilisateur (UAC) ?</h3>
-<p>Le <a href="https://fr.wikipedia.org/wiki/User_Account_Control">contrôle du compte d'utilisateur</a> est une cause courante de problèmes, surtout lors du passage de Windows XP/Vista/7 à Vista/7/8/10. Bien que présent depuis Windows Vista, il est activé par défaut sur les nouveaux systèmes ou nouvelles installations, et est plus difficile à désactiver à partir de Windows 8.</p>
-<p>Par défaut, le contrôle du compte d'utilisateur protège les programmes "élevés" (c'est-à-dire, les programmes exécutés en tant qu'administrateurs) d'être automatisés par des programmes non-élevés, puisque cela leur permettrait de contourner des restrictions de sécurité. Les hotkeys sont aussi bloquées, donc par exemple, un programme non-élevé ne peut pas espionner les entrées destinées à un programme élevé.</p>
-<p>Le contrôle du compte d'utilisateur peut aussi empêcher <a href="commands/Send.htm#SendPlayDetail">SendPlay</a> et <a href="commands/BlockInput.htm">BlockInput</a> de fonctionner.</p>
+<p>By default, <a href="https://en.wikipedia.org/wiki/User_Account_Control">User Account Control (UAC)</a> protects "elevated" programs (that is, programs which are running as admin) from being automated by non-elevated programs, since that would allow them to bypass security restrictions. Les hotkeys sont aussi bloquées, donc par exemple, un programme non-élevé ne peut pas espionner les entrées destinées à un programme élevé.</p>
+<p>Le contrôle du compte d'utilisateur peut aussi empêcher <a href="lib/Send.htm#SendPlayDetail">SendPlay</a> et <a href="lib/BlockInput.htm">BlockInput</a> de fonctionner.</p>
 <p>Les solutions courantes sont les suivantes :</p>
 <ul>
   <li>Activer l'option <em><a href="Program.htm#Installer_uiAccess">Add 'Run with UI Access' to context menus</a></em> (Ajouter 'Lancer avec accès UI' aux menus contextuels) dans l'installateur de AutoHotkey. Cette option peut être activée ou désactivée sans réinstaller AutoHotkey en ré-exécutant l'installateur de AutoHotkey depuis le menu Démarrer. Une fois activée, lancer le fichier de script par un clic droit dessus et sélectionner <em>Run with UI Access</em> (Lancer avec accès UI), ou utiliser la <a href="Scripts.htm#cmd">ligne de commande</a> comme <code>"AutoHotkeyU32_UIA.exe" "Mon script.ahk"</code> (mais bien inclure les chemins complets).</li>
@@ -155,8 +156,8 @@ return</pre>
 <p>Si AutoHotkey est lancé depuis le menu Démarrer ou en lançant directement AutoHotkey.exe (sans paramètre de ligne de commande), il cherchera un script dans l'un des endroits indiqués ci-dessus. Alternativement, il est possible de créer un fichier de script (quelquechose.ahk) n'importe où, et d'exécuter le fichier de script au lieu de lancer AutoHotkey.</p>
 <p>Voir aussi <a href="Scripts.htm#defaultfile">Paramètre de Ligne de Commande "Nom du Fichier de Script"</a> et <a href="Program.htm#portability">Portabilité de AutoHotkey.exe</a>.</p>
 <h3 id="Debug">Comment trouver et corriger les erreurs dans mon code ?</h3>
-<p>Pour des scripts simples, voir <a href="Scripts.htm#debug">Déboguer un Script</a>. Pour afficher le contenu d'une variable, utiliser <a href="commands/MsgBox.htm">MsgBox</a> ou <a href="commands/ToolTip.htm">ToolTip</a>. Pour des scripts complexes, voir <a href="Scripts.htm#idebug">Déboguage Interactif</a>.</p>
-<h3 id="run">Pourquoi la commande <a href="commands/Run.htm">Run</a> échoue-t-elle à lancer un jeu ou un programme ?</h3>
+<p>Pour des scripts simples, voir <a href="Scripts.htm#debug">Déboguer un Script</a>. Pour afficher le contenu d'une variable, utiliser <a href="lib/MsgBox.htm">MsgBox</a> ou <a href="lib/ToolTip.htm">ToolTip</a>. Pour des scripts complexes, voir <a href="Scripts.htm#idebug">Déboguage Interactif</a>.</p>
+<h3 id="run">Pourquoi la commande <a href="lib/Run.htm">Run</a> échoue-t-elle à lancer un jeu ou un programme ?</h3>
 <p>Certains programmes doivent être lancés dans leur propre dossier (dans le doute, il est préférable que ce soit le cas). Par exemple :</p>
 <pre>Run, %A_ProgramFiles%\Une Application\App.exe, %A_ProgramFiles%\Une Application</pre>
 <p>Si le programme à exécuter est dans <code>%A_WinDir%\System32</code> et que AutoHotkey 32-bit est utilisé sur un système 64-bit, le <a href="https://msdn.microsoft.com/en-us/library/aa384187">File System Redirector</a> (redirecteur du système de fichiers) peut interférer. Pour contourner le problème, utiliser <code>%A_WinDir%\SysNative</code> à la place ; c'est un dossier virtuel seulement visible par les programmes 32-bit exécutés sur des systèmes 64-bit.</p>
@@ -166,15 +167,15 @@ return</pre>
 <p>Bien que AutoHotkey soit compatible avec du texte Unicode, il est optimisé pour la rétrocompatibilité, ce qui signifie que le choix par défaut est l'encodage ANSI plutôt que l'UTF-8 pourtant davantage recommandé dans le monde entier. AutoHotkey ne reconnaîtra pas automatiquement un fichier UTF-8 à moins qu'il ne commence par un indicateur d'ordre des octets (Byte Order Mark).</p>
 <p>En d'autres termes, les fichiers UTF-8 sans indicateur d'ordre des octets sont mal interprétés, et les caractères hors ASCII sont décodés incorrectement. Pour résoudre le problème, sauvegarder le fichier en UTF-8 avec BOM ou <a href="Scripts.htm#cp">ajouter le commutateur de ligne de commande /CP65001</a>.</p>
 <p>Pour enregistrer en UTF-8 avec BOM dans Notepad, sélectionner <em>UTF-8</em> dans le menu déroulant <em>Encodage</em> de la boîte de dialogue Enregistrer sous.</p>
-<p>Pour lire d'autres fichiers UTF-8 sans indicateur d'ordre des octets, utiliser <code><a href="commands/FileEncoding.htm">FileEncoding</a> UTF-8-RAW</code>, l'option <code>*P65001</code> avec <a href="commands/FileRead.htm">FileRead</a>, ou <code>"UTF-8-RAW"</code> comme troisième paramètre de <a href="commands/FileOpen.htm">FileOpen()</a>. Le suffixe <code>-RAW</code> (brut) peut être omis, mais dans ce cas tout fichier nouvellement créé aura un indicateur d'ordre des octets.</p>
+<p>Pour lire d'autres fichiers UTF-8 sans indicateur d'ordre des octets, utiliser <code><a href="lib/FileEncoding.htm">FileEncoding</a> UTF-8-RAW</code>, l'option <code>*P65001</code> avec <a href="lib/FileRead.htm">FileRead</a>, ou <code>"UTF-8-RAW"</code> comme troisième paramètre de <a href="lib/FileOpen.htm">FileOpen()</a>. Le suffixe <code>-RAW</code> (brut) peut être omis, mais dans ce cas tout fichier nouvellement créé aura un indicateur d'ordre des octets.</p>
 <p>A noter que les fichiers INI auxquels accèdent les commandes INI standards ne sont pas compatibles avec UTF-8 ; ils doivent être enregistrés en ANSI ou UTF-16.</p>
 
-<h3 id="games">Pourquoi les <a href="Hotstrings.htm">Hotstrings</a>, <a href="commands/Send.htm">Send</a>, et <a href="commands/Click.htm">Click</a> n'ont aucun effet dans certains jeux ?</h3>
+<h3 id="games">Pourquoi les <a href="Hotstrings.htm">Hotstrings</a>, <a href="lib/Send.htm">Send</a>, et <a href="lib/Click.htm">Click</a> n'ont aucun effet dans certains jeux ?</h3>
 <p>Tous les jeux ne permettent pas à AutoHotkey d'envoyer des frappes et des clics ou de recevoir les couleurs des pixels.</p>
 <p>Mais il y a des alternatives, essayer toutes les solutions décrites ci-dessous. Si toutes échouent, il est possible qu'AutoHotkey ne fonctionne pas avec le jeu en question. Parfois les jeux ont des systèmes anti-triche, come GameGuard et Hackshield. Dans ce cas, il y a de grandes chances que AutoHotkey ne fonctionne pas avec ce jeu.</p>
 <ul>
   <li>
-  <p>Utiliser SendPlay via la commande <a href="commands/Send.htm#SendPlay">SendPlay</a>, <a href="commands/SendMode.htm">SendMode Play</a> et/ou <a href="Hotstrings.htm">l'option de hotstring SP</a>.</p>
+  <p>Utiliser SendPlay via la commande <a href="lib/Send.htm#SendPlay">SendPlay</a>, <a href="lib/SendMode.htm">SendMode Play</a> et/ou <a href="Hotstrings.htm">l'option de hotstring SP</a>.</p>
   <pre>SendPlay, abc</pre>
   <pre>SendMode, Play
 Send, abc</pre>
@@ -187,12 +188,12 @@ Send, abc</pre>
   <p class="note"><strong>Remarque</strong>: SendPlay peut n'avoir aucun effet sur Windows Vista ou version ultérieure si le contrôle de compte d'utilisateur (UAC) est activé, même si le script est lancé en tant qu'administrateur.</p>
   </li>
   <li>
-  <p>Augmenter <a href="commands/SetKeyDelay.htm">SetKeyDelay</a>. Par exemple :</p>
+  <p>Augmenter <a href="lib/SetKeyDelay.htm">SetKeyDelay</a>. Par exemple :</p>
   <pre>SetKeyDelay, 0, 50
 SetKeyDelay, 0, 50, Play</pre>
   </li>
   <li>
-  <p>Essayer <a href="commands/ControlSend.htm">ControlSend</a>, qui pourrait fonctionner là où d'autres modes de Send échoueraient :</p>
+  <p>Essayer <a href="lib/ControlSend.htm">ControlSend</a>, qui pourrait fonctionner là où d'autres modes de Send échoueraient :</p>
   <pre>ControlSend,, abc, titre_jeu</pre>
   </li>
   <li>
@@ -200,15 +201,15 @@ SetKeyDelay, 0, 50, Play</pre>
   <pre>Send {TOUCHE down}{TOUCHE up}</pre>
   </li>
   <li>
-  <p>Essayer les évènements enfoncer et relâcher d'une touche avec un <a href="commands/ControlSend.htm">Sleep</a> entre les deux :</p>
+  <p>Essayer les évènements enfoncer et relâcher d'une touche avec un <a href="lib/ControlSend.htm">Sleep</a> entre les deux :</p>
   <pre>Send {TOUCHE down}
 Sleep 10 <em>; essayer différents nombres de millisecondes</em>
 Send {TOUCHE up}</pre>
   </li>
 </ul>
 <h3 id="perf">Comment améliorer les performances pour des jeux ou autre quand le processeur est très demandé ?</h3>
-<p>Si les <a href="Hotkeys.htm">Hotkeys</a>, <a href="commands/Click.htm">Clicks</a>, ou <a href="commands/Send.htm">Sends</a> d'un script sont sensiblement plus lents qu'en temps normal quand le processeur est très sollicité, augmenter la priorité du processus du script peut aider. Pour ce faire, ajouter la ligne suivante vers le haut du script :</p>
-<pre><a href="commands/Process.htm">Process</a>, Priority, , High</pre>
+<p>Si les <a href="Hotkeys.htm">Hotkeys</a>, <a href="lib/Click.htm">Clicks</a>, ou <a href="lib/Send.htm">Sends</a> d'un script sont sensiblement plus lents qu'en temps normal quand le processeur est très sollicité, augmenter la priorité du processus du script peut aider. Pour ce faire, ajouter la ligne suivante vers le haut du script :</p>
+<pre><a href="lib/Process.htm">Process</a>, Priority, , High</pre>
 <h3 id="Virus">Mon programme antivirus a détecté AutoHotkey ou un script compilé comme logiciel malveillant. Est-ce vraiment un virus ?</h3>
 <p>Bien qu'il soit possible que le fichier ait été infecté, le plus souvent ces alertes sont des <em>faux positifs</em>, c'est-à-dire que le programme antivirus se trompe. Une suggestion courante est de télécharger le fichier vers un service en ligne comme <a href="https://www.virustotal.com/">virustotal</a> ou <a href="https://virusscan.jotti.org/">Jotti</a> et voir ce que d'autres programmes antivirus ont à dire. Dans le doute, le fichier peut être envoyé à l'éditeur du logiciel antivirus pour confirmation. Cela pourrait aussi aider tous les utilisateurs de AutoHotkey, puisque l'éditeur pourrait confirmer qu'il s'agit d'un faux positif et modifier son produit pour être sympa avec AutoHotkey.</p>
 <p>Les faux positifs peuvent être plus courants pour les scripts compilés qui ont été compressés, comme avec UPX (par défaut pour AutoHotkey 1.0 mais pas 1.1) ou MPRESS (optionnel pour AutoHotkey 1.1). Comme l'installation AutoHotkey par défaut ne comprend pas de compresseur, les scripts compilés ne sont par défaut pas compressés.</p>
@@ -218,28 +219,29 @@ Send {TOUCHE up}</pre>
 <h3 id="Download">Où trouver la compilation officielle, ou des versions plus anciennes ?</h3>
 <p>Voir la <a href="https://www.autohotkey.com/download/">page de téléchargement de AutoHotkey</a>.</p>
 <h3 id="USB">Puis-je lancer AutoHotkey depuis un périphérique USB ?</h3>
-<p>Voir <a href="Program.htm#portability">Portabilité de AutoHotkey.exe</a>. A noter qu'en cas d'utilisation de bibliothèques de fonctions auto-incluses, AutoHotkey.exe et le dossier Lib doivent être un niveau au-dessus de Ahk2Exe.exe (par exemple \AutoHotkey.exe vs \Compiler\Ahk2Exe.exe). A noter également que Ahk2Exe enregistre les paramètres à la clé de registre suivante :  <code>HKCU\Software\AutoHotkey\Ahk2Exe</code>.</p>
+<p>Voir <a href="Program.htm#portability">Portabilité de AutoHotkey.exe</a>.</p>
+<p>Note that when you compile a script that uses auto-included function libraries, AutoHotkey.exe and the Lib folder must be up one level from Ahk2Exe.exe (e.g. \AutoHotkey.exe vs \Compiler\Ahk2Exe.exe). A noter également que Ahk2Exe enregistre les paramètres à la clé de registre suivante : <code>HKCU\Software\AutoHotkey\Ahk2Exe</code>. The compiler itself (Ahk2Exe) is not needed to run scripts.</p>
 <h3 id="output">Comment récupérer la sortie d'une opération en ligne de commande ?</h3>
 <p>L'expérimentation montre que grâce à la mise en mémoire cache des fichiers, un fichier temporaire peut être très rapide pour des sorties relativements petites. En fait, si le fichier est supprimé immédiatement après utilisation, il n'est souvent pas du tout écrit sur le disque. Par exemple :</p>
-<pre><a href="commands/Run.htm">RunWait</a> %ComSpec% /c dir &gt; C:\Mon Fichier Temporaire.txt
+<pre><a href="lib/Run.htm">RunWait</a> %ComSpec% /c dir &gt; C:\Mon Fichier Temporaire.txt
 FileRead, VarAvecContenu, C:\Mon Fichier Temporaire.txt
 FileDelete, C:\Mon Fichier Temporaire.txt</pre>
-<p>Pour éviter d'utiliser un fichier temporaire (surtout si la sortie est conséquente), considérer l'utilisation de la méthode <a href="commands/Run.htm#StdOut">Shell.Exec()</a> comme montré dans les exemples de la commande <a href="commands/Run.htm">Run</a>.</p>
+<p>Pour éviter d'utiliser un fichier temporaire (surtout si la sortie est conséquente), considérer l'utilisation de la méthode <a href="lib/Run.htm#StdOut">Shell.Exec()</a> comme montré dans les exemples de la commande <a href="lib/Run.htm">Run</a>.</p>
 <h3 id="close">Comment un script peut-il fermer, mettre en pause, suspendre ou recharger d'autres scripts ?</h3>
 <p>D'abord, voici un exemple qui ferme un autre script :</p>
 <pre>DetectHiddenWindows On  <em>; Permet de détecter la fenêtre principale cachée d'un script.</em>
 SetTitleMatchMode 2  <em>; Evite d'avoir à indiquer le chemin complet du fichier ci-dessous.</em>
-WinClose Nom du Fichier de Script.ahk - AutoHotkey  <em>; Changer ceci pour refléter le nom du script (sensible à la casse).</em></pre>
-<p>Pour <a href="commands/Suspend.htm">suspendre</a>, <a href="commands/Pause.htm">mettre en pause</a> ou <a href="commands/Reload.htm">recharger</a> un autre script, remplacer la dernière ligne ci-dessus par l'une de celles-ci :</p>
-<pre>PostMessage, 0x111, 65305,,, Nom du Fichier de Script.ahk - AutoHotkey  <em>; Suspendre.</em>
-PostMessage, 0x111, 65306,,, Nom du Fichier de Script.ahk - AutoHotkey  <em>; Mettre en Pause.</em>
-PostMessage, 0x111, 65303,,, Nom du Fichier de Script.ahk - AutoHotkey  <em>; Recharger.</em></pre>
+WinClose ScriptFileName.ahk - AutoHotkey  <em>; Changer ceci pour refléter le nom du script (sensible à la casse).</em></pre>
+<p>Pour <a href="lib/Suspend.htm">suspendre</a>, <a href="lib/Pause.htm">mettre en pause</a> ou <a href="lib/Reload.htm">recharger</a> un autre script, remplacer la dernière ligne ci-dessus par l'une de celles-ci :</p>
+<pre>PostMessage, 0x0111, 65305,,, ScriptFileName.ahk - AutoHotkey  <em>; Suspendre.</em>
+PostMessage, 0x0111, 65306,,, ScriptFileName.ahk - AutoHotkey  <em>; Mettre en Pause.</em>
+PostMessage, 0x0111, 65303,,, ScriptFileName.ahk - AutoHotkey  <em>; Recharger.</em></pre>
 <h3 id="repeat">Comment arrêter une action répétée sans quitter le script ?</h3>
-<p>Pour mettre en pause ou reprendre l'exécution de tout le script à l'appui d'une touche, associer une hotkey à la commande <a href="commands/Pause.htm">Pause</a> comme dans cet exemple :</p>
+<p>Pour mettre en pause ou reprendre l'exécution de tout le script à l'appui d'une touche, associer une hotkey à la commande <a href="lib/Pause.htm">Pause</a> comme dans cet exemple :</p>
 <pre>^!p::Pause  <em>; Appuyer sur Ctrl+Alt+P pour mettre en pause. Appuyer à nouveau pour reprendre.</em></pre>
-<p>Pour arrêter une action qui se répète dans une <a href="commands/Loop.htm">Loop</a> (boucle), voir l'exemple fonctionnel suivant, avec une hotkey qui démarre et arrête sa propre action répétée. En d'autres termes, activer la hotkey une fois démarre la boucle. Activer encore la même hotkey arrêtera la boucle.</p>
+<p>Pour arrêter une action qui se répète dans une <a href="lib/Loop.htm">Loop</a> (boucle), voir l'exemple fonctionnel suivant, avec une hotkey qui démarre et arrête sa propre action répétée. En d'autres termes, activer la hotkey une fois démarre la boucle. Activer encore la même hotkey arrêtera la boucle.</p>
 <pre>#MaxThreadsPerHotkey 3
-<strong>#z::  <em>; hotkey Win+Z (changer selon préférences).</em></strong>
+#z::  <em><strong>; Win+Z hotkey (change this hotkey to suit your preferences).</strong></em>
 #MaxThreadsPerHotkey 1
 if ContinuerExecutionWinZ  <em>; Ceci veut dire qu'un <a href="misc/Threads.htm">thread</a> (fil d'exécution) exéute déjà la boucle ci-dessous.</em>
 {
@@ -250,19 +252,19 @@ if ContinuerExecutionWinZ  <em>; Ceci veut dire qu'un <a href="misc/Threads.htm"
 ContinuerExecutionWinZ := true
 Loop
 {
-    <strong><em>; Les quatre prochaines lignes sont l'action à répéter (les modifier selon ce qui doit être accompli):</em></strong>
+    <em><strong>; The next four lines are the action you want to repeat (update them to suit your preferences):</strong></em>
     ToolTip, Appuyer sur Win-Z à nouveau pour empêcher ceci de clignoter.
     Sleep 1000
     ToolTip
     Sleep 1000
-    <strong><em>; Mais ne pas modifier ce qui suit.</em></strong>
+    <em><strong>; But leave the rest below unchanged.</strong></em>
     if not ContinuerExecutionWinZ  <em>; L'utilisateur a indiqué à la boucle de s'arrêter en appuyant encore sur Win-Z.</em>
         break  <em>; Rompre l'exécution de la boucle.</em>
 }
 ContinuerExecutionWinZ := false  <em>; Remise à zéro en préparation de la prochaine activation de cette hotkey.</em>
 return</pre>
 <h3 id="help">Comment utiliser de l'aide sensible au contexte pour les commandes AutoHotkey dans un éditeur quelconque ?</h3>
-<p>Rajat a créé <a href="index.htm#ContextSensitiveHelp">ce script</a>.</p>
+<p>Rajat a créé <a href="scripts/index.htm#ContextSensitiveHelp">ce script</a>.</p>
 <h3 id="load">Comment détecter quand une page web a fini de charger ?</h3>
 <p>Avec Internet Explorer, peut-être que la méthode la plus robuste est d'utiliser DllCall() et COM comme montré ici <a href="https://www.autohotkey.com/forum/topic19256.html">www.autohotkey.com/forum/topic19256.html</a>. Dans le même thème, le contenu de la barre d'adresse et de la barre de statut peut être récupéré comme montré ici <a href="https://www.autohotkey.com/forum/topic19255.html">www.autohotkey.com/forum/topic19255.html</a>.</p>
 <p><strong>Méthode plus vieille, moins fiable :</strong> La technique dans l'exemple suivant fonctionnera avec MS Internet Explorer pour la plupart des pages. Une technique similaire peut fonctionner dans d'autres navigateurs :</p>
@@ -270,26 +272,26 @@ return</pre>
 MouseMove, 0, 0  <em>; Empêche la barre de statut d'afficher un lien lié au survol de la souris au lieu de "Done".</em>
 WinWait, Yahoo! - 
 WinActivate 
-<a href="commands/StatusBarWait.htm">StatusBarWait</a>, Done, 30
+<a href="lib/StatusBarWait.htm">StatusBarWait</a>, Done, 30
 if ErrorLevel
     MsgBox L'attente a été trop longue ou la fenêtre a été fermée. 
 else 
     MsgBox La page a fini de charger.</pre>
 <h3 id="time">Comment comparer ou manipuler les dates et le temps ?</h3>
-<p>La commande <a href="commands/EnvAdd.htm">EnvAdd</a> peut ajouter ou soustraire une quantité de jours, heures, minutes ou secondes à une chaîne de caractère temporelle dans le format <a href="commands/FileSetTime.htm#YYYYMMDD">AAAAMMDDHH24MISS</a>. L'exemple suivant soustrait 7 jours (days) du temps indiqué : <code>EnvAdd, VarAvecLeTemps, -7, days</code>.</p>
-<p>Pour déterminer le temps entre deux dates ou temps, voir <a href="commands/EnvSub.htm">EnvSub</a>, qui donne un exemple. Aussi, la variable intégrée <a href="Variables.htm#Now">A_Now</a> contient le temps actuel local. Enfin, il y a plusieurs <a href="Variables.htm#date">variables de date/temps</a> intégrées, et la commande <a href="commands/FormatTime.htm">FormatTime</a> permet de créer une chaîne de caractère avec date/temps personnalisée.</p>
+<p>La commande <a href="lib/EnvAdd.htm">EnvAdd</a> peut ajouter ou soustraire une quantité de jours, heures, minutes ou secondes à une chaîne de caractère temporelle dans le format <a href="lib/FileSetTime.htm#YYYYMMDD">AAAAMMDDHH24MISS</a>. L'exemple suivant soustrait 7 jours (days) du temps indiqué : <code>EnvAdd, VarAvecLeTemps, -7, days</code>.</p>
+<p>Pour déterminer le temps entre deux dates ou temps, voir <a href="lib/EnvSub.htm">EnvSub</a>, qui donne un exemple. Aussi, la variable intégrée <a href="Variables.htm#Now">A_Now</a> contient le temps actuel local. Enfin, il y a plusieurs <a href="Variables.htm#date">variables de date/temps</a> intégrées, et la commande <a href="lib/FormatTime.htm">FormatTime</a> permet de créer une chaîne de caractère avec date/temps personnalisée.</p>
 <h3 id="SendDate">Comment puis-je envoyer la date et/ou l'instant actuels ?</h3>
-<p>Utiliser <a href="commands/FormatTime.htm">FormatTime</a> ou les <a href="Variables.htm#date">variables de date/temps intégrées</a>.</p>
+<p>Utiliser <a href="lib/FormatTime.htm">FormatTime</a> ou les <a href="Variables.htm#date">variables de date/temps intégrées</a>.</p>
 <h3 id="ControlSend">Comment puis-je envoyer du texte à une fenêtre qui n'est pas active ou pas visible ?</h3>
-<p>Utiliser <a href="commands/ControlSend.htm">ControlSend</a>.</p>
+<p>Utiliser <a href="lib/ControlSend.htm">ControlSend</a>.</p>
 <h3 id="winamp">Comment contrôler Winamp même sans qu'il soit actif ?</h3>
 <p>Voir <a href="misc/Winamp.htm">Automatiser Winamp</a>.</p>
-<h3 id="msgbox">Comment changer le texte des boutons de <a href="commands/MsgBox.htm">MsgBox</a> ?</h3>
+<h3 id="msgbox">Comment changer le texte des boutons de <a href="lib/MsgBox.htm">MsgBox</a> ?</h3>
 <p>Voici un <a href="scripts/index.htm#MsgBoxButtonNames">exemple</a>.</p>
 <h3 id="DefaultEditor">Comment changer l'éditeur par défaut, qui est accessible via le menu contextuel ou l'icône de la zone de notifications ?</h3>
-<p>Dans la section des exemples de <a href="commands/Edit.htm">Edit</a> se trouve un script permettant de changer l'éditeur par défaut.</p>
+<p>Dans la section des exemples de <a href="lib/Edit.htm">Edit</a> se trouve un script permettant de changer l'éditeur par défaut.</p>
 <h3 id="GuiSubmit">Comment enregistrer le contenu de mes variables associées à une GUI ?</h3>
-<p>Utiliser <a href="commands/Gui.htm#Submit">Gui Submit</a>. Par exemple :</p>
+<p>Utiliser <a href="lib/Gui.htm#Submit">Gui Submit</a>. Par exemple :</p>
 <pre>Gui, Add, Text,, Entrez du texte et cliquez sur ENVOYER :
 Gui, Add, Edit, vVarAssociee
 Gui, Add, Button,, ENVOYER
@@ -303,22 +305,22 @@ Return</pre>
 <h3 id="GDIPlus">Puis-je dessiner avec AutoHotkey ?</h3>
 <p>Voir la <a href="https://www.autohotkey.com/forum/topic32238.html">bibliothèque standard GDI+</a> par tic. C'est aussi possible avec des méthodes rudimentaires utilisant Gui, mais de manière limitée.</p>
 <h3 id="WinWaitAction">Comment puis-je démarrer une action quand une fenêtre apparaît, se ferme ou devient (in)active ?</h3>
-<p>Utiliser <a href="commands/WinWait.htm">WinWait</a>, <a href="commands/WinWaitClose.htm">WinWaitClose</a> ou <a href="commands/WinWaitActive.htm">WinWait[Not]Active</a>.</p>
+<p>Utiliser <a href="lib/WinWait.htm">WinWait</a>, <a href="lib/WinWaitClose.htm">WinWaitClose</a> ou <a href="lib/WinWaitActive.htm">WinWait[Not]Active</a>.</p>
 <p>Il y a aussi des solutions créées par des utilisateurs, comme <a href="https://www.autohotkey.com/boards/viewtopic.php?f=6&amp;t=6463">OnWin.ahk</a> et <a href="https://www.autohotkey.com/board/topic/80644-how-to-hook-on-to-shell-to-receive-its-messages/">[How to] Hook on to Shell to receive its messages</a> ([Comment faire] Passer par le Shell pour recevoir ses messages).</p>
 <h2 id="hotkeys-hotstrings-and-remapping">Hotkeys, Hotstrings, et Réaffectation de Touches</h2>
 <h3 id="Startup">Comment faire pour que mes hotkeys et hotstrings soient activés dès le démarrage de mon ordinateur ?</h3>
 <p>Il y a plusieurs manières pour qu'un script (ou n'importe quel programme) se lance automatiquement à chaque démarrage. Le plus simple est de placer un raccourci vers le script dans le menu Démarrage :</p>
 <ol>
-  <li>Trouver le fichier de script, le sélectionner, appuyer sur <kbd>Ctrl</kbd>+<kbd>C</kbd>.</li>
+  <li>Find the script file, select it, and press <kbd>Ctrl</kbd>+<kbd>C</kbd>.</li>
   <li>Appuyer sur <kbd>Win</kbd>+<kbd>R</kbd> pour ouvrir la boîte de dialogue Exécuter, puis entrer <code>shell:startup</code> et cliquer sur OK ou appuyer sur <kbd>Entrée</kbd>. Ceci ouvrira le menu Démarrage de l'utilisateur courant. Pour ouvrir à la place le dossier pour tous les utilisateurs, entrer <code>shell:common startup</code> (toutefois, dans ce cas il faut être un administrateur pour continuer).</li>
   <li>Cliquer droit dans la fenêtre, et cliquer "Coller le raccourci". Le raccourci vers le script devrait maintenant être dans le dossier Démarrage.</li>
 </ol>
 <h3 id="HotMouse">J'ai du mal à faire fonctionner mes boutons de souris comme hotkeys. Des conseils ?</h3>
 <p>Les boutons gauche et droit de la souris devrait être utilisables normalement (par exemple, <code>#LButton::</code> est la hotkey <kbd>Win</kbd>+BoutonGauche). De manière similaire, le bouton du milieu et la rotation de la <a href="KeyList.htm">molette de souris</a> devraient être utilisables normalement sauf sur les souris où le pilote contrôle directement ces boutons.</p>
-<p> Le quatrième bouton (XButton1) et le cinquième bouton (XButton2) peuvent être utilisables si le pilote de la souris autorise que leurs clics soient <a href="commands/KeyHistory.htm">visibles</a> par le système. S'ils ne sont pas visibles -- ou si la souris a plus de cinq boutons à utiliser -- il est possible d'essayer de configurer le logiciel fourni avec la souris (parfois accessible dans le Panneau de configuration ou le menu Démarrer) afin qu'il envoie des frappes à chaque appui sur un de ces boutons. Ces frappes peuvent ensuite être définies comme hotkey dans un script. Par exemple, si le quatrième bouton est configuré pour envoyer <kbd>Ctrl</kbd>+<kbd>F1</kbd>, ce bouton peut être indirectement configuré via une hotkey <code>^F1::</code> dans un script.</p>
-<p>Si les quatrième et cinquième boutons d'une souris ne sont pas <a href="commands/KeyHistory.htm">visibles</a>, il est possible de changer le pilote de la souris vers le pilote par défaut inclus avec l'OS. En supposant qu'il existe un tel pilote pour cette souris en particulier et que les fonctionnalités fournies par le logiciel personnalisé de la souris ne sont pas nécessaires ou utiles.</p>
+<p> Le quatrième bouton (XButton1) et le cinquième bouton (XButton2) peuvent être utilisables si le pilote de la souris autorise que leurs clics soient <a href="lib/KeyHistory.htm">visibles</a> par le système. S'ils ne sont pas visibles -- ou si la souris a plus de cinq boutons à utiliser -- il est possible d'essayer de configurer le logiciel fourni avec la souris (parfois accessible dans le Panneau de configuration ou le menu Démarrer) afin qu'il envoie des frappes à chaque appui sur un de ces boutons. Ces frappes peuvent ensuite être définies comme hotkey dans un script. For example, if you configure the fourth button to send <kbd>Ctrl</kbd>+<kbd>F1</kbd>, you can then indirectly configure that button as a hotkey by using <code>^F1::</code> in a script.</p>
+<p>Si les quatrième et cinquième boutons d'une souris ne sont pas <a href="lib/KeyHistory.htm">visibles</a>, il est possible de changer le pilote de la souris vers le pilote par défaut inclus avec l'OS. En supposant qu'il existe un tel pilote pour cette souris en particulier et que les fonctionnalités fournies par le logiciel personnalisé de la souris ne sont pas nécessaires ou utiles.</p>
 <h3 id="HotSymb">Comment définir des hotkeys avec la tabulation ou la barre espace ?</h3>
-<p>Il faut utiliser le nom des touches (Tab pour tabulation et Space pour la barre espace) plutôt que les caractères. Par exemple, <code>#Space</code> est <kbd>Win</kbd>+<kbd>Espace</kbd> et <code>^!Tab</code> est <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>Tabulation</kbd>.</p>
+<p>Il faut utiliser le nom des touches (Tab pour tabulation et Space pour la barre espace) plutôt que les caractères. For example, <code>#Space</code> is <kbd>Win</kbd>+<kbd>Space</kbd> and <code>^!Tab</code> is <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>Tab</kbd>.</p>
 <h3 id="Remap">Comment réaffecter des touches ou des boutons de la souris afin qu'elles deviennent des touches différentes ?</h3>
 <p>Ceci est décrit sur la page de <a href="misc/Remap.htm">réaffectation</a>.</p>
 <h3 id="DoublePress">Comment détecter un double appui d'une touche ou d'un bouton ?</h3>
@@ -328,7 +330,7 @@ Return</pre>
         MsgBox double appui
 return</pre>
 <h3 id="HotContext">Comment rendre une <a href="Hotkeys.htm">hotkey</a> ou un <a href="Hotstrings.htm">hotstring</a> exclusif à certains programmes ? Autrement dit, je veux qu'une certaine touche agisse normalement sauf quand une certaine fenêtre est active.</h3>
-<p>La méthode recommandée est <a href="commands/_IfWinActive.htm">#IfWinActive</a>. Par exemple :</p>
+<p>La méthode recommandée est <a href="lib/_IfWinActive.htm">#IfWinActive</a>. Par exemple :</p>
 <pre>#IfWinActive, ahk_class Notepad
 ^a::MsgBox Vous avez appuyé sur Ctrl-A pendant que Notepad était actif.
 </pre>
@@ -345,6 +347,6 @@ return</pre>
 <h3 id="SpecialKey">Comment puis-je utiliser une hotkey qui n'est pas dans ma disposition clavier ?</h3>
 <p>Voir <a href="KeyList.htm#SpecialKeys">Touches Spéciales</a>.</p>
 <h3 id="HotZero">Mon clavier numérique a une touche spéciale 000. Est-il possible de l'utiliser pour une hotkey ?</h3>
-<p>Oui. Ce <a href="scripts/index.htm#Numpad000">script d'exemple</a> transforme la touche <kbd>000</kbd> en une touche égal. L'action peut être modifiée en remplaçant la ligne <code>Send, =</code> avec des lignes quelconques.</p>
+<p>Oui. This <a href="scripts/index.htm#Numpad000">example script</a> makes <kbd>000</kbd> into an equals key. L'action peut être modifiée en remplaçant la ligne <code>Send, =</code> avec des lignes quelconques.</p>
 </body>
 </html>

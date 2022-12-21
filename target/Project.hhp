@@ -3,7 +3,7 @@ Binary Index=No
 Compatibility=1.1 or later
 Compiled file=AutoHotkey.chm
 Default Window=Contents
-Default topic=docs\AutoHotkey.htm
+Default topic=docs\index.htm
 Display compile progress=No
 Full-text search=Yes
 Index file=Index.hhk
@@ -11,13 +11,15 @@ Language=0x40c French (France)
 Title=AutoHotkey Help
 
 [WINDOWS]
-Contents="Aide pour AutoHotkey",,,"docs\AutoHotkey.htm","docs\AutoHotkey.htm",,,,,0x73500,,0x10200e,[200,0,1080,700],,,,,3,,0
+Contents="Aide pour AutoHotkey",,,"docs\index.htm","docs\index.htm",,,,,0x73500,,0x10200e,[200,0,1080,700],,,,,3,,0
 
 
 [FILES]
 docs\search.htm
 docs\settings.htm
 docs\static\content.css
+docs\static\dark.css
+docs\static\ahk_logo.png
 docs\static\fonts\icons.eot
 docs\static\fonts\icons.svg
 docs\static\fonts\icons.ttf
@@ -26,5 +28,7 @@ docs\static\source\data_translate.js
 docs\static\source\data_search.js
 docs\static\source\data_toc.js
 docs\static\source\data_index.js
+docs\static\source\data_deprecate.js
+NUL
 
 [INFOTYPES]

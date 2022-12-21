@@ -3,7 +3,7 @@
 <head>
 <title>FileRemoveDir - Syntax &amp; Usage | AutoHotkey</title>
 <meta name="description" content="The FileRemoveDir command deletes a folder." />
-<meta name="ahk:equiv-v2" content="commands/DirDelete.htm" />
+<meta name="ahk:equiv-v2" content="lib/DirDelete.htm" />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -16,7 +16,7 @@
 <p>Deletes a folder.</p>
 
 <pre class="Syntax"><span class="func">FileRemoveDir</span>, DirName <span class="optional">, Recurse</span></pre>
-<h2>Parameters</h2>
+<h2 id="Parameters">Parameters</h2>
 <dl>
 
   <dt>DirName</dt>
@@ -31,18 +31,21 @@
   </dd>
 
 </dl>
-<h2>Error Handling</h2>
+<h2 id="Error_Handling">Error Handling</h2>
 <p><span class="ver">[v1.1.04+]</span>: This command is able to throw an exception on failure. For more information, see <a href="Catch.htm#RuntimeErrors">Runtime Errors</a>.</p>
 <p><a href="../misc/ErrorLevel.htm">ErrorLevel</a> is set to 1 if there was a problem or 0 otherwise.</p>
-<h2>Remarques</h2>
-<p>None</p>
-<h2>Related</h2>
+
+<h2 id="Related">Related</h2>
 <p><a href="FileCreateDir.htm">FileCreateDir</a>, <a href="FileDelete.htm">FileDelete</a></p>
-<h2>Exemples</h2>
+<h2 id="Examples">Exemples</h2>
 <div class="ex" id="ExBasic">
-<p><a href="#ExBasic">#1</a></p>
-<pre>FileRemoveDir, C:\Download Temp
-FileRemoveDir, C:\Download Temp, 1</pre>
+<p><a class="ex_number" href="#ExBasic"></a> Removes the directory, but only if it is empty.</p>
+<pre>FileRemoveDir, C:\Download Temp</pre>
+</div>
+
+<div class="ex" id="ExRecurse">
+<p><a class="ex_number" href="#ExRecurse"></a> Removes the directory including its files and subdirectories.</p>
+<pre>FileRemoveDir, C:\Download Temp, 1</pre>
 </div>
 
 </body>

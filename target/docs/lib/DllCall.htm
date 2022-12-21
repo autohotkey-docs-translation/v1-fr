@@ -15,14 +15,11 @@
 <p>Calls a function inside a DLL, such as a standard Windows API function.</p>
 
 <pre class="Syntax">Result := <span class="func">DllCall</span>("<span class="optional">DllFile\</span>Function" <span class="optional">, Type1, Arg1, Type2, Arg2, "Cdecl ReturnType"</span>)</pre>
-<h2>Parameters</h2>
+<h2 id="Parameters">Parameters</h2>
 <dl>
 
-  <dt>Result</dt>
-  <dd><p>DllCall returns the actual value returned by the function. If the function is of a type that does not return a value, the result is an undefined integer. If the function cannot be called due to an <a href="#error">error</a>, the return value is blank (an empty string).</p></dd>
-
   <dt>[DllFile\]Function</dt>
-  <dd><p>The DLL or EXE file name followed by a backslash and the name of the function. Par exemple : <code>"MyDLL\MyFunction"</code> (the file extension ".dll" is the default when omitted). If an absolute path isn't specified, <em>DllFile</em> is assumed to be in the system's PATH or <a href="../Variables.htm#WorkingDir">A_WorkingDir</a>.</p>
+  <dd><p>The DLL or EXE file name followed by a backslash and the name of the function. Par exemple : <code>"MyDLL\MyFunction"</code> (the file extension ".dll" is the default when omitted). If an absolute path isn't specified, <em>DllFile</em> is assumed to be in the system's PATH or <a href="../Variables.htm#WorkingDir">A_WorkingDir</a>. Note that DllCall() expects a path with backslashes (\). Forward slashes (/) are not supported.</p>
       <p id="std"><em>DllFile</em> may be omitted when calling a function that resides in User32.dll, Kernel32.dll, ComCtl32.dll, or Gdi32.dll. For example, <code>"User32\IsWindowVisible"</code> produces the same result as <code>"IsWindowVisible"</code>.</p>
       <p>If no function can be found by the given name, an A (ANSI) or W (Unicode) suffix is automatically appended based on which version of AutoHotkey is running the script. For example, <code>"MessageBox"</code> is the same as <code>"MessageBoxA"</code> in ANSI versions and <code>"MessageBoxW"</code> in Unicode versions.</p>
       <p>Performance can be dramatically improved when making <em>repeated</em> calls to a DLL by <a href="#load">loading it beforehand</a>.</p>
@@ -39,8 +36,15 @@
 
 </dl>
 
+<h2 id="Return_Value">Return Value</h2>
+<p>DllCall returns the actual value returned by <em>Function</em>. If <em>Function</em> is of a type that does not return a value, the result is an undefined integer. If <em>Function</em> cannot be called due to an <a href="#error">error</a>, the return value is blank (an empty string).</p>
+
 <h2 id="types">Types of Arguments and Return Values</h2>
 <table class="info">
+<tr>
+<th>Type</th>
+<th abbr="Descr">Description</th>
+</tr>
 <tr id="str">
 <td>Str</td>
 <td><p>A string such as "Blue" or MyVar. If the called function modifies the string and the argument is a naked variable, its contents will be updated. For example, the following call would convert the contents of <em>MyVar</em> to uppercase: <code>DllCall("CharUpper", "Str", <i>MyVar</i>)</code>.</p>
@@ -157,32 +161,31 @@ result := DllCall("CharLower", "<strong><u>Str</u></strong>", DllCall("CharUpper
 <h2 id="COM">Component Object Model (COM)</h2>
 <p>COM objects which are accessible to VBScript and similar languages are typically also accessible to AutoHotkey via <a href="ComObjCreate.htm">ComObjCreate()</a>, <a href="ComObjGet.htm">ComObjGet()</a> or <a href="ComObjActive.htm">ComObjActive()</a> and the built-in <a href="../Objects.htm#Usage_Objects">object syntax</a>.</p>
 <p>COM objects which don't support <a href="http://msdn.microsoft.com/en-us/library/ms221608.aspx">IDispatch</a> can be used with DllCall by retrieving the address of a function from the virtual function table of the object's interface. For more details, see <a href="#ExTaskbar">the example</a> further below.</p>
-<p>Much of the .NET Framework is also accessible via COM and DllCall. See <a href="https://www.autohotkey.com/forum/topic26191.html">.NET Framework Interop</a>.
-</p>
+<p>Much of the .NET Framework is also accessible via COM and DllCall. See <a href="https://www.autohotkey.com/forum/topic26191.html">.NET Framework Interop</a>.</p>
 
-<h2>Related</h2>
+<h2 id="Related">Related</h2>
 <p><a href="../Compat.htm#DllCall">Script Compatibility</a>, <a href="PostMessage.htm">PostMessage</a>, <a href="OnMessage.htm">OnMessage()</a>, <a href="RegisterCallback.htm">RegisterCallback()</a>, <a href="Run.htm">Run</a>, <a href="VarSetCapacity.htm">VarSetCapacity()</a>, <a href="../Functions.htm">Functions</a>, <a href="SysGet.htm">SysGet</a>, <a href="http://msdn.microsoft.com/library/">MSDN Library</a></p>
-<h2>Exemples</h2>
+<h2 id="Examples">Exemples</h2>
 <div class="ex" id="ExMessageBox">
-<p><a href="#ExMessageBox">#1</a>: Calls the Windows API function "MessageBox" and report which button the user presses.</p>
+<p><a class="ex_number" href="#ExMessageBox"></a> Calls the Windows API function "MessageBox" and reports which button the user presses.</p>
 <pre>WhichButton := DllCall("MessageBox", "Int", 0, "Str", "Press Yes or No", "Str", "Title of box", "Int", 4)
 MsgBox You pressed button #%WhichButton%.</pre>
 </div>
 
 <div class="ex" id="ExWallpaper">
-<p><a href="#ExWallpaper">#2</a>: Changes the desktop wallpaper to the specified bitmap (.bmp) file.</p>
-<pre>DllCall("SystemParametersInfo", "UInt", 0x14, "UInt", 0, "Str", A_WinDir <strong>.</strong> "\winnt.bmp", "UInt", 2)</pre>
+<p><a class="ex_number" href="#ExWallpaper"></a> Changes the desktop wallpaper to the specified bitmap (.bmp) file.</p>
+<pre>DllCall("SystemParametersInfo", "UInt", 0x14, "UInt", 0, "Str", A_WinDir <strong>.</strong> "\winnt.bmp", "UInt", 1)</pre>
 </div>
 
 <div class="ex" id="ExIsWindowVisible">
-<p><a href="#ExIsWindowVisible">#3</a>: Calls the API function "IsWindowVisible" to find out if a Notepad window is visible.</p>
+<p><a class="ex_number" href="#ExIsWindowVisible"></a> Calls the API function "IsWindowVisible" to find out if a Notepad window is visible.</p>
 <pre>DetectHiddenWindows On
 if not DllCall("IsWindowVisible", "Ptr", WinExist("Untitled - Notepad"))  <em>; WinExist() returns an HWND.</em>
     MsgBox The window is not visible.</pre>
 </div>
 
 <div class="ex" id="ExWsprintf">
-<p><a href="#ExWsprintf">#4</a>: Calls the API's wsprintf() to pad the number 432 with leading zeros to make it 10 characters wide (0000000432).</p>
+<p><a class="ex_number" href="#ExWsprintf"></a> Calls the API's wsprintf() to pad the number 432 with leading zeros to make it 10 characters wide (0000000432).</p>
 <pre>VarSetCapacity(ZeroPaddedNumber, 20)  <em>; Ensure the variable is large enough to accept the new string.</em>
 DllCall("wsprintf", "Str", ZeroPaddedNumber, "Str", "%010d", "Int", 432, "Cdecl")  <em>; Requires the Cdecl calling convention.</em>
 MsgBox %ZeroPaddedNumber%
@@ -193,7 +196,7 @@ MsgBox % Format("{:010}", 432)
 </div>
 
 <div class="ex" id="QPC">
-<p><a href="#QPC">#5</a>: Demonstrates QueryPerformanceCounter(), which gives more precision than <a href="../Variables.htm#TickCount">A_TickCount's</a> 10ms.</p>
+<p><a class="ex_number" href="#QPC"></a> Demonstrates QueryPerformanceCounter(), which gives more precision than <a href="../Variables.htm#TickCount">A_TickCount</a>'s 10ms.</p>
 <pre>DllCall("QueryPerformanceFrequency", "Int64*", freq)
 DllCall("QueryPerformanceCounter", "Int64*", CounterBefore)
 Sleep 1000
@@ -202,7 +205,7 @@ MsgBox % "Elapsed QPC time is " . (CounterAfter - CounterBefore) / freq * 1000 "
 </div>
 
 <div class="ex" id="ExMouseSpeed">
-<p><a href="#ExMouseSpeed">#6</a>: This is a hotkey that temporarily reduces the mouse cursor's speed, which facilitates precise positioning. Hold down <kbd>F1</kbd> to slow down the cursor. Release it to return to original speed.</p>
+<p><a class="ex_number" href="#ExMouseSpeed"></a> Press a hotkey to temporarily reduce the mouse cursor's speed, which facilitates precise positioning. Hold down <kbd>F1</kbd> to slow down the cursor. Release it to return to original speed.</p>
 <pre>F1::
 SPI_GETMOUSESPEED := 0x70
 SPI_SETMOUSESPEED := 0x71
@@ -216,13 +219,8 @@ return
 F1 up::DllCall("SystemParametersInfo", "UInt", SPI_SETMOUSESPEED, "UInt", 0, "Ptr", OrigMouseSpeed, "UInt", 0)  <em>; Restore the original speed.</em></pre>
 </div>
 
-<div class="ex" id="GetChildHWND">
-<p><a href="#GetChildHWND">#7</a>: When passed a window's Unique ID and the text or ClassNN of one of its controls, the following function returns the HWND (unique ID) of that control. <span class="ver">[v1.0.43.06+]</span>: This function has been superseded by <a href="ControlGet.htm#Hwnd">ControlGet Hwnd</a>, which is more accurate.</p>
-<pre>ControlGet, OutputVar, Hwnd,, ClassNN, WinTitle</pre>
-</div>
-
 <div class="ex" id="ExWatchScrollBar">
-<p><a href="#ExWatchScrollBar">#8</a>: Monitors the active window and displays the position of its vertical scroll bar in its focused control (with real-time updates). This requires <span class="ver">[v1.0.43.06+]</span> because it uses <a href="ControlGet.htm#Hwnd">ControlGet Hwnd</a>.</p>
+<p><a class="ex_number" href="#ExWatchScrollBar"></a> Monitors the active window and displays the position of its vertical scroll bar in its focused control (with real-time updates). This requires <span class="ver">[v1.0.43.06+]</span> because it uses <a href="ControlGet.htm#Hwnd">ControlGet Hwnd</a>.</p>
 <pre>#Persistent
 SetTimer, WatchScrollBar, 100
 return
@@ -234,14 +232,14 @@ if not ActiveWindow  <em>; No active window.</em>
 ControlGetFocus, FocusedControl, ahk_id %ActiveWindow%
 if not FocusedControl  <em>; No focused control.</em>
     return
-<em>; Display the vertical or horizontal scroll bar's position in a ToolTip:</em>
+<em>; Display the vertical or horizontal scroll bar's position in a tooltip:</em>
 ControlGet, ChildHWND, Hwnd,, %FocusedControl%, ahk_id %ActiveWindow%
 ToolTip % DllCall("GetScrollPos", "Ptr", ChildHWND, "Int", 1)  <em>;  Last parameter is 1 for SB_VERT, 0 for SB_HORZ.</em>
 return</pre>
 </div>
 
 <div class="ex" id="file">
-<p><a href="#file">#9</a>: This is a working script that writes some text to a file then reads it back into memory (requires <span class="ver">[v1.0.34+]</span>). This method can be used to help performance in cases where multiple files are being read or written simultaneously. <span class="ver">[AHK_L 42+]</span>: <a href="FileOpen.htm#writeread">The same can be achieved</a> using <a href="FileOpen.htm">FileOpen()</a>.</p>
+<p><a class="ex_number" href="#file"></a> Writes some text to a file then reads it back into memory (requires <span class="ver">[v1.0.34+]</span>). This method can be used to help performance in cases where multiple files are being read or written simultaneously. <span class="ver">[AHK_L 42+]</span>: <a href="FileOpen.htm#writeread">The same can be achieved</a> using <a href="FileOpen.htm">FileOpen()</a>.</p>
 <pre>FileSelectFile, FileName, S16,, Create a new file:
 if (FileName = "")
     return
@@ -277,7 +275,7 @@ MsgBox The following string was read from the file: %TestString%</pre>
 </div>
 
 <div class="ex" id="HideCursor">
-<p><a href="#HideCursor">#10</a>: Hides the mouse cursor when you press <kbd>Win</kbd>+<kbd>C</kbd>. To later show the cursor, press this hotkey again. This script is from <a href="https://www.autohotkey.com/forum/topic6107.html">www.autohotkey.com/forum/topic6107.html</a></p>
+<p><a class="ex_number" href="#HideCursor"></a> Hides the mouse cursor when you press <kbd>Win</kbd>+<kbd>C</kbd>. To later show the cursor, press this hotkey again. This script is from <a href="https://www.autohotkey.com/forum/topic6107.html">www.autohotkey.com/forum/topic6107.html</a></p>
 <pre>OnExit, ShowCursor  <em>; Ensure the cursor is made visible when the script exits.</em>
 return
 
@@ -323,7 +321,7 @@ SystemCursor(OnOff=1)   <em>; INIT = "I","Init"; OFF = 0,"Off"; TOGGLE = -1,"T",
 </div>
 
 <div class="ex" id="ExStruct">
-<p><a href="#ExStruct">#11</a>: Structure example. Pass the address of a RECT structure to GetWindowRect(), which sets the structure's members to the positions of the left, top, right, and bottom sides of a window (relative to the screen).</p>
+<p><a class="ex_number" href="#ExStruct"></a> Structure example. Pass the address of a RECT structure to GetWindowRect(), which sets the structure's members to the positions of the left, top, right, and bottom sides of a window (relative to the screen).</p>
 <pre>Run Notepad
 WinWait Untitled - Notepad  <em>; This also sets the "<a href="../misc/WinTitle.htm#LastFoundWindow">last found window</a>" for use with WinExist() below.</em>
 VarSetCapacity(Rect, 16)  <em>; A RECT is a struct consisting of four 32-bit integers (i.e. 4*4=16).</em>
@@ -333,7 +331,7 @@ MsgBox % "Left " . <a href="NumGet.htm">NumGet</a>(Rect, 0, "Int") . " Top " . N
 </div>
 
 <div class="ex" id="ExStructRect">
-<p><a href="#ExStructRect">#12</a>: Structure example. Pass to FillRect() the address of a RECT structure that indicates a part of the screen to temporarily paint red.</p>
+<p><a class="ex_number" href="#ExStructRect"></a> Structure example. Pass to FillRect() the address of a RECT structure that indicates a part of the screen to temporarily paint red.</p>
 <pre>VarSetCapacity(Rect, 16, 0)  <em>; Set capacity to hold four 4-byte integers and initialize them all to zero.</em>
 <a href="NumPut.htm">NumPut</a>(A_ScreenWidth//2, Rect, 8, "Int")  <em>; The third integer in the structure is "rect.right".</em>
 NumPut(A_ScreenHeight//2, Rect, 12, "Int") <em>; The fourth integer in the structure is "rect.bottom".</em>
@@ -345,7 +343,7 @@ DllCall("DeleteObject", "Ptr", hBrush)  <em>; Clean-up.</em></pre>
 </div>
 
 <div class="ex" id="ExSystemTime">
-<p><a href="#ExSystemTime">#13</a>: Structure Example. Change the system's clock to the specified date and time. Use caution when changing to a date in the future as it may cause scheduled tasks to run prematurely!</p>
+<p><a class="ex_number" href="#ExSystemTime"></a> Structure Example. Changes the system's clock to the specified date and time. Use caution when changing to a date in the future as it may cause scheduled tasks to run prematurely!</p>
 <pre>SetSystemTime("20051008142211")  <em>; Pass it a <a href="FileSetTime.htm#YYYYMMDD">timestamp</a> (local, not UTC).</em>
 
 SetSystemTime(YYYYMMDDHHMISS)
@@ -377,15 +375,13 @@ SetSystemTime(YYYYMMDDHHMISS)
 }</pre>
 <p>More structure examples:</p>
 <ul>
-  <li>See the <a href="../scripts/index.htm#WinLIRC">WinLIRC client script</a> for a demonstration of how to use DllCall() to make a network connection
-  to a TCP/IP server and receive data from it.</li>
-  <li>The operating system offers standard dialog boxes that prompt the user to pick a font and/or color, or an icon.
-  These dialogs use structures and are demonstrated at <a href="https://github.com/majkinetor/mm-autohotkey/tree/master/Dlg">GitHub</a>.</li>
+  <li>See the <a href="../scripts/index.htm#WinLIRC">WinLIRC client script</a> for a demonstration of how to use DllCall() to make a network connection to a TCP/IP server and receive data from it.</li>
+  <li>The operating system offers standard dialog boxes that prompt the user to pick a font and/or color, or an icon. These dialogs use structures and are demonstrated at <a href="https://github.com/majkinetor/mm-autohotkey/tree/master/Dlg">GitHub</a>.</li>
 </ul>
 </div>
 
 <div class="ex" id="ExTaskbar">
-<p><a href="#ExTaskbar">#14</a>: Temporarily remove the active window from the taskbar by using COM.</p>
+<p><a class="ex_number" href="#ExTaskbar"></a> Temporarily removes the active window from the taskbar by using COM.</p>
 <pre><em>/*
   Methods in <a href="http://msdn.microsoft.com/en-us/library/bb774652.aspx">ITaskbarList</a>'s VTable:
     IUnknown:

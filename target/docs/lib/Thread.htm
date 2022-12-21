@@ -51,20 +51,28 @@
 <p>If a <a href="../Hotkeys.htm">hotkey</a> is pressed or a <a href="Menu.htm">custom menu item</a> is selected while the <a href="../misc/Threads.htm">current thread</a> is uninterruptible, that event will be buffered. In other words, it will launch when the current thread finishes or becomes interruptible, whichever comes first. The exception to this is when the current thread becomes interruptible before it finishes, and it is of higher <a href="#Priority">priority</a> than the buffered event; in this case the buffered event is unbuffered and discarded.</p>
 <p>Regardless of this sub-command, a thread will become interruptible the moment it displays a <a href="MsgBox.htm">MsgBox</a>, <a href="InputBox.htm">InputBox</a>, <a href="FileSelectFile.htm">FileSelectFile</a>, or <a href="FileSelectFolder.htm">FileSelectFolder</a> dialog.</p>
 <p>Either parameter can be left blank to avoid changing it.</p>
-<p>If <a href="Critical.htm">Critical</a> is specified as the first line of the thread's subroutine or function, the thread starts out uninterruptible and the Interrupt sub-command has no effect. However, this does not apply to bound functions or user-defined <a href="../objects/Functor.htm">function objects</a>.</p>
+<p>If <a href="Critical.htm">Critical</a> is specified as the first line of the thread's subroutine or function, the thread starts out uninterruptible and the Interrupt sub-command has no effect. However, this does not apply to bound functions or user-defined <a href="../misc/Functor.htm">function objects</a>.</p>
 
-<h2>Remarques</h2>
+<h2 id="Remarks">Remarques</h2>
 <p>Due to its greater flexibility and its ability to buffer events, the command <a href="Critical.htm">Critical</a> is generally more useful than the sub-commands <a href="#Interrupt">Interrupt</a> and <a href="#Priority">Priority</a>.</p>
 
-<h2>Related</h2>
+<h2 id="Related">Related</h2>
 <p><a href="Critical.htm">Critical</a>, <a href="../misc/Threads.htm">Threads</a>, <a href="Hotkey.htm">Hotkey</a>, <a href="Menu.htm">Menu</a>, <a href="SetTimer.htm">SetTimer</a>, <a href="Process.htm">Process</a></p>
 
-<h2>Exemples</h2>
-<div class="ex" id="ExBasic">
-<p><a href="#ExBasic">#1</a></p>
-<pre>Thread, Priority, 1 <em>; Make priority of current thread slightly above average.</em>
-Thread, Interrupt, 0  <em>; Make each newly launched thread immediately interruptible.</em>
-Thread, Interrupt, 50, 2000  <em>; Make each thread interruptible after 50ms or 2000 lines, whichever comes first.</em></pre>
+<h2 id="Examples">Exemples</h2>
+<div class="ex" id="ExPriority">
+<p><a class="ex_number" href="#ExPriority"></a> Makes the priority of the current thread slightly above average.</p>
+<pre>Thread, Priority, 1</pre>
+</div>
+
+<div class="ex" id="ExInterrupt">
+<p><a class="ex_number" href="#ExInterrupt"></a> Makes each newly launched thread immediately interruptible.</p>
+<pre>Thread, Interrupt, 0</pre>
+</div>
+
+<div class="ex" id="ExInterrupt2">
+<p><a class="ex_number" href="#ExInterrupt2"></a> Makes each thread interruptible after 50 ms or 2000 lines, whichever comes first.</p>
+<pre>Thread, Interrupt, 50, 2000</pre>
 </div>
 
 </body>

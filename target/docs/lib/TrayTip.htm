@@ -15,7 +15,7 @@
 <p>Creates a balloon message window near the tray icon. On Windows 10, a toast notification may be shown instead.</p>
 
 <pre class="Syntax"><span class="func">TrayTip</span> <span class="optional">, Title, Text, Seconds, Options</span></pre>
-<h2>Parameters</h2>
+<h2 id="Parameters">Parameters</h2>
 <dl>
 
   <dt>Title</dt>
@@ -42,7 +42,7 @@
   <dt>Options</dt>
   <dd><p>The <em>Options</em> parameter can be a combination (sum) of zero or more of the following values:</p>
     <table class="info">
-      <tr><th>Function</th><th>Decimal Value</th><th>Hex Value</th></tr>
+      <tr><th>Function</th><th abbr="Dec">Decimal Value</th><th abbr="Hex">Hex Value</th></tr>
       <tr><td>Info icon</td><td>1</td><td>0x1</td></tr>
       <tr><td>Warning icon</td><td>2</td><td>0x2</td></tr>
       <tr><td>Error icon</td><td>3</td><td>0x3</td></tr>
@@ -54,7 +54,7 @@
     </dd>
 
 </dl>
-<h2>Remarques</h2>
+<h2 id="Remarks">Remarques</h2>
 <p>On Windows 10, a TrayTip window usually looks like this:</p>
 <img src="../static/dlg_traytip.png" alt="TrayTip" />
 <p id="Windows10"><strong>Windows 10</strong> replaces all balloon windows with toast notifications by default (this can be overridden via group policy). Calling TrayTip multiple times will usually cause multiple notifications to be placed in a "queue" instead of each notification replacing the last. To hide a notification, temporarily removing the tray icon may be effective. Par exemple :</p>
@@ -78,29 +78,29 @@ HideTrayTip() {
 <pre>HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced &gt;&gt; EnableBalloonTips</pre>
 <p>On a related note, there is a tooltip displayed whenever the user hovers the mouse over the script's tray icon. The contents of this tooltip can be changed via: <code><a href="Menu.htm">Menu</a>, Tray, Tip, My New Text</code>.</p>
 
-<h2>Related</h2>
+<h2 id="Related">Related</h2>
 <p><a href="ToolTip.htm">ToolTip</a>, <a href="SetTimer.htm">SetTimer</a>, <a href="Menu.htm">Menu</a>, <a href="SplashTextOn.htm">SplashTextOn</a>, <a href="MsgBox.htm">MsgBox</a>, <a href="InputBox.htm">InputBox</a>, <a href="FileSelectFile.htm">FileSelectFile</a>, <a href="FileSelectFolder.htm">FileSelectFolder</a></p>
 
-<h2>Exemples</h2>
+<h2 id="Examples">Exemples</h2>
 <div class="ex" id="ExBasic">
-<p><a href="#ExBasic">#1</a></p>
+<p><a class="ex_number" href="#ExBasic"></a> Shows a multiline balloon message or toast notification for 20 seconds near the tray icon without playing the notification sound. It also has a title and contains an info icon.</p>
 <pre>TrayTip, My Title, Multiline`nText, 20, 17</pre>
 </div>
 
 <div class="ex" id="ExDisplayTime">
-<p><a href="#ExDisplayTime">#2</a>: To have more precise control over the display time without having to use Sleep (which stops the current thread):</p>
+<p><a class="ex_number" href="#ExDisplayTime"></a> Provides a more precise control over the display time without having to use Sleep (which would stop the current thread). For Windows 10, replace the HideTrayTip function definition with the one defined <a href="#Hide">above</a>.</p>
 <pre>#Persistent
 TrayTip, Timed TrayTip, This will be displayed for 5 seconds.
 SetTimer, HideTrayTip, -5000
 
-HideTrayTip() {  <em>; NOTE: For Windows 10, replace this function with the one defined <a href="#Hide">above</a>.</em>
+HideTrayTip() {
     TrayTip
 }
 </pre>
 </div>
 
 <div class="ex" id="ExPermanent">
-<p><a href="#ExPermanent">#3</a>: To have a TrayTip permanently displayed, use a timer to refresh it periodically. REMARQUE: This probably won't work well on Windows 10 for <a href="#Windows10">reasons described above</a>.</p>
+<p><a class="ex_number" href="#ExPermanent"></a> Permanently displays a TrayTip by refreshing it periodically via timer. Note that this probably won't work well on Windows 10 for <a href="#Windows10">reasons described above</a>.</p>
 <pre>#Persistent
 SetTimer, RefreshTrayTip, 1000
 Gosub, RefreshTrayTip  <em>; Call it once to get it started right away.</em>

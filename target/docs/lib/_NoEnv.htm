@@ -3,7 +3,7 @@
 <head>
 <title>#NoEnv - Syntax &amp; Usage | AutoHotkey</title>
 <meta name="description" content="The #NoEnv directive avoids checking empty variables to see if they are environment variables (recommended for all new scripts)." />
-<meta name="ahk:equiv-v2" content="AutoHotkey.htm" />
+<meta name="ahk:equiv-v2" content="v2-changes.htm#NoEnv" />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -27,7 +27,8 @@ MsgBox %WinDir%</pre>
 </ol>
 <p>To help ease the transition to #NoEnv, the built-in variables <a href="../Variables.htm#ComSpec">ComSpec</a> and <a href="../Variables.htm#ProgramFiles">ProgramFiles</a> have been added. They contain the same strings as the corresponding environment variables.</p>
 <p>When #NoEnv is in effect, the script should use <a href="EnvGet.htm">EnvGet</a> to retrieve environment variables, or use built-in variables like <a href="../Variables.htm#WinDir">A_WinDir</a>.</p>
-<h2>Related</h2>
+<p>Like other directives, #NoEnv cannot be executed conditionally.</p>
+<h2 id="Related">Related</h2>
 <p><a href="EnvGet.htm">EnvGet</a>, <a href="../Variables.htm#ComSpec">ComSpec</a>, <a href="../Variables.htm#ProgramFiles">ProgramFiles</a>, <a href="../Variables.htm#WinDir">A_WinDir</a></p>
 
 </body>

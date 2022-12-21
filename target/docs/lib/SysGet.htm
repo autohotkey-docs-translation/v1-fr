@@ -14,7 +14,7 @@
 
 <p>Retrieves screen resolution, multi-monitor info, dimensions of system objects, and other system properties.</p>
 <pre class="Syntax"><span class="func">SysGet</span>, OutputVar, <a href="#SubCommands">SubCommand</a> <span class="optional">, Value</span></pre>
-<p>The <em>OutputVar</em> parameter is the name of the variable in which to store the result. The <em>SubCommand</em> and <em>Value</em> parameters are dependent upon each other and their usage is described below.</p>
+<p>The <em>OutputVar</em> parameter is the name of the output variable in which to store the result. The <em>SubCommand</em> and <em>Value</em> parameters are dependent upon each other and their usage is described below.</p>
 
 <h2 id="SubCommands">Sub-commands</h2>
 <p>For <em>SubCommand</em>, specify one of the following:</p>
@@ -60,11 +60,11 @@ MsgBox, Gauche : %Mon2Left% -- Top: %Mon2Top% -- Right: %Mon2Right% -- Bottom %M
 <pre class="Syntax"><span class="func">SysGet</span>, OutputVar, N</pre>
 <p>The following example would store the number of mouse buttons in a variable named "MouseButtonCount": <code>SysGet, MouseButtonCount, 43</code>.</p>
 
-<h4>Commonly Used</h4>
+<h4 id="Commonly_Used">Commonly Used</h4>
 <table class="info">
   <tr>
     <th>Nombre</th>
-    <th>Description</th>
+    <th abbr="Descr">Description</th>
   </tr>
   <tr>
     <td>80</td>
@@ -120,24 +120,19 @@ MsgBox, Gauche : %Mon2Left% -- Top: %Mon2Top% -- Right: %Mon2Right% -- Bottom %M
   </tr>
   <tr>
     <td>8193</td>
-    <td>
-      SM_REMOTECONTROL: This system metric is used in a Terminal Services environment. Its value is nonzero if the current session is remotely controlled; zero otherwise.</td>
+    <td>SM_REMOTECONTROL: This system metric is used in a Terminal Services environment. Its value is nonzero if the current session is remotely controlled; zero otherwise.</td>
   </tr>
   <tr>
     <td>4096</td>
-    <td>
-      SM_REMOTESESSION: This system metric is used in a Terminal Services environment. If the calling process is associated with a Terminal Services client session, the return value is nonzero. If the calling process is associated with the Terminal Server console session, the return value is zero. The console session is not necessarily the physical console.</td>
+    <td>SM_REMOTESESSION: This system metric is used in a Terminal Services environment. If the calling process is associated with a Terminal Services client session, the return value is nonzero. If the calling process is associated with the Terminal Server console session, the return value is zero. The console session is not necessarily the physical console.</td>
   </tr>
   <tr>
     <td>70</td>
-    <td>
-      SM_SHOWSOUNDS: Nonzero if the user requires an application to present information visually in situations where it would otherwise present the information only in audible form; zero otherwise.
-    </td>
+    <td>SM_SHOWSOUNDS: Nonzero if the user requires an application to present information visually in situations where it would otherwise present the information only in audible form; zero otherwise.</td>
   </tr>
   <tr>
     <td>8192</td>
-    <td>
-      SM_SHUTTINGDOWN: Nonzero if the current session is shutting down; zero otherwise. <b>Windows 2000:</b> The retrieved value is always 0.</td>
+    <td>SM_SHUTTINGDOWN: Nonzero if the current session is shutting down; zero otherwise. <b>Windows 2000:</b> The retrieved value is always 0.</td>
   </tr>
   <tr>
     <td>23</td>
@@ -145,16 +140,15 @@ MsgBox, Gauche : %Mon2Left% -- Top: %Mon2Top% -- Right: %Mon2Right% -- Bottom %M
   </tr>
   <tr>
     <td>76, 77</td>
-    <td>
-      SM_XVIRTUALSCREEN, SM_YVIRTUALSCREEN: Coordinates for the left side and the top of the virtual screen. The virtual screen is the bounding rectangle of all display monitors. By contrast, the SM_CXVIRTUALSCREEN, SM_CYVIRTUALSCREEN metrics (further above) are the width and height of the virtual screen.</td>
+    <td>SM_XVIRTUALSCREEN, SM_YVIRTUALSCREEN: Coordinates for the left side and the top of the virtual screen. The virtual screen is the bounding rectangle of all display monitors. By contrast, the SM_CXVIRTUALSCREEN, SM_CYVIRTUALSCREEN metrics (further above) are the width and height of the virtual screen.</td>
   </tr>
 </table>
 
-<h4>Not Commonly Used</h4>
+<h4 id="Not_Commonly_Used">Not Commonly Used</h4>
 <table class="info">
   <tr>
     <th>Nombre</th>
-    <th>Description</th>
+    <th abbr="Descr">Description</th>
   </tr>
   <tr>
     <td>56</td>
@@ -162,10 +156,13 @@ MsgBox, Gauche : %Mon2Left% -- Top: %Mon2Top% -- Right: %Mon2Right% -- Bottom %M
   </tr>
   <tr>
     <td>67</td>
-    <td>SM_CLEANBOOT: Specifies how the system was started:
-      <br> 0 Normal boot
-      <br> 1 Fail-safe boot
-      <br> 2 Fail-safe with network boot</td>
+    <td><p>SM_CLEANBOOT: Specifies how the system was started:</p>
+      <ul>
+        <li>0 = Normal boot</li>
+        <li>1 = Fail-safe boot</li>
+        <li>2 = Fail-safe with network boot</li>
+      </ul>
+     </td>
   </tr>
   <tr>
     <td>5, 6</td>
@@ -273,7 +270,7 @@ MsgBox, Gauche : %Mon2Left% -- Top: %Mon2Top% -- Right: %Mon2Right% -- Bottom %M
   </tr>
   <tr>
     <td>82</td>
-    <td>SM_IMMENABLED: Nonzero if Input Method Manager/Input Method Editor features are enabled; zero otherwise.
+    <td><p>SM_IMMENABLED: Nonzero if Input Method Manager/Input Method Editor features are enabled; zero otherwise.</p>
       <p>SM_IMMENABLED indicates whether the system is ready to use a Unicode-based IME on a Unicode application. To ensure that a language-dependent IME works, check SM_DBCSENABLED and the system ANSI code page. Otherwise the ANSI-to-Unicode conversion may not be performed correctly, or some components like fonts or registry setting may not be present.</p>
     </td>
   </tr>
@@ -307,23 +304,27 @@ MsgBox, Gauche : %Mon2Left% -- Top: %Mon2Top% -- Right: %Mon2Right% -- Bottom %M
   </tr>
 </table>
 
-<h2>Remarques</h2>
+<h2 id="Remarks">Remarques</h2>
 <p>The built-in variables <a href="../Variables.htm#Screen">A_ScreenWidth</a> and <a href="../Variables.htm#Screen">A_ScreenHeight</a> contain the dimensions of the primary monitor, in pixels.</p>
 
-<h2>Related</h2>
+<h2 id="Related">Related</h2>
 <p><a href="DllCall.htm">DllCall()</a>, <a href="WinGet.htm">WinGet</a></p>
 
-<h2>Exemples</h2>
+<h2 id="Examples">Exemples</h2>
 
 <div class="ex" id="ExBasic">
-<p><a href="#ExBasic">#1</a></p>
-<pre>SysGet, MouseButtonCount, 43
-SysGet, VirtualScreenWidth, 78
+<p><a class="ex_number" href="#ExBasic"></a> Retrieves the number of mouse buttons and stores it in <var>MouseButtonCount</var>.</p>
+<pre>SysGet, MouseButtonCount, 43</pre>
+</div>
+
+<div class="ex" id="ExVirtScreenWH">
+<p><a class="ex_number" href="#ExVirtScreenWH"></a> Retrieves the width and height of the virtual screen and stores them in <var>VirtualScreenWidth</var> and <var>VirtualScreenHeight</var>.</p>
+<pre>SysGet, VirtualScreenWidth, 78
 SysGet, VirtualScreenHeight, 79</pre>
 </div>
 
 <div class="ex" id="ExMonitor">
-<p><a href="#ExMonitor">#2</a>: Displays info about each monitor:</p>
+<p><a class="ex_number" href="#ExMonitor"></a> Displays info about each monitor.</p>
 <pre>SysGet, MonitorCount, MonitorCount
 SysGet, MonitorPrimary, MonitorPrimary
 MsgBox, Monitor Count:`t%MonitorCount%`nPrimary Monitor:`t%MonitorPrimary%

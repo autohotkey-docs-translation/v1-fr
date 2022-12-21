@@ -3,6 +3,7 @@
 <head>
 <title>IsByRef() - Syntax &amp; Usage | AutoHotkey</title>
 <meta name="description" content="The IsByRef function returns a non-zero number if the specified ByRef parameter was supplied with a variable." />
+<meta name="ahk:equiv-v2" content="Concepts.htm#variable-references" />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -15,7 +16,7 @@
 <p>Returns a non-zero number if the specified <a href="../Functions.htm#ByRef">ByRef parameter</a> was supplied with a variable.</p>
 
 <pre class="Syntax">TrueOrFalse := <span class="func">IsByRef</span>(ParameterVar)</pre>
-<h2>Parameters</h2>
+<h2 id="Parameters">Parameters</h2>
 <dl>
 
   <dt>ParameterVar</dt>
@@ -23,14 +24,14 @@
 
 </dl>
 
-<h2>Return Value</h2>
+<h2 id="Return_Value">Return Value</h2>
 <p>This function returns 1 if <em>ParameterVar</em> is a <a href="../Functions.htm#ByRef">ByRef parameter</a> and the caller supplied a variable; or 0 if <em>ParameterVar</em> is any other kind of variable.</p>
 
-<h2>Related</h2>
+<h2 id="Related">Related</h2>
 <p><a href="../Functions.htm#ByRef">ByRef parameters</a></p>
-<h2>Exemples</h2>
+<h2 id="Examples">Exemples</h2>
 <div class="ex" id="ExBasic">
-<p><a href="#ExBasic">#1</a></p>
+<p><a class="ex_number" href="#ExBasic"></a> Reports 1 (true) because <var>Param</var> is a <a href="../Functions.htm#ByRef">ByRef parameter</a> and was supplied with a variable.</p>
 <pre>MsgBox, % Function(MyVar)
 
 Function(ByRef Param)
