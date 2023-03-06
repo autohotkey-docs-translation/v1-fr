@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE tmx SYSTEM "tmx11.dtd">
 <tmx version="1.1">
-  <header creationtool="OmegaT" o-tmf="OmegaT TMX" adminlang="EN-US" datatype="plaintext" creationtoolversion="5.5.0_0_a1fd6a4d" segtype="sentence" srclang="en"/>
+  <header creationtool="OmegaT" o-tmf="OmegaT TMX" adminlang="EN-US" datatype="plaintext" creationtoolversion="5.7.1_0_c3206253" segtype="sentence" srclang="en"/>
   <body>
 <!-- Default translations -->
     <tu>
@@ -250,6 +250,14 @@
       </tuv>
       <tuv lang="fr" changeid="OmegaT Aligner" changedate="20210528T103836Z" creationid="OmegaT Aligner" creationdate="20210528T103836Z">
         <seg>1 - Les Bases</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en">
+        <seg>1.1 or later</seg>
+      </tuv>
+      <tuv lang="fr" changeid="Ragnar-F" changedate="20230306T153745Z" creationid="Ragnar-F" creationdate="20230306T153745Z">
+        <seg>1.1 or later</seg>
       </tuv>
     </tu>
     <tu>
@@ -4606,6 +4614,14 @@
     </tu>
     <tu>
       <tuv lang="en">
+        <seg>AutoHotkey Help</seg>
+      </tuv>
+      <tuv lang="fr" changeid="Ragnar-F" changedate="20230306T153819Z" creationid="Ragnar-F" creationdate="20230306T153819Z">
+        <seg>Aide pour AutoHotkey</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en">
         <seg>AutoHotkey also creates one global pseudo-array to contain any &lt;a0&gt;command line parameters&lt;/a0&gt; that were passed to the script.</seg>
       </tuv>
       <tuv lang="fr" changeid="OmegaT Aligner" changedate="20210528T095908Z" creationid="OmegaT Aligner" creationdate="20210528T095908Z">
@@ -4674,6 +4690,14 @@
       </tuv>
       <tuv lang="fr" changeid="OmegaT Aligner" changedate="20210528T093746Z" creationid="OmegaT Aligner" creationdate="20210528T093746Z">
         <seg>AutoHotkey.ahk est lancé à la place d'AutoHotkey.ini</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en">
+        <seg>AutoHotkey.chm</seg>
+      </tuv>
+      <tuv lang="fr" changeid="Ragnar-F" changedate="20230306T153747Z" creationid="Ragnar-F" creationdate="20230306T153747Z">
+        <seg>AutoHotkey.chm</seg>
       </tuv>
     </tu>
     <tu>
@@ -9166,6 +9190,14 @@
     </tu>
     <tu>
       <tuv lang="en">
+        <seg>Index.hhk</seg>
+      </tuv>
+      <tuv lang="fr" changeid="Ragnar-F" changedate="20230306T153802Z" creationid="Ragnar-F" creationdate="20230306T153802Z">
+        <seg>Index.hhk</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en">
         <seg>Indicate that the script is being restarted (this is also used by the &lt;a0&gt;Reload&lt;/a0&gt; command, internally).</seg>
       </tuv>
       <tuv lang="fr" changeid="OmegaT Aligner" changedate="20210528T101352Z" creationid="OmegaT Aligner" creationdate="20210528T101352Z">
@@ -10830,6 +10862,14 @@
     </tu>
     <tu>
       <tuv lang="en">
+        <seg>NUL</seg>
+      </tuv>
+      <tuv lang="fr" changeid="Ragnar-F" changedate="20230306T153838Z" creationid="Ragnar-F" creationdate="20230306T153838Z">
+        <seg>NUL</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en">
         <seg>Named If statements allow a &lt;a0&gt;command&lt;/a0&gt; to be written on the same line, but mispelled command names are treated as literal text.</seg>
       </tuv>
       <tuv lang="fr" changeid="OmegaT Aligner" changedate="20210528T095908Z" creationid="OmegaT Aligner" creationdate="20210528T095908Z">
@@ -11814,18 +11854,18 @@
     </tu>
     <tu>
       <tuv lang="en">
-        <seg>Redirecting to &lt;a0&gt;index.htm&lt;/a0&gt;.</seg>
-      </tuv>
-      <tuv lang="fr" changeid="OmegaT Aligner" changedate="20210528T092505Z" creationid="OmegaT Aligner" creationdate="20210528T092505Z">
-        <seg>Redirection vers &lt;a0&gt;index.htm&lt;/a0&gt;.</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="en">
         <seg>Redirecting to &lt;a0&gt;docs/index.htm&lt;/a0&gt;.</seg>
       </tuv>
       <tuv lang="fr" changeid="OmegaT Aligner" changedate="20210528T092354Z" creationid="OmegaT Aligner" creationdate="20210528T092354Z">
         <seg>Redirection vers &lt;a0&gt;docs/index.htm&lt;/a0&gt;.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en">
+        <seg>Redirecting to &lt;a0&gt;index.htm&lt;/a0&gt;.</seg>
+      </tuv>
+      <tuv lang="fr" changeid="OmegaT Aligner" changedate="20210528T092505Z" creationid="OmegaT Aligner" creationdate="20210528T092505Z">
+        <seg>Redirection vers &lt;a0&gt;index.htm&lt;/a0&gt;.</seg>
       </tuv>
     </tu>
     <tu>
@@ -17342,6 +17382,38 @@
     </tu>
     <tu>
       <tuv lang="en">
+        <seg>[</seg>
+      </tuv>
+      <tuv lang="fr" changeid="Ragnar-F" changedate="20230306T153918Z" creationid="Ragnar-F" creationdate="20230306T153918Z">
+        <seg>[</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en">
+        <seg>];</seg>
+      </tuv>
+      <tuv lang="fr" changeid="Ragnar-F" changedate="20230306T153941Z" creationid="Ragnar-F" creationdate="20230306T153941Z">
+        <seg>];</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en">
+        <seg>]]</seg>
+      </tuv>
+      <tuv lang="fr" changeid="Ragnar-F" changedate="20230306T153931Z" creationid="Ragnar-F" creationdate="20230306T153931Z">
+        <seg>]]</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en">
+        <seg>]],</seg>
+      </tuv>
+      <tuv lang="fr" changeid="Ragnar-F" changedate="20230306T153923Z" creationid="Ragnar-F" creationdate="20230306T153923Z">
+        <seg>]],</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en">
         <seg>^VK24::MsgBox You pressed Home or NumpadHome while holding down Control.</seg>
       </tuv>
       <tuv lang="fr" changeid="OmegaT Aligner" changedate="20210528T094741Z" creationid="OmegaT Aligner" creationdate="20210528T094741Z">
@@ -17370,6 +17442,134 @@
       </tuv>
       <tuv lang="fr" changeid="OmegaT Aligner" changedate="20210528T094741Z" creationid="OmegaT Aligner" creationdate="20210528T094741Z">
         <seg>b c'est la touche &lt;k1&gt;B&lt;/k1&gt; et 5 c'est la touche &lt;k2&gt;5&lt;/k2&gt;.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en">
+        <seg>deprecateData = {</seg>
+      </tuv>
+      <tuv lang="fr" changeid="Ragnar-F" changedate="20230306T153951Z" creationid="Ragnar-F" creationdate="20230306T153951Z">
+        <seg>deprecateData = {</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en">
+        <seg>docs\index.htm</seg>
+      </tuv>
+      <tuv lang="fr" changeid="Ragnar-F" changedate="20230306T153757Z" creationid="Ragnar-F" creationdate="20230306T153757Z">
+        <seg>docs\index.htm</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en">
+        <seg>docs\search.htm</seg>
+      </tuv>
+      <tuv lang="fr" changeid="Ragnar-F" changedate="20230306T153823Z" creationid="Ragnar-F" creationdate="20230306T153823Z">
+        <seg>docs\search.htm</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en">
+        <seg>docs\settings.htm</seg>
+      </tuv>
+      <tuv lang="fr" changeid="Ragnar-F" changedate="20230306T153824Z" creationid="Ragnar-F" creationdate="20230306T153824Z">
+        <seg>docs\settings.htm</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en">
+        <seg>docs\static\ahk_logo.png</seg>
+      </tuv>
+      <tuv lang="fr" changeid="Ragnar-F" changedate="20230306T153827Z" creationid="Ragnar-F" creationdate="20230306T153827Z">
+        <seg>docs\static\ahk_logo.png</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en">
+        <seg>docs\static\content.css</seg>
+      </tuv>
+      <tuv lang="fr" changeid="Ragnar-F" changedate="20230306T153825Z" creationid="Ragnar-F" creationdate="20230306T153825Z">
+        <seg>docs\static\content.css</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en">
+        <seg>docs\static\dark.css</seg>
+      </tuv>
+      <tuv lang="fr" changeid="Ragnar-F" changedate="20230306T153826Z" creationid="Ragnar-F" creationdate="20230306T153826Z">
+        <seg>docs\static\dark.css</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en">
+        <seg>docs\static\fonts\icons.eot</seg>
+      </tuv>
+      <tuv lang="fr" changeid="Ragnar-F" changedate="20230306T153828Z" creationid="Ragnar-F" creationdate="20230306T153828Z">
+        <seg>docs\static\fonts\icons.eot</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en">
+        <seg>docs\static\fonts\icons.svg</seg>
+      </tuv>
+      <tuv lang="fr" changeid="Ragnar-F" changedate="20230306T153829Z" creationid="Ragnar-F" creationdate="20230306T153829Z">
+        <seg>docs\static\fonts\icons.svg</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en">
+        <seg>docs\static\fonts\icons.ttf</seg>
+      </tuv>
+      <tuv lang="fr" changeid="Ragnar-F" changedate="20230306T153830Z" creationid="Ragnar-F" creationdate="20230306T153830Z">
+        <seg>docs\static\fonts\icons.ttf</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en">
+        <seg>docs\static\fonts\icons.woff</seg>
+      </tuv>
+      <tuv lang="fr" changeid="Ragnar-F" changedate="20230306T153831Z" creationid="Ragnar-F" creationdate="20230306T153831Z">
+        <seg>docs\static\fonts\icons.woff</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en">
+        <seg>docs\static\source\data_deprecate.js</seg>
+      </tuv>
+      <tuv lang="fr" changeid="Ragnar-F" changedate="20230306T153837Z" creationid="Ragnar-F" creationdate="20230306T153837Z">
+        <seg>docs\static\source\data_deprecate.js</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en">
+        <seg>docs\static\source\data_index.js</seg>
+      </tuv>
+      <tuv lang="fr" changeid="Ragnar-F" changedate="20230306T153836Z" creationid="Ragnar-F" creationdate="20230306T153836Z">
+        <seg>docs\static\source\data_index.js</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en">
+        <seg>docs\static\source\data_search.js</seg>
+      </tuv>
+      <tuv lang="fr" changeid="Ragnar-F" changedate="20230306T153833Z" creationid="Ragnar-F" creationdate="20230306T153833Z">
+        <seg>docs\static\source\data_search.js</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en">
+        <seg>docs\static\source\data_toc.js</seg>
+      </tuv>
+      <tuv lang="fr" changeid="Ragnar-F" changedate="20230306T153835Z" creationid="Ragnar-F" creationdate="20230306T153835Z">
+        <seg>docs\static\source\data_toc.js</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en">
+        <seg>docs\static\source\data_translate.js</seg>
+      </tuv>
+      <tuv lang="fr" changeid="Ragnar-F" changedate="20230306T153832Z" creationid="Ragnar-F" creationdate="20230306T153832Z">
+        <seg>docs\static\source\data_translate.js</seg>
       </tuv>
     </tu>
     <tu>
@@ -17558,6 +17758,14 @@
     </tu>
     <tu>
       <tuv lang="en">
+        <seg>indexData = [</seg>
+      </tuv>
+      <tuv lang="fr" changeid="Ragnar-F" changedate="20230306T153946Z" creationid="Ragnar-F" creationdate="20230306T153946Z">
+        <seg>indexData = [</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en">
         <seg>it affects all continuation sections physically beneath it.</seg>
       </tuv>
       <tuv lang="fr" changeid="OmegaT Aligner" changedate="20210528T101352Z" creationid="OmegaT Aligner" creationdate="20210528T101352Z">
@@ -17694,10 +17902,34 @@
     </tu>
     <tu>
       <tuv lang="en">
+        <seg>tocData = [</seg>
+      </tuv>
+      <tuv lang="fr" changeid="Ragnar-F" changedate="20230306T153916Z" creationid="Ragnar-F" creationdate="20230306T153916Z">
+        <seg>tocData = [</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en">
+        <seg>translateData = {</seg>
+      </tuv>
+      <tuv lang="fr" changeid="Ragnar-F" changedate="20230306T153905Z" creationid="Ragnar-F" creationdate="20230306T153905Z">
+        <seg>translateData = {</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en">
         <seg>using a joystick as a mouse.</seg>
       </tuv>
       <tuv lang="fr" changeid="OmegaT Aligner" changedate="20210528T094741Z" creationid="OmegaT Aligner" creationdate="20210528T094741Z">
         <seg>utilisation d'un joystick comme souris.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en">
+        <seg>};</seg>
+      </tuv>
+      <tuv lang="fr" changeid="Ragnar-F" changedate="20230306T153909Z" creationid="Ragnar-F" creationdate="20230306T153909Z">
+        <seg>};</seg>
       </tuv>
     </tu>
     <tu>
@@ -17733,6 +17965,16 @@
       </tuv>
       <tuv lang="fr" changeid="Ragnar-F" changedate="20210528T105538Z" creationid="Ragnar-F" creationdate="20210528T105538Z">
         <seg>No</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <prop type="file">Project.hhp</prop>
+      <prop type="id">OPTIONS/Default Window</prop>
+      <tuv lang="en">
+        <seg>Contents</seg>
+      </tuv>
+      <tuv lang="fr" changeid="Ragnar-F" changedate="20230306T153751Z" creationid="Ragnar-F" creationdate="20230306T153751Z">
+        <seg>Contents</seg>
       </tuv>
     </tu>
     <tu>
